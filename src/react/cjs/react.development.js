@@ -403,7 +403,6 @@ if (process.env.NODE_ENV !== "production") {
         }
       }
 
-      debugger;
       this.updater.enqueueSetState(this, partialState, callback, "setState");
     };
     /**
