@@ -2,7 +2,15 @@
 
 ---
 
-> 基于 react 17.0.2
+#### 使用方法
+
+1. 在源码包 package.json 目录执行
+   - yarn 安装依赖
+   - yarn link (3 个包都需要)
+2. 新起脚手架项目 npx create-react-app react_app
+3. 根目录执行 yarn link react react-dom scheduler
+
+> 源码包 基于 react 17.0.2
 
 - react - src/react
 
