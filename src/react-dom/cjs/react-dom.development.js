@@ -14915,7 +14915,10 @@ if (process.env.NODE_ENV !== "production") {
           update.callback = callback;
         }
 
+        // 更新任务队列
         enqueueUpdate(fiber, update);
+
+        // 调度任务
         scheduleUpdateOnFiber(fiber, lane, eventTime);
       },
       enqueueReplaceState: function(inst, payload, callback) {
@@ -26108,12 +26111,14 @@ if (process.env.NODE_ENV !== "production") {
           (executionContext & (RenderContext | CommitContext)) === NoContext
         ) {
 
-          console.log('scheduleUpdateOnFiber 1');
+          console.log('scheduleUpdateOnFiber 初次加载');
 
           // Register pending interactions on the root to avoid losing traced interaction data.
           schedulePendingInteractions(root, lane); // This is a legacy edge case. The initial mount of a ReactDOM.render-ed
           // root inside of batchedUpdates should be synchronous, but layout updates
           // should be deferred until the end of the batch.
+
+          //WANPAN setState() 3  初次加载 同步更新任务
           performSyncWorkOnRoot(root);
         } else {
 
@@ -26121,6 +26126,7 @@ if (process.env.NODE_ENV !== "production") {
 
           //WANPAN setState() 3 异步 注册调度更新任务
           ensureRootIsScheduled(root, eventTime);
+
           schedulePendingInteractions(root, lane);
 
           if (executionContext === NoContext) {
@@ -26131,7 +26137,8 @@ if (process.env.NODE_ENV !== "production") {
             // without immediately flushing it. We only do this for user-initiated
             // updates, to preserve historical behavior of legacy mode.
             resetRenderTimer();
-            //WANPAN setState() 3 同步更新任务
+
+            //WANPAN setState() 3 没有执行上下文时 同步更新任务
             flushSyncCallbackQueue();
           }
         }
@@ -26157,6 +26164,7 @@ if (process.env.NODE_ENV !== "production") {
 
         //WANPAN setState() 3 异步 注册调度更新任务
         ensureRootIsScheduled(root, eventTime);
+
         schedulePendingInteractions(root, lane);
       } // We use this when assigning a lane for a transition inside
       // `requestUpdateLane`. We assume it's the same as the root being updated,
@@ -30868,6 +30876,7 @@ if (process.env.NODE_ENV !== "production") {
 
     // WANPAN 程序启动 render() 1
     function render(element, container, callback) {
+      debugger
       if (!isValidContainer(container)) {
         {
           throw Error("Target container is not a DOM element.");
