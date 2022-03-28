@@ -13,6 +13,8 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
     "use strict";
 
+    console.log('react-dom.development.js');
+
     var React = require("react");
     var _assign = require("object-assign");
     var Scheduler = require("scheduler");
@@ -22736,6 +22738,8 @@ if (process.env.NODE_ENV !== "production") {
       }
     }
 
+
+    // WANPAN beginWork
     function beginWork(current, workInProgress, renderLanes) {
       var updateLanes = workInProgress.lanes;
 
@@ -30876,7 +30880,6 @@ if (process.env.NODE_ENV !== "production") {
 
     // WANPAN 程序启动 render() 1
     function render(element, container, callback) {
-      debugger
       if (!isValidContainer(container)) {
         {
           throw Error("Target container is not a DOM element.");

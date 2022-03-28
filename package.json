@@ -1,0 +1,20 @@
+{
+  "name": "react_source_debug",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wanpan11/react_source_debug.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wanpan11/react_source_debug/issues"
+  },
+  "homepage": "https://github.com/wanpan11/react_source_debug#readme"
+}
