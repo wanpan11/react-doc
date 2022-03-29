@@ -10,6 +10,10 @@
 2. 新起脚手架项目 npx create-react-app react_app
 3. 根目录执行 yarn link react react-dom scheduler
 
+#### 注意
+
+- 每个包可能依赖其它包 yarn link 之后，可根据不同包依赖 yarn link packname
+
 > 源码包 基于 react 17.0.2
 
 - react - src/react
