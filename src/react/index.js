@@ -1,10 +1,7 @@
-'use strict';
+"use strict";
 
-
-console.log('wanpan');
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./cjs/react.production.min.js');
+if (process.env.NODE_ENV === "production") {
+  module.exports = require("./cjs/react.production.min.js");
 } else {
-  module.exports = require('./cjs/react.development.js');
+  module.exports = require("./cjs/react.development.js");
 }

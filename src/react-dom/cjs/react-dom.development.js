@@ -10,10 +10,10 @@
 "use strict";
 
 if (process.env.NODE_ENV !== "production") {
-  (function() {
+  (function () {
     "use strict";
 
-    console.log('react-dom.development.js');
+    console.log("react-dom 17.0.2 new Date >>>", new Date());
 
     var React = require("react");
     var _assign = require("object-assign");
@@ -32,8 +32,8 @@ if (process.env.NODE_ENV !== "production") {
       {
         for (
           var _len = arguments.length,
-          args = new Array(_len > 1 ? _len - 1 : 0),
-          _key = 1;
+            args = new Array(_len > 1 ? _len - 1 : 0),
+            _key = 1;
           _key < _len;
           _key++
         ) {
@@ -47,8 +47,8 @@ if (process.env.NODE_ENV !== "production") {
       {
         for (
           var _len2 = arguments.length,
-          args = new Array(_len2 > 1 ? _len2 - 1 : 0),
-          _key2 = 1;
+            args = new Array(_len2 > 1 ? _len2 - 1 : 0),
+            _key2 = 1;
           _key2 < _len2;
           _key2++
         ) {
@@ -72,7 +72,7 @@ if (process.env.NODE_ENV !== "production") {
           args = args.concat([stack]);
         }
 
-        var argsWithFormat = args.map(function(item) {
+        var argsWithFormat = args.map(function (item) {
           return "" + item;
         }); // Careful: RN currently depends on this prefix
 
@@ -153,7 +153,7 @@ if (process.env.NODE_ENV !== "production") {
         if (registrationNameDependencies[registrationName]) {
           error(
             "EventRegistry: More than one plugin attempted to publish the same " +
-            "registration name, `%s`.",
+              "registration name, `%s`.",
             registrationName
           );
         }
@@ -383,7 +383,7 @@ if (process.env.NODE_ENV !== "production") {
       "suppressHydrationWarning",
       "style",
     ];
-    reservedProps.forEach(function(name) {
+    reservedProps.forEach(function (name) {
       properties[name] = new PropertyInfoRecord(
         name,
         RESERVED,
@@ -401,7 +401,7 @@ if (process.env.NODE_ENV !== "production") {
       ["className", "class"],
       ["htmlFor", "for"],
       ["httpEquiv", "http-equiv"],
-    ].forEach(function(_ref) {
+    ].forEach(function (_ref) {
       var name = _ref[0],
         attributeName = _ref[1];
       properties[name] = new PropertyInfoRecord(
@@ -417,7 +417,7 @@ if (process.env.NODE_ENV !== "production") {
     // In React, we let users pass `true` and `false` even though technically
     // these aren't boolean attributes (they are coerced to strings).
 
-    ["contentEditable", "draggable", "spellCheck", "value"].forEach(function(
+    ["contentEditable", "draggable", "spellCheck", "value"].forEach(function (
       name
     ) {
       properties[name] = new PropertyInfoRecord(
@@ -439,7 +439,7 @@ if (process.env.NODE_ENV !== "production") {
       "externalResourcesRequired",
       "focusable",
       "preserveAlpha",
-    ].forEach(function(name) {
+    ].forEach(function (name) {
       properties[name] = new PropertyInfoRecord(
         name,
         BOOLEANISH_STRING,
@@ -476,7 +476,7 @@ if (process.env.NODE_ENV !== "production") {
       "scoped",
       "seamless", // Microdata
       "itemScope",
-    ].forEach(function(name) {
+    ].forEach(function (name) {
       properties[name] = new PropertyInfoRecord(
         name,
         BOOLEAN,
@@ -497,7 +497,7 @@ if (process.env.NODE_ENV !== "production") {
       "selected", // NOTE: if you add a camelCased prop to this list,
       // you'll need to set attributeName to name.toLowerCase()
       // instead in the assignment below.
-    ].forEach(function(name) {
+    ].forEach(function (name) {
       properties[name] = new PropertyInfoRecord(
         name,
         BOOLEAN,
@@ -515,7 +515,7 @@ if (process.env.NODE_ENV !== "production") {
       "download", // NOTE: if you add a camelCased prop to this list,
       // you'll need to set attributeName to name.toLowerCase()
       // instead in the assignment below.
-    ].forEach(function(name) {
+    ].forEach(function (name) {
       properties[name] = new PropertyInfoRecord(
         name,
         OVERLOADED_BOOLEAN,
@@ -534,7 +534,7 @@ if (process.env.NODE_ENV !== "production") {
       "span", // NOTE: if you add a camelCased prop to this list,
       // you'll need to set attributeName to name.toLowerCase()
       // instead in the assignment below.
-    ].forEach(function(name) {
+    ].forEach(function (name) {
       properties[name] = new PropertyInfoRecord(
         name,
         POSITIVE_NUMERIC,
@@ -546,7 +546,7 @@ if (process.env.NODE_ENV !== "production") {
       );
     }); // These are HTML attributes that must be numbers.
 
-    ["rowSpan", "start"].forEach(function(name) {
+    ["rowSpan", "start"].forEach(function (name) {
       properties[name] = new PropertyInfoRecord(
         name,
         NUMERIC,
@@ -559,7 +559,7 @@ if (process.env.NODE_ENV !== "production") {
     });
     var CAMELIZE = /[\-\:]([a-z])/g;
 
-    var capitalize = function(token) {
+    var capitalize = function (token) {
       return token[1].toUpperCase();
     }; // This is a list of all SVG attributes that need special casing, namespacing,
     // or boolean value assignment. Regular attributes that just accept strings
@@ -643,7 +643,7 @@ if (process.env.NODE_ENV !== "production") {
       "x-height", // NOTE: if you add a camelCased prop to this list,
       // you'll need to set attributeName to name.toLowerCase()
       // instead in the assignment below.
-    ].forEach(function(attributeName) {
+    ].forEach(function (attributeName) {
       var name = attributeName.replace(CAMELIZE, capitalize);
       properties[name] = new PropertyInfoRecord(
         name,
@@ -665,7 +665,7 @@ if (process.env.NODE_ENV !== "production") {
       "xlink:type", // NOTE: if you add a camelCased prop to this list,
       // you'll need to set attributeName to name.toLowerCase()
       // instead in the assignment below.
-    ].forEach(function(attributeName) {
+    ].forEach(function (attributeName) {
       var name = attributeName.replace(CAMELIZE, capitalize);
       properties[name] = new PropertyInfoRecord(
         name,
@@ -684,7 +684,7 @@ if (process.env.NODE_ENV !== "production") {
       "xml:space", // NOTE: if you add a camelCased prop to this list,
       // you'll need to set attributeName to name.toLowerCase()
       // instead in the assignment below.
-    ].forEach(function(attributeName) {
+    ].forEach(function (attributeName) {
       var name = attributeName.replace(CAMELIZE, capitalize);
       properties[name] = new PropertyInfoRecord(
         name,
@@ -699,7 +699,7 @@ if (process.env.NODE_ENV !== "production") {
     // The attribute name is case-sensitive in SVG so we can't just use
     // the React name like we do for attributes that exist only in HTML.
 
-    ["tabIndex", "crossOrigin"].forEach(function(attributeName) {
+    ["tabIndex", "crossOrigin"].forEach(function (attributeName) {
       properties[attributeName] = new PropertyInfoRecord(
         attributeName,
         STRING,
@@ -722,7 +722,7 @@ if (process.env.NODE_ENV !== "production") {
       true, // sanitizeURL
       false
     );
-    ["src", "href", "action", "formAction"].forEach(function(attributeName) {
+    ["src", "href", "action", "formAction"].forEach(function (attributeName) {
       properties[attributeName] = new PropertyInfoRecord(
         attributeName,
         STRING,
@@ -755,8 +755,8 @@ if (process.env.NODE_ENV !== "production") {
 
           error(
             "A future version of React will block javascript: URLs as a security precaution. " +
-            "Use event handlers instead if you can. If you need to generate unsafe HTML try " +
-            "using dangerouslySetInnerHTML instead. React was passed %s.",
+              "Use event handlers instead if you can. If you need to generate unsafe HTML try " +
+              "using dangerouslySetInnerHTML instead. React was passed %s.",
             JSON.stringify(url)
           );
         }
@@ -1035,7 +1035,7 @@ if (process.env.NODE_ENV !== "production") {
     var prevGroupCollapsed;
     var prevGroupEnd;
 
-    function disabledLog() { }
+    function disabledLog() {}
 
     disabledLog.__reactDisabledLog = true;
     function disableLogs() {
@@ -1113,7 +1113,7 @@ if (process.env.NODE_ENV !== "production") {
         if (disabledDepth < 0) {
           error(
             "disabledDepth fell below zero. " +
-            "This is a bug in React. Please file an issue."
+              "This is a bug in React. Please file an issue."
           );
         }
       }
@@ -1177,12 +1177,12 @@ if (process.env.NODE_ENV !== "production") {
         // This should throw.
         if (construct) {
           // Something should be setting the props in the constructor.
-          var Fake = function() {
+          var Fake = function () {
             throw Error();
           }; // $FlowFixMe
 
           Object.defineProperty(Fake.prototype, "props", {
-            set: function() {
+            set: function () {
               // We use a throwing setter instead of frozen or non-writable props
               // because that won't throw in a non-strict mode function.
               throw Error();
@@ -1362,7 +1362,7 @@ if (process.env.NODE_ENV !== "production") {
                 source,
                 ownerFn
               );
-            } catch (x) { }
+            } catch (x) {}
           }
         }
       }
@@ -1446,7 +1446,7 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof type.tag === "number") {
           error(
             "Received an unexpected object in getComponentName(). " +
-            "This is likely a bug in React. Please file an issue."
+              "This is likely a bug in React. Please file an issue."
           );
         }
       }
@@ -1614,9 +1614,9 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "You provided a `value` prop to a form field without an " +
-            "`onChange` handler. This will render a read-only field. If " +
-            "the field should be mutable use `defaultValue`. Otherwise, " +
-            "set either `onChange` or `readOnly`."
+              "`onChange` handler. This will render a read-only field. If " +
+              "the field should be mutable use `defaultValue`. Otherwise, " +
+              "set either `onChange` or `readOnly`."
           );
         }
 
@@ -1630,9 +1630,9 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "You provided a `checked` prop to a form field without an " +
-            "`onChange` handler. This will render a read-only field. If " +
-            "the field should be mutable use `defaultChecked`. Otherwise, " +
-            "set either `onChange` or `readOnly`."
+              "`onChange` handler. This will render a read-only field. If " +
+              "the field should be mutable use `defaultChecked`. Otherwise, " +
+              "set either `onChange` or `readOnly`."
           );
         }
       }
@@ -1696,10 +1696,10 @@ if (process.env.NODE_ENV !== "production") {
         set = descriptor.set;
       Object.defineProperty(node, valueField, {
         configurable: true,
-        get: function() {
+        get: function () {
           return get.call(this);
         },
-        set: function(value) {
+        set: function (value) {
           currentValue = "" + value;
           set.call(this, value);
         },
@@ -1712,13 +1712,13 @@ if (process.env.NODE_ENV !== "production") {
         enumerable: descriptor.enumerable,
       });
       var tracker = {
-        getValue: function() {
+        getValue: function () {
           return currentValue;
         },
-        setValue: function(value) {
+        setValue: function (value) {
           currentValue = "" + value;
         },
-        stopTracking: function() {
+        stopTracking: function () {
           detachTracker(node);
           delete node[valueField];
         },
@@ -1820,11 +1820,11 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "%s contains an input of type %s with both checked and defaultChecked props. " +
-            "Input elements must be either controlled or uncontrolled " +
-            "(specify either the checked prop, or the defaultChecked prop, but not " +
-            "both). Decide between using a controlled or uncontrolled input " +
-            "element and remove one of these props. More info: " +
-            "https://reactjs.org/link/controlled-components",
+              "Input elements must be either controlled or uncontrolled " +
+              "(specify either the checked prop, or the defaultChecked prop, but not " +
+              "both). Decide between using a controlled or uncontrolled input " +
+              "element and remove one of these props. More info: " +
+              "https://reactjs.org/link/controlled-components",
             getCurrentFiberOwnerNameInDevOrNull() || "A component",
             props.type
           );
@@ -1839,11 +1839,11 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "%s contains an input of type %s with both value and defaultValue props. " +
-            "Input elements must be either controlled or uncontrolled " +
-            "(specify either the value prop, or the defaultValue prop, but not " +
-            "both). Decide between using a controlled or uncontrolled input " +
-            "element and remove one of these props. More info: " +
-            "https://reactjs.org/link/controlled-components",
+              "Input elements must be either controlled or uncontrolled " +
+              "(specify either the value prop, or the defaultValue prop, but not " +
+              "both). Decide between using a controlled or uncontrolled input " +
+              "element and remove one of these props. More info: " +
+              "https://reactjs.org/link/controlled-components",
             getCurrentFiberOwnerNameInDevOrNull() || "A component",
             props.type
           );
@@ -1884,10 +1884,10 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "A component is changing an uncontrolled input to be controlled. " +
-            "This is likely caused by the value changing from undefined to " +
-            "a defined value, which should not happen. " +
-            "Decide between using a controlled or uncontrolled input " +
-            "element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components"
+              "This is likely caused by the value changing from undefined to " +
+              "a defined value, which should not happen. " +
+              "Decide between using a controlled or uncontrolled input " +
+              "element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components"
           );
 
           didWarnUncontrolledToControlled = true;
@@ -1900,10 +1900,10 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "A component is changing a controlled input to be uncontrolled. " +
-            "This is likely caused by the value changing from a defined to " +
-            "undefined, which should not happen. " +
-            "Decide between using a controlled or uncontrolled input " +
-            "element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components"
+              "This is likely caused by the value changing from a defined to " +
+              "undefined, which should not happen. " +
+              "Decide between using a controlled or uncontrolled input " +
+              "element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components"
           );
 
           didWarnControlledToUncontrolled = true;
@@ -2111,7 +2111,7 @@ if (process.env.NODE_ENV !== "production") {
       // Elements are stringified (which is normally irrelevant
       // but matters for <fbt>).
 
-      React.Children.forEach(children, function(child) {
+      React.Children.forEach(children, function (child) {
         if (child == null) {
           return;
         }
@@ -2133,7 +2133,7 @@ if (process.env.NODE_ENV !== "production") {
         // TODO: this seems like it could cause a DEV-only throw for hydration
         // if children contains a non-element object. We should try to avoid that.
         if (typeof props.children === "object" && props.children !== null) {
-          React.Children.forEach(props.children, function(child) {
+          React.Children.forEach(props.children, function (child) {
             if (child == null) {
               return;
             }
@@ -2159,7 +2159,7 @@ if (process.env.NODE_ENV !== "production") {
         if (props.selected != null && !didWarnSelectedSetOnOption) {
           error(
             "Use the `defaultValue` or `value` props on <select> instead of " +
-            "setting `selected` on <option>."
+              "setting `selected` on <option>."
           );
 
           didWarnSelectedSetOnOption = true;
@@ -2226,14 +2226,14 @@ if (process.env.NODE_ENV !== "production") {
           if (props.multiple && !isArray) {
             error(
               "The `%s` prop supplied to <select> must be an array if " +
-              "`multiple` is true.%s",
+                "`multiple` is true.%s",
               propName,
               getDeclarationErrorAddendum()
             );
           } else if (!props.multiple && isArray) {
             error(
               "The `%s` prop supplied to <select> must be a scalar " +
-              "value if `multiple` is false.%s",
+                "value if `multiple` is false.%s",
               propName,
               getDeclarationErrorAddendum()
             );
@@ -2333,10 +2333,10 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "Select elements must be either controlled or uncontrolled " +
-            "(specify either the value prop, or the defaultValue prop, but not " +
-            "both). Decide between using a controlled or uncontrolled select " +
-            "element and remove one of these props. More info: " +
-            "https://reactjs.org/link/controlled-components"
+              "(specify either the value prop, or the defaultValue prop, but not " +
+              "both). Decide between using a controlled or uncontrolled select " +
+              "element and remove one of these props. More info: " +
+              "https://reactjs.org/link/controlled-components"
           );
 
           didWarnValueDefaultValue$1 = true;
@@ -2440,11 +2440,11 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "%s contains a textarea with both value and defaultValue props. " +
-            "Textarea elements must be either controlled or uncontrolled " +
-            "(specify either the value prop, or the defaultValue prop, but not " +
-            "both). Decide between using a controlled or uncontrolled textarea " +
-            "and remove one of these props. More info: " +
-            "https://reactjs.org/link/controlled-components",
+              "Textarea elements must be either controlled or uncontrolled " +
+              "(specify either the value prop, or the defaultValue prop, but not " +
+              "both). Decide between using a controlled or uncontrolled textarea " +
+              "and remove one of these props. More info: " +
+              "https://reactjs.org/link/controlled-components",
             getCurrentFiberOwnerNameInDevOrNull() || "A component"
           );
 
@@ -2462,7 +2462,7 @@ if (process.env.NODE_ENV !== "production") {
           {
             error(
               "Use the `defaultValue` or `value` props instead of setting " +
-              "children on <textarea>."
+                "children on <textarea>."
             );
           }
 
@@ -2583,10 +2583,10 @@ if (process.env.NODE_ENV !== "production") {
     /**
      * Create a function which has 'unsafe' privileges (required by windows8 apps)
      */
-    var createMicrosoftUnsafeLocalFunction = function(func) {
+    var createMicrosoftUnsafeLocalFunction = function (func) {
       if (typeof MSApp !== "undefined" && MSApp.execUnsafeLocalFunction) {
-        return function(arg0, arg1, arg2, arg3) {
-          MSApp.execUnsafeLocalFunction(function() {
+        return function (arg0, arg1, arg2, arg3) {
+          MSApp.execUnsafeLocalFunction(function () {
             return func(arg0, arg1, arg2, arg3);
           });
         };
@@ -2604,7 +2604,7 @@ if (process.env.NODE_ENV !== "production") {
      * @internal
      */
 
-    var setInnerHTML = createMicrosoftUnsafeLocalFunction(function(
+    var setInnerHTML = createMicrosoftUnsafeLocalFunction(function (
       node,
       html
     ) {
@@ -2653,7 +2653,7 @@ if (process.env.NODE_ENV !== "production") {
      * @internal
      */
 
-    var setTextContent = function(node, text) {
+    var setTextContent = function (node, text) {
       if (text) {
         var firstChild = node.firstChild;
 
@@ -2931,8 +2931,8 @@ if (process.env.NODE_ENV !== "production") {
     var prefixes = ["Webkit", "ms", "Moz", "O"]; // Using Object.keys here, or else the vanilla for-in loop makes IE8 go into an
     // infinite loop, because it iterates over the newly added props too.
 
-    Object.keys(isUnitlessNumber).forEach(function(prop) {
-      prefixes.forEach(function(prefix) {
+    Object.keys(isUnitlessNumber).forEach(function (prop) {
+      prefixes.forEach(function (prefix) {
         isUnitlessNumber[prefixKey(prefix, prop)] = isUnitlessNumber[prop];
       });
     });
@@ -2998,7 +2998,7 @@ if (process.env.NODE_ENV !== "production") {
         .replace(msPattern, "-ms-");
     }
 
-    var warnValidStyle = function() { };
+    var warnValidStyle = function () {};
 
     {
       // 'msTransform' is correct, but the other prefixes should be capitalized
@@ -3012,13 +3012,13 @@ if (process.env.NODE_ENV !== "production") {
       var warnedForNaNValue = false;
       var warnedForInfinityValue = false;
 
-      var camelize = function(string) {
-        return string.replace(hyphenPattern, function(_, character) {
+      var camelize = function (string) {
+        return string.replace(hyphenPattern, function (_, character) {
           return character.toUpperCase();
         });
       };
 
-      var warnHyphenatedStyleName = function(name) {
+      var warnHyphenatedStyleName = function (name) {
         if (warnedStyleNames.hasOwnProperty(name) && warnedStyleNames[name]) {
           return;
         }
@@ -3034,7 +3034,7 @@ if (process.env.NODE_ENV !== "production") {
         );
       };
 
-      var warnBadVendoredStyleName = function(name) {
+      var warnBadVendoredStyleName = function (name) {
         if (warnedStyleNames.hasOwnProperty(name) && warnedStyleNames[name]) {
           return;
         }
@@ -3048,7 +3048,7 @@ if (process.env.NODE_ENV !== "production") {
         );
       };
 
-      var warnStyleValueWithSemicolon = function(name, value) {
+      var warnStyleValueWithSemicolon = function (name, value) {
         if (
           warnedStyleValues.hasOwnProperty(value) &&
           warnedStyleValues[value]
@@ -3060,13 +3060,13 @@ if (process.env.NODE_ENV !== "production") {
 
         error(
           "Style property values shouldn't contain a semicolon. " +
-          'Try "%s: %s" instead.',
+            'Try "%s: %s" instead.',
           name,
           value.replace(badStyleValueWithSemicolonPattern, "")
         );
       };
 
-      var warnStyleValueIsNaN = function(name, value) {
+      var warnStyleValueIsNaN = function (name, value) {
         if (warnedForNaNValue) {
           return;
         }
@@ -3079,7 +3079,7 @@ if (process.env.NODE_ENV !== "production") {
         );
       };
 
-      var warnStyleValueIsInfinity = function(name, value) {
+      var warnStyleValueIsInfinity = function (name, value) {
         if (warnedForInfinityValue) {
           return;
         }
@@ -3092,7 +3092,7 @@ if (process.env.NODE_ENV !== "production") {
         );
       };
 
-      warnValidStyle = function(name, value) {
+      warnValidStyle = function (name, value) {
         if (name.indexOf("-") > -1) {
           warnHyphenatedStyleName(name);
         } else if (badVendoredStyleNamePattern.test(name)) {
@@ -3261,10 +3261,10 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "%s a style property during rerender (%s) when a " +
-              "conflicting property is set (%s) can lead to styling bugs. To " +
-              "avoid this, don't mix shorthand and non-shorthand properties " +
-              "for the same value; instead, replace the shorthand with " +
-              "separate values.",
+                "conflicting property is set (%s) can lead to styling bugs. To " +
+                "avoid this, don't mix shorthand and non-shorthand properties " +
+                "for the same value; instead, replace the shorthand with " +
+                "separate values.",
               isValueEmpty(styleUpdates[originalKey]) ? "Removing" : "Updating",
               originalKey,
               correctOriginalKey
@@ -3317,7 +3317,7 @@ if (process.env.NODE_ENV !== "production") {
           {
             throw Error(
               tag +
-              " is a void element tag and must neither have `children` nor use `dangerouslySetInnerHTML`."
+                " is a void element tag and must neither have `children` nor use `dangerouslySetInnerHTML`."
             );
           }
         }
@@ -3354,9 +3354,9 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "A component is `contentEditable` and contains `children` managed by " +
-            "React. It is now your responsibility to guarantee that none of " +
-            "those nodes are unexpectedly modified or duplicated. This is " +
-            "probably not intentional."
+              "React. It is now your responsibility to guarantee that none of " +
+              "those nodes are unexpectedly modified or duplicated. This is " +
+              "probably not intentional."
           );
         }
       }
@@ -4029,7 +4029,7 @@ if (process.env.NODE_ENV !== "production") {
         }
 
         var unknownPropString = invalidProps
-          .map(function(prop) {
+          .map(function (prop) {
             return "`" + prop + "`";
           })
           .join(", ");
@@ -4037,14 +4037,14 @@ if (process.env.NODE_ENV !== "production") {
         if (invalidProps.length === 1) {
           error(
             "Invalid aria prop %s on <%s> tag. " +
-            "For details, see https://reactjs.org/link/invalid-aria-props",
+              "For details, see https://reactjs.org/link/invalid-aria-props",
             unknownPropString,
             type
           );
         } else if (invalidProps.length > 1) {
           error(
             "Invalid aria props %s on <%s> tag. " +
-            "For details, see https://reactjs.org/link/invalid-aria-props",
+              "For details, see https://reactjs.org/link/invalid-aria-props",
             unknownPropString,
             type
           );
@@ -4073,15 +4073,15 @@ if (process.env.NODE_ENV !== "production") {
           if (type === "select" && props.multiple) {
             error(
               "`value` prop on `%s` should not be null. " +
-              "Consider using an empty array when `multiple` is set to `true` " +
-              "to clear the component or `undefined` for uncontrolled components.",
+                "Consider using an empty array when `multiple` is set to `true` " +
+                "to clear the component or `undefined` for uncontrolled components.",
               type
             );
           } else {
             error(
               "`value` prop on `%s` should not be null. " +
-              "Consider using an empty string to clear the component or `undefined` " +
-              "for uncontrolled components.",
+                "Consider using an empty string to clear the component or `undefined` " +
+                "for uncontrolled components.",
               type
             );
           }
@@ -4089,7 +4089,7 @@ if (process.env.NODE_ENV !== "production") {
       }
     }
 
-    var validateProperty$1 = function() { };
+    var validateProperty$1 = function () {};
 
     {
       var warnedProperties$1 = {};
@@ -4101,7 +4101,7 @@ if (process.env.NODE_ENV !== "production") {
         "^(aria)[A-Z][" + ATTRIBUTE_NAME_CHAR + "]*$"
       );
 
-      validateProperty$1 = function(tagName, name, value, eventRegistry) {
+      validateProperty$1 = function (tagName, name, value, eventRegistry) {
         if (
           _hasOwnProperty.call(warnedProperties$1, name) &&
           warnedProperties$1[name]
@@ -4114,8 +4114,8 @@ if (process.env.NODE_ENV !== "production") {
         if (lowerCasedName === "onfocusin" || lowerCasedName === "onfocusout") {
           error(
             "React uses onFocus and onBlur instead of onFocusIn and onFocusOut. " +
-            "All React events are normalized to bubble, so onFocusIn and onFocusOut " +
-            "are not needed/supported by React."
+              "All React events are normalized to bubble, so onFocusIn and onFocusOut " +
+              "are not needed/supported by React."
           );
 
           warnedProperties$1[name] = true;
@@ -4124,7 +4124,7 @@ if (process.env.NODE_ENV !== "production") {
 
         if (eventRegistry != null) {
           var registrationNameDependencies =
-            eventRegistry.registrationNameDependencies,
+              eventRegistry.registrationNameDependencies,
             possibleRegistrationNames = eventRegistry.possibleRegistrationNames;
 
           if (registrationNameDependencies.hasOwnProperty(name)) {
@@ -4164,7 +4164,7 @@ if (process.env.NODE_ENV !== "production") {
           if (INVALID_EVENT_NAME_REGEX.test(name)) {
             error(
               "Invalid event handler property `%s`. " +
-              "React events use the camelCase naming convention, for example `onClick`.",
+                "React events use the camelCase naming convention, for example `onClick`.",
               name
             );
           }
@@ -4180,7 +4180,7 @@ if (process.env.NODE_ENV !== "production") {
         if (lowerCasedName === "innerhtml") {
           error(
             "Directly setting property `innerHTML` is not permitted. " +
-            "For more information, lookup documentation on `dangerouslySetInnerHTML`."
+              "For more information, lookup documentation on `dangerouslySetInnerHTML`."
           );
 
           warnedProperties$1[name] = true;
@@ -4190,7 +4190,7 @@ if (process.env.NODE_ENV !== "production") {
         if (lowerCasedName === "aria") {
           error(
             "The `aria` attribute is reserved for future use in React. " +
-            "Pass individual `aria-` attributes instead."
+              "Pass individual `aria-` attributes instead."
           );
 
           warnedProperties$1[name] = true;
@@ -4205,7 +4205,7 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "Received a `%s` for a string attribute `is`. If this is expected, cast " +
-            "the value to a string.",
+              "the value to a string.",
             typeof value
           );
 
@@ -4216,7 +4216,7 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof value === "number" && isNaN(value)) {
           error(
             "Received NaN for the `%s` attribute. If this is expected, cast " +
-            "the value to a string.",
+              "the value to a string.",
             name
           );
 
@@ -4246,10 +4246,10 @@ if (process.env.NODE_ENV !== "production") {
           // will be cased anyway with server rendering.
           error(
             "React does not recognize the `%s` prop on a DOM element. If you " +
-            "intentionally want it to appear in the DOM as a custom " +
-            "attribute, spell it as lowercase `%s` instead. " +
-            "If you accidentally passed it from a parent component, remove " +
-            "it from the DOM element.",
+              "intentionally want it to appear in the DOM as a custom " +
+              "attribute, spell it as lowercase `%s` instead. " +
+              "If you accidentally passed it from a parent component, remove " +
+              "it from the DOM element.",
             name,
             lowerCasedName
           );
@@ -4265,8 +4265,8 @@ if (process.env.NODE_ENV !== "production") {
           if (value) {
             error(
               "Received `%s` for a non-boolean attribute `%s`.\n\n" +
-              "If you want to write it to the DOM, pass a string instead: " +
-              '%s="%s" or %s={value.toString()}.',
+                "If you want to write it to the DOM, pass a string instead: " +
+                '%s="%s" or %s={value.toString()}.',
               value,
               name,
               name,
@@ -4276,10 +4276,10 @@ if (process.env.NODE_ENV !== "production") {
           } else {
             error(
               "Received `%s` for a non-boolean attribute `%s`.\n\n" +
-              "If you want to write it to the DOM, pass a string instead: " +
-              '%s="%s" or %s={value.toString()}.\n\n' +
-              "If you used to conditionally omit it with %s={condition && value}, " +
-              "pass %s={condition ? value : undefined} instead.",
+                "If you want to write it to the DOM, pass a string instead: " +
+                '%s="%s" or %s={value.toString()}.\n\n' +
+                "If you used to conditionally omit it with %s={condition && value}, " +
+                "pass %s={condition ? value : undefined} instead.",
               value,
               name,
               name,
@@ -4313,8 +4313,8 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "Received the string `%s` for the boolean attribute `%s`. " +
-            "%s " +
-            "Did you mean %s={%s}?",
+              "%s " +
+              "Did you mean %s={%s}?",
             value,
             name,
             value === "false"
@@ -4332,7 +4332,7 @@ if (process.env.NODE_ENV !== "production") {
       };
     }
 
-    var warnUnknownProperties = function(type, props, eventRegistry) {
+    var warnUnknownProperties = function (type, props, eventRegistry) {
       {
         var unknownProps = [];
 
@@ -4350,7 +4350,7 @@ if (process.env.NODE_ENV !== "production") {
         }
 
         var unknownPropString = unknownProps
-          .map(function(prop) {
+          .map(function (prop) {
             return "`" + prop + "`";
           })
           .join(", ");
@@ -4358,16 +4358,16 @@ if (process.env.NODE_ENV !== "production") {
         if (unknownProps.length === 1) {
           error(
             "Invalid value for prop %s on <%s> tag. Either remove it from the element, " +
-            "or pass a string or number value to keep it in the DOM. " +
-            "For details, see https://reactjs.org/link/attribute-behavior ",
+              "or pass a string or number value to keep it in the DOM. " +
+              "For details, see https://reactjs.org/link/attribute-behavior ",
             unknownPropString,
             type
           );
         } else if (unknownProps.length > 1) {
           error(
             "Invalid values for props %s on <%s> tag. Either remove them from the element, " +
-            "or pass a string or number value to keep them in the DOM. " +
-            "For details, see https://reactjs.org/link/attribute-behavior ",
+              "or pass a string or number value to keep them in the DOM. " +
+              "For details, see https://reactjs.org/link/attribute-behavior ",
             unknownPropString,
             type
           );
@@ -4488,15 +4488,15 @@ if (process.env.NODE_ENV !== "production") {
     // scheduled work and instead do synchronous work.
     // Defaults
 
-    var batchedUpdatesImpl = function(fn, bookkeeping) {
+    var batchedUpdatesImpl = function (fn, bookkeeping) {
       return fn(bookkeeping);
     };
 
-    var discreteUpdatesImpl = function(fn, a, b, c, d) {
+    var discreteUpdatesImpl = function (fn, a, b, c, d) {
       return fn(a, b, c, d);
     };
 
-    var flushDiscreteUpdatesImpl = function() { };
+    var flushDiscreteUpdatesImpl = function () {};
 
     var batchedEventUpdatesImpl = batchedUpdatesImpl;
     var isInsideEventHandler = false;
@@ -4642,10 +4642,10 @@ if (process.env.NODE_ENV !== "production") {
         {
           throw Error(
             "Expected `" +
-            registrationName +
-            "` listener to be a function, instead got a value of `" +
-            typeof listener +
-            "` type."
+              registrationName +
+              "` listener to be a function, instead got a value of `" +
+              typeof listener +
+              "` type."
           );
         }
       }
@@ -4661,7 +4661,7 @@ if (process.env.NODE_ENV !== "production") {
         var options = {}; // $FlowFixMe: Ignore Flow complaining about needing a value
 
         Object.defineProperty(options, "passive", {
-          get: function() {
+          get: function () {
             passiveBrowserEventsSupported = true;
           },
         });
@@ -4840,19 +4840,19 @@ if (process.env.NODE_ENV !== "production") {
               // The callback errored, but the error event never fired.
               error = new Error(
                 "An error was thrown inside one of your components, but React " +
-                "doesn't know what it was. This is likely due to browser " +
-                'flakiness. React does its best to preserve the "Pause on ' +
-                'exceptions" behavior of the DevTools, which requires some ' +
-                "DEV-mode only tricks. It's possible that these don't work in " +
-                "your browser. Try triggering the error in production mode, " +
-                "or switching to a modern browser. If you suspect that this is " +
-                "actually an issue with React, please file an issue."
+                  "doesn't know what it was. This is likely due to browser " +
+                  'flakiness. React does its best to preserve the "Pause on ' +
+                  'exceptions" behavior of the DevTools, which requires some ' +
+                  "DEV-mode only tricks. It's possible that these don't work in " +
+                  "your browser. Try triggering the error in production mode, " +
+                  "or switching to a modern browser. If you suspect that this is " +
+                  "actually an issue with React, please file an issue."
               );
             } else if (isCrossOriginError) {
               error = new Error(
                 "A cross-origin error was thrown. React doesn't have access to " +
-                "the actual error object in development. " +
-                "See https://reactjs.org/link/crossorigin-error for more information."
+                  "the actual error object in development. " +
+                  "See https://reactjs.org/link/crossorigin-error for more information."
               );
             }
 
@@ -4881,7 +4881,7 @@ if (process.env.NODE_ENV !== "production") {
     var hasRethrowError = false;
     var rethrowError = null;
     var reporter = {
-      onError: function(error) {
+      onError: function (error) {
         hasError = true;
         caughtError = error;
       },
@@ -5130,10 +5130,10 @@ if (process.env.NODE_ENV !== "production") {
           if (!instance._warnedAboutRefsInRender) {
             error(
               "%s is accessing isMounted inside its render() function. " +
-              "render() should be a pure function of props and state. It should " +
-              "never access something that requires stale data from the previous " +
-              "render, such as refs. Move this logic to componentDidMount and " +
-              "componentDidUpdate instead.",
+                "render() should be a pure function of props and state. It should " +
+                "never access something that requires stale data from the previous " +
+                "render, such as refs. Move this logic to componentDidMount and " +
+                "componentDidUpdate instead.",
               getComponentName(ownerFiber.type) || "A component"
             );
           }
@@ -5709,10 +5709,10 @@ if (process.env.NODE_ENV !== "production") {
               queuedTarget.blockedOn = instance;
               attemptHydrationAtPriority(
                 queuedTarget.lanePriority,
-                function() {
+                function () {
                   Scheduler.unstable_runWithPriority(
                     queuedTarget.priority,
-                    function() {
+                    function () {
                       attemptHydrationAtCurrentPriority(nearestMounted);
                     }
                   );
@@ -5892,7 +5892,7 @@ if (process.env.NODE_ENV !== "production") {
         scheduleCallbackIfUnblocked(queuedMouse, unblocked);
       }
 
-      var unblock = function(queuedEvent) {
+      var unblock = function (queuedEvent) {
         return scheduleCallbackIfUnblocked(queuedEvent, unblocked);
       };
 
@@ -6259,7 +6259,7 @@ if (process.env.NODE_ENV !== "production") {
       /*                   */
       1073741824;
     var NoTimestamp = -1;
-    function setCurrentUpdateLanePriority(newLanePriority) { } // "Registers" used to "return" multiple values
+    function setCurrentUpdateLanePriority(newLanePriority) {} // "Registers" used to "return" multiple values
     // Used by getHighestPriorityLanes and getNextLanes:
 
     var return_highestLanePriority = DefaultLanePriority;
@@ -6412,8 +6412,8 @@ if (process.env.NODE_ENV !== "production") {
           {
             throw Error(
               "Invalid update priority: " +
-              lanePriority +
-              ". This is a bug in React."
+                lanePriority +
+                ". This is a bug in React."
             );
           }
         }
@@ -6716,8 +6716,8 @@ if (process.env.NODE_ENV !== "production") {
         {
           throw Error(
             "Invalid update priority: " +
-            lanePriority +
-            ". This is a bug in React."
+              lanePriority +
+              ". This is a bug in React."
           );
         }
       }
@@ -7360,7 +7360,7 @@ if (process.env.NODE_ENV !== "production") {
       }
 
       _assign(SyntheticBaseEvent.prototype, {
-        preventDefault: function() {
+        preventDefault: function () {
           this.defaultPrevented = true;
           var event = this.nativeEvent;
 
@@ -7376,7 +7376,7 @@ if (process.env.NODE_ENV !== "production") {
 
           this.isDefaultPrevented = functionThatReturnsTrue;
         },
-        stopPropagation: function() {
+        stopPropagation: function () {
           var event = this.nativeEvent;
 
           if (!event) {
@@ -7402,7 +7402,7 @@ if (process.env.NODE_ENV !== "production") {
          * them back into the pool. This allows a way to hold onto a reference that
          * won't be added back into the pool.
          */
-        persist: function() {
+        persist: function () {
           // Modern event system doesn't use pooling.
         },
 
@@ -7425,7 +7425,7 @@ if (process.env.NODE_ENV !== "production") {
       eventPhase: 0,
       bubbles: 0,
       cancelable: 0,
-      timeStamp: function(event) {
+      timeStamp: function (event) {
         return event.timeStamp || Date.now();
       },
       defaultPrevented: 0,
@@ -7475,14 +7475,14 @@ if (process.env.NODE_ENV !== "production") {
       getModifierState: getEventModifierState,
       button: 0,
       buttons: 0,
-      relatedTarget: function(event) {
+      relatedTarget: function (event) {
         if (event.relatedTarget === undefined)
           return event.fromElement === event.srcElement
             ? event.toElement
             : event.fromElement;
         return event.relatedTarget;
       },
-      movementX: function(event) {
+      movementX: function (event) {
         if ("movementX" in event) {
           return event.movementX;
         }
@@ -7490,7 +7490,7 @@ if (process.env.NODE_ENV !== "production") {
         updateMouseMovementPolyfillState(event);
         return lastMovementX;
       },
-      movementY: function(event) {
+      movementY: function (event) {
         if ("movementY" in event) {
           return event.movementY;
         } // Don't need to call updateMouseMovementPolyfillState() here
@@ -7541,7 +7541,7 @@ if (process.env.NODE_ENV !== "production") {
      */
 
     var ClipboardEventInterface = _assign({}, EventInterface, {
-      clipboardData: function(event) {
+      clipboardData: function (event) {
         return "clipboardData" in event
           ? event.clipboardData
           : window.clipboardData;
@@ -7711,7 +7711,7 @@ if (process.env.NODE_ENV !== "production") {
       locale: 0,
       getModifierState: getEventModifierState,
       // Legacy Interface
-      charCode: function(event) {
+      charCode: function (event) {
         // `charCode` is the result of a KeyPress event and represents the value of
         // the actual printable character.
         // KeyPress is deprecated, but its replacement is not yet final and not
@@ -7722,7 +7722,7 @@ if (process.env.NODE_ENV !== "production") {
 
         return 0;
       },
-      keyCode: function(event) {
+      keyCode: function (event) {
         // `keyCode` is the result of a KeyDown/Up event and represents the value of
         // physical keyboard key.
         // The actual meaning of the value depends on the users' keyboard layout
@@ -7735,7 +7735,7 @@ if (process.env.NODE_ENV !== "production") {
 
         return 0;
       },
-      which: function(event) {
+      which: function (event) {
         // `which` is an alias for either `keyCode` or `charCode` depending on the
         // type of the event.
         if (event.type === "keypress") {
@@ -7808,21 +7808,21 @@ if (process.env.NODE_ENV !== "production") {
      */
 
     var WheelEventInterface = _assign({}, MouseEventInterface, {
-      deltaX: function(event) {
+      deltaX: function (event) {
         return "deltaX" in event
           ? event.deltaX // Fallback to `wheelDeltaX` for Webkit and normalize (right is positive).
           : "wheelDeltaX" in event
-            ? -event.wheelDeltaX
-            : 0;
+          ? -event.wheelDeltaX
+          : 0;
       },
-      deltaY: function(event) {
+      deltaY: function (event) {
         return "deltaY" in event
           ? event.deltaY // Fallback to `wheelDeltaY` for Webkit and normalize (down is positive).
           : "wheelDeltaY" in event
-            ? -event.wheelDeltaY // Fallback to `wheelDelta` for IE<9 and normalize (down is positive).
-            : "wheelDelta" in event
-              ? -event.wheelDelta
-              : 0;
+          ? -event.wheelDeltaY // Fallback to `wheelDelta` for IE<9 and normalize (down is positive).
+          : "wheelDelta" in event
+          ? -event.wheelDelta
+          : 0;
       },
       deltaZ: 0,
       // Browsers without "deltaMode" is reporting in raw wheel delta where one
@@ -9332,8 +9332,8 @@ if (process.env.NODE_ENV !== "production") {
       return eventTarget.window === eventTarget
         ? eventTarget.document
         : eventTarget.nodeType === DOCUMENT_NODE
-          ? eventTarget
-          : eventTarget.ownerDocument;
+        ? eventTarget
+        : eventTarget.ownerDocument;
     }
     /**
      * Poll selection to see whether it's changed.
@@ -9859,7 +9859,7 @@ if (process.env.NODE_ENV !== "production") {
         }
 
         rootContainerElement[listeningMarker] = true;
-        allNativeEvents.forEach(function(domEventName) {
+        allNativeEvents.forEach(function (domEventName) {
           if (!nonDelegatedEvents.has(domEventName)) {
             listenToNativeEvent(
               domEventName,
@@ -10115,7 +10115,7 @@ if (process.env.NODE_ENV !== "production") {
         }
       }
 
-      batchedEventUpdates(function() {
+      batchedEventUpdates(function () {
         return dispatchEventsForPlugins(
           domEventName,
           eventSystemFlags,
@@ -10408,7 +10408,7 @@ if (process.env.NODE_ENV !== "production") {
         webview: true,
       };
 
-      validatePropertiesInDevelopment = function(type, props) {
+      validatePropertiesInDevelopment = function (type, props) {
         validateProperties(type, props);
         validateProperties$1(type, props);
         validateProperties$2(type, props, {
@@ -10433,14 +10433,14 @@ if (process.env.NODE_ENV !== "production") {
       var NORMALIZE_NEWLINES_REGEX = /\r\n?/g;
       var NORMALIZE_NULL_AND_REPLACEMENT_REGEX = /\u0000|\uFFFD/g;
 
-      normalizeMarkupForTextOrAttribute = function(markup) {
+      normalizeMarkupForTextOrAttribute = function (markup) {
         var markupString = typeof markup === "string" ? markup : "" + markup;
         return markupString
           .replace(NORMALIZE_NEWLINES_REGEX, "\n")
           .replace(NORMALIZE_NULL_AND_REPLACEMENT_REGEX, "");
       };
 
-      warnForTextDifference = function(serverText, clientText) {
+      warnForTextDifference = function (serverText, clientText) {
         if (didWarnInvalidHydration) {
           return;
         }
@@ -10463,7 +10463,7 @@ if (process.env.NODE_ENV !== "production") {
         );
       };
 
-      warnForPropDifference = function(propName, serverValue, clientValue) {
+      warnForPropDifference = function (propName, serverValue, clientValue) {
         if (didWarnInvalidHydration) {
           return;
         }
@@ -10487,26 +10487,26 @@ if (process.env.NODE_ENV !== "production") {
         );
       };
 
-      warnForExtraAttributes = function(attributeNames) {
+      warnForExtraAttributes = function (attributeNames) {
         if (didWarnInvalidHydration) {
           return;
         }
 
         didWarnInvalidHydration = true;
         var names = [];
-        attributeNames.forEach(function(name) {
+        attributeNames.forEach(function (name) {
           names.push(name);
         });
 
         error("Extra attributes from the server: %s", names);
       };
 
-      warnForInvalidEventListener = function(registrationName, listener) {
+      warnForInvalidEventListener = function (registrationName, listener) {
         if (listener === false) {
           error(
             "Expected `%s` listener to be a function, instead got `false`.\n\n" +
-            "If you used to conditionally omit it with %s={condition && value}, " +
-            "pass %s={condition ? value : undefined} instead.",
+              "If you used to conditionally omit it with %s={condition && value}, " +
+              "pass %s={condition ? value : undefined} instead.",
             registrationName,
             registrationName,
             registrationName
@@ -10521,7 +10521,7 @@ if (process.env.NODE_ENV !== "production") {
       }; // Parse the HTML and read it back to normalize the HTML string so that it
       // can be used for comparison.
 
-      normalizeHTML = function(parent, html) {
+      normalizeHTML = function (parent, html) {
         // We could have created a separate document here to avoid
         // re-initializing custom elements if they exist. But this breaks
         // how <noscript> is being handled. So we use the same document.
@@ -10530,9 +10530,9 @@ if (process.env.NODE_ENV !== "production") {
           parent.namespaceURI === HTML_NAMESPACE$1
             ? parent.ownerDocument.createElement(parent.tagName)
             : parent.ownerDocument.createElementNS(
-              parent.namespaceURI,
-              parent.tagName
-            );
+                parent.namespaceURI,
+                parent.tagName
+              );
         testElement.innerHTML = html;
         return testElement.innerHTML;
       };
@@ -10544,7 +10544,7 @@ if (process.env.NODE_ENV !== "production") {
         : rootContainerElement.ownerDocument;
     }
 
-    function noop() { }
+    function noop() {}
 
     function trapClickOnNonInteractiveElement(node) {
       // Mobile Safari does not fire properly bubble click events on
@@ -10678,8 +10678,8 @@ if (process.env.NODE_ENV !== "production") {
           if (!isCustomComponentTag && type !== type.toLowerCase()) {
             error(
               "<%s /> is using incorrect casing. " +
-              "Use PascalCase for React components, " +
-              "or lowercase for HTML elements.",
+                "Use PascalCase for React components, " +
+                "or lowercase for HTML elements.",
               type
             );
           }
@@ -10736,15 +10736,15 @@ if (process.env.NODE_ENV !== "production") {
           if (
             !isCustomComponentTag &&
             Object.prototype.toString.call(domElement) ===
-            "[object HTMLUnknownElement]" &&
+              "[object HTMLUnknownElement]" &&
             !Object.prototype.hasOwnProperty.call(warnedUnknownTags, type)
           ) {
             warnedUnknownTags[type] = true;
 
             error(
               "The tag <%s> is unrecognized in this browser. " +
-              "If you meant to render a React component, start its name with " +
-              "an uppercase letter.",
+                "If you meant to render a React component, start its name with " +
+                "an uppercase letter.",
               type
             );
           }
@@ -11606,9 +11606,9 @@ if (process.env.NODE_ENV !== "production") {
       }
     }
 
-    var validateDOMNesting = function() { };
+    var validateDOMNesting = function () {};
 
-    var updatedAncestorInfo = function() { };
+    var updatedAncestorInfo = function () {};
 
     {
       // This validation code was written based on the HTML5 parsing spec:
@@ -11748,7 +11748,7 @@ if (process.env.NODE_ENV !== "production") {
         dlItemTagAutoclosing: null,
       };
 
-      updatedAncestorInfo = function(oldInfo, tag) {
+      updatedAncestorInfo = function (oldInfo, tag) {
         var ancestorInfo = _assign({}, oldInfo || emptyAncestorInfo);
 
         var info = {
@@ -11812,7 +11812,7 @@ if (process.env.NODE_ENV !== "production") {
        * Returns whether
        */
 
-      var isTagValidWithParent = function(tag, parentTag) {
+      var isTagValidWithParent = function (tag, parentTag) {
         // First, let's check if we're in an unusual parsing mode...
         switch (parentTag) {
           // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-inselect
@@ -11945,7 +11945,7 @@ if (process.env.NODE_ENV !== "production") {
        * Returns whether
        */
 
-      var findInvalidAncestorForTag = function(tag, ancestorInfo) {
+      var findInvalidAncestorForTag = function (tag, ancestorInfo) {
         switch (tag) {
           case "address":
           case "article":
@@ -12011,7 +12011,7 @@ if (process.env.NODE_ENV !== "production") {
 
       var didWarn$1 = {};
 
-      validateDOMNesting = function(childTag, childText, ancestorInfo) {
+      validateDOMNesting = function (childTag, childText, ancestorInfo) {
         ancestorInfo = ancestorInfo || emptyAncestorInfo;
         var parentInfo = ancestorInfo.current;
         var parentTag = parentInfo && parentInfo.tag;
@@ -12081,7 +12081,7 @@ if (process.env.NODE_ENV !== "production") {
         } else {
           error(
             "validateDOMNesting(...): %s cannot appear as a descendant of " +
-            "<%s>.",
+              "<%s>.",
             tagDisplayName,
             ancestorTag
           );
@@ -12401,8 +12401,8 @@ if (process.env.NODE_ENV !== "production") {
       var styleProp = props[STYLE$1];
       var display =
         styleProp !== undefined &&
-          styleProp !== null &&
-          styleProp.hasOwnProperty("display")
+        styleProp !== null &&
+        styleProp.hasOwnProperty("display")
           ? styleProp.display
           : null;
       instance.style.display = dangerousStyleValue("display", display);
@@ -12654,11 +12654,11 @@ if (process.env.NODE_ENV !== "production") {
     function makeClientIdInDEV(warnOnAccessInDEV) {
       var id = "r:" + (clientId++).toString(36);
       return {
-        toString: function() {
+        toString: function () {
           warnOnAccessInDEV();
           return id;
         },
-        valueOf: function() {
+        valueOf: function () {
           warnOnAccessInDEV();
           return id;
         },
@@ -12890,15 +12890,15 @@ if (process.env.NODE_ENV !== "production") {
               if (typeof typeSpecs[typeSpecName] !== "function") {
                 var err = Error(
                   (componentName || "React class") +
-                  ": " +
-                  location +
-                  " type `" +
-                  typeSpecName +
-                  "` is invalid; " +
-                  "it must be a function, usually from the `prop-types` package, but received `" +
-                  typeof typeSpecs[typeSpecName] +
-                  "`." +
-                  "This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`."
+                    ": " +
+                    location +
+                    " type `" +
+                    typeSpecName +
+                    "` is invalid; " +
+                    "it must be a function, usually from the `prop-types` package, but received `" +
+                    typeof typeSpecs[typeSpecName] +
+                    "`." +
+                    "This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`."
                 );
                 err.name = "Invariant Violation";
                 throw err;
@@ -12921,11 +12921,11 @@ if (process.env.NODE_ENV !== "production") {
 
               error(
                 "%s: type specification of %s" +
-                " `%s` is invalid; the type checker " +
-                "function must return `null` or an `Error` but returned a %s. " +
-                "You may have forgotten to pass an argument to the type checker " +
-                "creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and " +
-                "shape all require an argument).",
+                  " `%s` is invalid; the type checker " +
+                  "function must return `null` or an `Error` but returned a %s. " +
+                  "You may have forgotten to pass an argument to the type checker " +
+                  "creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and " +
+                  "shape all require an argument).",
                 componentName || "React class",
                 location,
                 typeSpecName,
@@ -13066,7 +13066,7 @@ if (process.env.NODE_ENV !== "production") {
         if (
           instance &&
           instance.__reactInternalMemoizedUnmaskedChildContext ===
-          unmaskedContext
+            unmaskedContext
         ) {
           return instance.__reactInternalMemoizedMaskedChildContext;
         }
@@ -13148,8 +13148,8 @@ if (process.env.NODE_ENV !== "production") {
 
               error(
                 "%s.childContextTypes is specified but there is no getChildContext() method " +
-                "on the instance. You can either define getChildContext() on %s or remove " +
-                "childContextTypes from it.",
+                  "on the instance. You can either define getChildContext() on %s or remove " +
+                  "childContextTypes from it.",
                 componentName,
                 componentName
               );
@@ -13166,9 +13166,9 @@ if (process.env.NODE_ENV !== "production") {
             {
               throw Error(
                 (getComponentName(type) || "Unknown") +
-                '.getChildContext(): key "' +
-                contextKey +
-                '" is not defined in childContextTypes.'
+                  '.getChildContext(): key "' +
+                  contextKey +
+                  '" is not defined in childContextTypes.'
               );
             }
           }
@@ -13317,8 +13317,8 @@ if (process.env.NODE_ENV !== "production") {
         {
           error(
             "The installed version of React DevTools is too old and will not work " +
-            "with the current version of React. Please update React DevTools. " +
-            "https://reactjs.org/link/react-devtools"
+              "with the current version of React. Please update React DevTools. " +
+              "https://reactjs.org/link/react-devtools"
           );
         } // DevTools exists, even though it doesn't support Fiber.
 
@@ -13456,7 +13456,7 @@ if (process.env.NODE_ENV !== "production") {
     var requestPaint = // Fall back gracefully if we're running an older version of Scheduler.
       Scheduler_requestPaint !== undefined
         ? Scheduler_requestPaint
-        : function() { };
+        : function () {};
     var syncQueue = null;
     var immediateQueueCallbackNode = null;
     var isFlushingSyncQueue = false;
@@ -13471,9 +13471,9 @@ if (process.env.NODE_ENV !== "production") {
     var now =
       initialTimeMs$1 < 10000
         ? Scheduler_now$1
-        : function() {
-          return Scheduler_now$1() - initialTimeMs$1;
-        };
+        : function () {
+            return Scheduler_now$1() - initialTimeMs$1;
+          };
     function getCurrentPriorityLevel() {
       switch (Scheduler_getCurrentPriorityLevel()) {
         case Scheduler_ImmediatePriority:
@@ -13575,7 +13575,7 @@ if (process.env.NODE_ENV !== "production") {
           try {
             var _isSync2 = true;
             var _queue = syncQueue;
-            runWithPriority$1(ImmediatePriority$1, function() {
+            runWithPriority$1(ImmediatePriority$1, function () {
               for (; i < _queue.length; i++) {
                 var callback = _queue[i];
 
@@ -13622,15 +13622,15 @@ if (process.env.NODE_ENV !== "production") {
     }
 
     var ReactStrictModeWarnings = {
-      recordUnsafeLifecycleWarnings: function(fiber, instance) { },
-      flushPendingUnsafeLifecycleWarnings: function() { },
-      recordLegacyContextWarning: function(fiber, instance) { },
-      flushLegacyContextWarning: function() { },
-      discardPendingWarnings: function() { },
+      recordUnsafeLifecycleWarnings: function (fiber, instance) {},
+      flushPendingUnsafeLifecycleWarnings: function () {},
+      recordLegacyContextWarning: function (fiber, instance) {},
+      flushLegacyContextWarning: function () {},
+      discardPendingWarnings: function () {},
     };
 
     {
-      var findStrictRoot = function(fiber) {
+      var findStrictRoot = function (fiber) {
         var maybeStrictRoot = null;
         var node = fiber;
 
@@ -13645,9 +13645,9 @@ if (process.env.NODE_ENV !== "production") {
         return maybeStrictRoot;
       };
 
-      var setToSortedString = function(set) {
+      var setToSortedString = function (set) {
         var array = [];
-        set.forEach(function(value) {
+        set.forEach(function (value) {
           array.push(value);
         });
         return array.sort().join(", ");
@@ -13662,7 +13662,7 @@ if (process.env.NODE_ENV !== "production") {
 
       var didWarnAboutUnsafeLifecycles = new Set();
 
-      ReactStrictModeWarnings.recordUnsafeLifecycleWarnings = function(
+      ReactStrictModeWarnings.recordUnsafeLifecycleWarnings = function (
         fiber,
         instance
       ) {
@@ -13688,7 +13688,7 @@ if (process.env.NODE_ENV !== "production") {
         if (
           typeof instance.componentWillReceiveProps === "function" &&
           instance.componentWillReceiveProps.__suppressDeprecationWarning !==
-          true
+            true
         ) {
           pendingComponentWillReceivePropsWarnings.push(fiber);
         }
@@ -13716,12 +13716,12 @@ if (process.env.NODE_ENV !== "production") {
       };
 
       ReactStrictModeWarnings.flushPendingUnsafeLifecycleWarnings =
-        function() {
+        function () {
           // We do an initial pass to gather component names
           var componentWillMountUniqueNames = new Set();
 
           if (pendingComponentWillMountWarnings.length > 0) {
-            pendingComponentWillMountWarnings.forEach(function(fiber) {
+            pendingComponentWillMountWarnings.forEach(function (fiber) {
               componentWillMountUniqueNames.add(
                 getComponentName(fiber.type) || "Component"
               );
@@ -13733,7 +13733,7 @@ if (process.env.NODE_ENV !== "production") {
           var UNSAFE_componentWillMountUniqueNames = new Set();
 
           if (pendingUNSAFE_ComponentWillMountWarnings.length > 0) {
-            pendingUNSAFE_ComponentWillMountWarnings.forEach(function(fiber) {
+            pendingUNSAFE_ComponentWillMountWarnings.forEach(function (fiber) {
               UNSAFE_componentWillMountUniqueNames.add(
                 getComponentName(fiber.type) || "Component"
               );
@@ -13745,7 +13745,7 @@ if (process.env.NODE_ENV !== "production") {
           var componentWillReceivePropsUniqueNames = new Set();
 
           if (pendingComponentWillReceivePropsWarnings.length > 0) {
-            pendingComponentWillReceivePropsWarnings.forEach(function(fiber) {
+            pendingComponentWillReceivePropsWarnings.forEach(function (fiber) {
               componentWillReceivePropsUniqueNames.add(
                 getComponentName(fiber.type) || "Component"
               );
@@ -13757,7 +13757,7 @@ if (process.env.NODE_ENV !== "production") {
           var UNSAFE_componentWillReceivePropsUniqueNames = new Set();
 
           if (pendingUNSAFE_ComponentWillReceivePropsWarnings.length > 0) {
-            pendingUNSAFE_ComponentWillReceivePropsWarnings.forEach(function(
+            pendingUNSAFE_ComponentWillReceivePropsWarnings.forEach(function (
               fiber
             ) {
               UNSAFE_componentWillReceivePropsUniqueNames.add(
@@ -13771,7 +13771,7 @@ if (process.env.NODE_ENV !== "production") {
           var componentWillUpdateUniqueNames = new Set();
 
           if (pendingComponentWillUpdateWarnings.length > 0) {
-            pendingComponentWillUpdateWarnings.forEach(function(fiber) {
+            pendingComponentWillUpdateWarnings.forEach(function (fiber) {
               componentWillUpdateUniqueNames.add(
                 getComponentName(fiber.type) || "Component"
               );
@@ -13783,7 +13783,7 @@ if (process.env.NODE_ENV !== "production") {
           var UNSAFE_componentWillUpdateUniqueNames = new Set();
 
           if (pendingUNSAFE_ComponentWillUpdateWarnings.length > 0) {
-            pendingUNSAFE_ComponentWillUpdateWarnings.forEach(function(fiber) {
+            pendingUNSAFE_ComponentWillUpdateWarnings.forEach(function (fiber) {
               UNSAFE_componentWillUpdateUniqueNames.add(
                 getComponentName(fiber.type) || "Component"
               );
@@ -13800,9 +13800,9 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "Using UNSAFE_componentWillMount in strict mode is not recommended and may indicate bugs in your code. " +
-              "See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n" +
-              "* Move code with side effects to componentDidMount, and set initial state in the constructor.\n" +
-              "\nPlease update the following components: %s",
+                "See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n" +
+                "* Move code with side effects to componentDidMount, and set initial state in the constructor.\n" +
+                "\nPlease update the following components: %s",
               sortedNames
             );
           }
@@ -13814,13 +13814,13 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "Using UNSAFE_componentWillReceiveProps in strict mode is not recommended " +
-              "and may indicate bugs in your code. " +
-              "See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n" +
-              "* Move data fetching code or side effects to componentDidUpdate.\n" +
-              "* If you're updating state whenever props change, " +
-              "refactor your code to use memoization techniques or move it to " +
-              "static getDerivedStateFromProps. Learn more at: https://reactjs.org/link/derived-state\n" +
-              "\nPlease update the following components: %s",
+                "and may indicate bugs in your code. " +
+                "See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n" +
+                "* Move data fetching code or side effects to componentDidUpdate.\n" +
+                "* If you're updating state whenever props change, " +
+                "refactor your code to use memoization techniques or move it to " +
+                "static getDerivedStateFromProps. Learn more at: https://reactjs.org/link/derived-state\n" +
+                "\nPlease update the following components: %s",
               _sortedNames
             );
           }
@@ -13832,10 +13832,10 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "Using UNSAFE_componentWillUpdate in strict mode is not recommended " +
-              "and may indicate bugs in your code. " +
-              "See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n" +
-              "* Move data fetching code or side effects to componentDidUpdate.\n" +
-              "\nPlease update the following components: %s",
+                "and may indicate bugs in your code. " +
+                "See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n" +
+                "* Move data fetching code or side effects to componentDidUpdate.\n" +
+                "\nPlease update the following components: %s",
               _sortedNames2
             );
           }
@@ -13847,13 +13847,13 @@ if (process.env.NODE_ENV !== "production") {
 
             warn(
               "componentWillMount has been renamed, and is not recommended for use. " +
-              "See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n" +
-              "* Move code with side effects to componentDidMount, and set initial state in the constructor.\n" +
-              "* Rename componentWillMount to UNSAFE_componentWillMount to suppress " +
-              "this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. " +
-              "To rename all deprecated lifecycles to their new names, you can run " +
-              "`npx react-codemod rename-unsafe-lifecycles` in your project source folder.\n" +
-              "\nPlease update the following components: %s",
+                "See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n" +
+                "* Move code with side effects to componentDidMount, and set initial state in the constructor.\n" +
+                "* Rename componentWillMount to UNSAFE_componentWillMount to suppress " +
+                "this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. " +
+                "To rename all deprecated lifecycles to their new names, you can run " +
+                "`npx react-codemod rename-unsafe-lifecycles` in your project source folder.\n" +
+                "\nPlease update the following components: %s",
               _sortedNames3
             );
           }
@@ -13865,16 +13865,16 @@ if (process.env.NODE_ENV !== "production") {
 
             warn(
               "componentWillReceiveProps has been renamed, and is not recommended for use. " +
-              "See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n" +
-              "* Move data fetching code or side effects to componentDidUpdate.\n" +
-              "* If you're updating state whenever props change, refactor your " +
-              "code to use memoization techniques or move it to " +
-              "static getDerivedStateFromProps. Learn more at: https://reactjs.org/link/derived-state\n" +
-              "* Rename componentWillReceiveProps to UNSAFE_componentWillReceiveProps to suppress " +
-              "this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. " +
-              "To rename all deprecated lifecycles to their new names, you can run " +
-              "`npx react-codemod rename-unsafe-lifecycles` in your project source folder.\n" +
-              "\nPlease update the following components: %s",
+                "See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n" +
+                "* Move data fetching code or side effects to componentDidUpdate.\n" +
+                "* If you're updating state whenever props change, refactor your " +
+                "code to use memoization techniques or move it to " +
+                "static getDerivedStateFromProps. Learn more at: https://reactjs.org/link/derived-state\n" +
+                "* Rename componentWillReceiveProps to UNSAFE_componentWillReceiveProps to suppress " +
+                "this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. " +
+                "To rename all deprecated lifecycles to their new names, you can run " +
+                "`npx react-codemod rename-unsafe-lifecycles` in your project source folder.\n" +
+                "\nPlease update the following components: %s",
               _sortedNames4
             );
           }
@@ -13886,13 +13886,13 @@ if (process.env.NODE_ENV !== "production") {
 
             warn(
               "componentWillUpdate has been renamed, and is not recommended for use. " +
-              "See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n" +
-              "* Move data fetching code or side effects to componentDidUpdate.\n" +
-              "* Rename componentWillUpdate to UNSAFE_componentWillUpdate to suppress " +
-              "this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. " +
-              "To rename all deprecated lifecycles to their new names, you can run " +
-              "`npx react-codemod rename-unsafe-lifecycles` in your project source folder.\n" +
-              "\nPlease update the following components: %s",
+                "See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n" +
+                "* Move data fetching code or side effects to componentDidUpdate.\n" +
+                "* Rename componentWillUpdate to UNSAFE_componentWillUpdate to suppress " +
+                "this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. " +
+                "To rename all deprecated lifecycles to their new names, you can run " +
+                "`npx react-codemod rename-unsafe-lifecycles` in your project source folder.\n" +
+                "\nPlease update the following components: %s",
               _sortedNames5
             );
           }
@@ -13902,7 +13902,7 @@ if (process.env.NODE_ENV !== "production") {
 
       var didWarnAboutLegacyContext = new Set();
 
-      ReactStrictModeWarnings.recordLegacyContextWarning = function(
+      ReactStrictModeWarnings.recordLegacyContextWarning = function (
         fiber,
         instance
       ) {
@@ -13911,7 +13911,7 @@ if (process.env.NODE_ENV !== "production") {
         if (strictRoot === null) {
           error(
             "Expected to find a StrictMode component in a strict mode tree. " +
-            "This error is likely caused by a bug in React. Please file an issue."
+              "This error is likely caused by a bug in React. Please file an issue."
           );
 
           return;
@@ -13937,15 +13937,15 @@ if (process.env.NODE_ENV !== "production") {
         }
       };
 
-      ReactStrictModeWarnings.flushLegacyContextWarning = function() {
-        pendingLegacyContextWarning.forEach(function(fiberArray, strictRoot) {
+      ReactStrictModeWarnings.flushLegacyContextWarning = function () {
+        pendingLegacyContextWarning.forEach(function (fiberArray, strictRoot) {
           if (fiberArray.length === 0) {
             return;
           }
 
           var firstFiber = fiberArray[0];
           var uniqueNames = new Set();
-          fiberArray.forEach(function(fiber) {
+          fiberArray.forEach(function (fiber) {
             uniqueNames.add(getComponentName(fiber.type) || "Component");
             didWarnAboutLegacyContext.add(fiber.type);
           });
@@ -13956,10 +13956,10 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "Legacy context API has been detected within a strict-mode tree." +
-              "\n\nThe old API will be supported in all 16.x releases, but applications " +
-              "using it should migrate to the new version." +
-              "\n\nPlease update the following components: %s" +
-              "\n\nLearn more about this warning here: https://reactjs.org/link/legacy-context",
+                "\n\nThe old API will be supported in all 16.x releases, but applications " +
+                "using it should migrate to the new version." +
+                "\n\nPlease update the following components: %s" +
+                "\n\nLearn more about this warning here: https://reactjs.org/link/legacy-context",
               sortedNames
             );
           } finally {
@@ -13968,7 +13968,7 @@ if (process.env.NODE_ENV !== "production") {
         });
       };
 
-      ReactStrictModeWarnings.discardPendingWarnings = function() {
+      ReactStrictModeWarnings.discardPendingWarnings = function () {
         pendingComponentWillMountWarnings = [];
         pendingUNSAFE_ComponentWillMountWarnings = [];
         pendingComponentWillReceivePropsWarnings = [];
@@ -14051,7 +14051,7 @@ if (process.env.NODE_ENV !== "production") {
           ) {
             error(
               "Detected multiple renderers concurrently rendering the " +
-              "same context provider. This is currently unsupported."
+                "same context provider. This is currently unsupported."
             );
           }
 
@@ -14082,7 +14082,7 @@ if (process.env.NODE_ENV !== "production") {
           if ((changedBits & MAX_SIGNED_31_BIT_INT) !== changedBits) {
             error(
               "calculateChangedBits: Expected the return value to be a " +
-              "31-bit integer. Instead received: %s",
+                "31-bit integer. Instead received: %s",
               changedBits
             );
           }
@@ -14245,9 +14245,9 @@ if (process.env.NODE_ENV !== "production") {
         if (isDisallowedContextReadInDEV) {
           error(
             "Context can only be read while React is rendering. " +
-            "In classes, you can read it in the render method or getDerivedStateFromProps. " +
-            "In function components, you can read it directly in the function body, but not " +
-            "inside Hooks like useReducer() or useMemo()."
+              "In classes, you can read it in the render method or getDerivedStateFromProps. " +
+              "In function components, you can read it directly in the function body, but not " +
+              "inside Hooks like useReducer() or useMemo()."
           );
         }
       }
@@ -14383,9 +14383,9 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "An update (setState, replaceState, or forceUpdate) was scheduled " +
-            "from inside an update function. Update functions should be pure, " +
-            "with zero side-effects. Consider using componentDidUpdate or a " +
-            "callback."
+              "from inside an update function. Update functions should be pure, " +
+              "with zero side-effects. Consider using componentDidUpdate or a " +
+              "callback."
           );
 
           didWarnUpdateInsideUpdate = true;
@@ -14745,7 +14745,7 @@ if (process.env.NODE_ENV !== "production") {
         {
           throw Error(
             "Invalid argument passed as callback. Expected a function. Instead received: " +
-            callback
+              callback
           );
         }
       }
@@ -14804,7 +14804,7 @@ if (process.env.NODE_ENV !== "production") {
       didWarnAboutInvalidateContextType = new Set();
       var didWarnOnInvalidCallback = new Set();
 
-      warnOnInvalidCallback = function(callback, callerName) {
+      warnOnInvalidCallback = function (callback, callerName) {
         if (callback === null || typeof callback === "function") {
           return;
         }
@@ -14816,14 +14816,14 @@ if (process.env.NODE_ENV !== "production") {
 
           error(
             "%s(...): Expected the last optional `callback` argument to be a " +
-            "function. Instead received: %s.",
+              "function. Instead received: %s.",
             callerName,
             callback
           );
         }
       };
 
-      warnOnUndefinedDerivedState = function(type, partialState) {
+      warnOnUndefinedDerivedState = function (type, partialState) {
         if (partialState === undefined) {
           var componentName = getComponentName(type) || "Component";
 
@@ -14832,7 +14832,7 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "%s.getDerivedStateFromProps(): A valid state object (or null) must be returned. " +
-              "You have returned undefined.",
+                "You have returned undefined.",
               componentName
             );
           }
@@ -14845,7 +14845,7 @@ if (process.env.NODE_ENV !== "production") {
 
       Object.defineProperty(fakeInternalInstance, "_processChildContext", {
         enumerable: false,
-        value: function() {
+        value: function () {
           {
             {
               throw Error(
@@ -14902,7 +14902,7 @@ if (process.env.NODE_ENV !== "production") {
     var classComponentUpdater = {
       isMounted: isMounted,
       // WANPAN setState() 2-0  更新任务队列 准备调度任务
-      enqueueSetState: function(inst, payload, callback) {
+      enqueueSetState: function (inst, payload, callback) {
         var fiber = get(inst);
         var eventTime = requestEventTime();
         var lane = requestUpdateLane(fiber);
@@ -14923,7 +14923,7 @@ if (process.env.NODE_ENV !== "production") {
         // 调度任务
         scheduleUpdateOnFiber(fiber, lane, eventTime);
       },
-      enqueueReplaceState: function(inst, payload, callback) {
+      enqueueReplaceState: function (inst, payload, callback) {
         var fiber = get(inst);
         var eventTime = requestEventTime();
         var lane = requestUpdateLane(fiber);
@@ -14942,7 +14942,7 @@ if (process.env.NODE_ENV !== "production") {
         enqueueUpdate(fiber, update);
         scheduleUpdateOnFiber(fiber, lane, eventTime);
       },
-      enqueueForceUpdate: function(inst, callback) {
+      enqueueForceUpdate: function (inst, callback) {
         var fiber = get(inst);
         var eventTime = requestEventTime();
         var lane = requestUpdateLane(fiber);
@@ -14997,7 +14997,7 @@ if (process.env.NODE_ENV !== "production") {
           if (shouldUpdate === undefined) {
             error(
               "%s.shouldComponentUpdate(): Returned undefined instead of a " +
-              "boolean value. Make sure to return true or false.",
+                "boolean value. Make sure to return true or false.",
               getComponentName(ctor) || "Component"
             );
           }
@@ -15026,13 +15026,13 @@ if (process.env.NODE_ENV !== "production") {
           if (ctor.prototype && typeof ctor.prototype.render === "function") {
             error(
               "%s(...): No `render` method found on the returned component " +
-              "instance: did you accidentally return an object from the constructor?",
+                "instance: did you accidentally return an object from the constructor?",
               name
             );
           } else {
             error(
               "%s(...): No `render` method found on the returned component " +
-              "instance: you may have forgotten to define `render`.",
+                "instance: you may have forgotten to define `render`.",
               name
             );
           }
@@ -15045,8 +15045,8 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "getInitialState was defined on %s, a plain JavaScript class. " +
-            "This is only supported for classes created using React.createClass. " +
-            "Did you mean to define a state property instead?",
+              "This is only supported for classes created using React.createClass. " +
+              "Did you mean to define a state property instead?",
             name
           );
         }
@@ -15057,8 +15057,8 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "getDefaultProps was defined on %s, a plain JavaScript class. " +
-            "This is only supported for classes created using React.createClass. " +
-            "Use a static property to define defaultProps instead.",
+              "This is only supported for classes created using React.createClass. " +
+              "Use a static property to define defaultProps instead.",
             name
           );
         }
@@ -15066,7 +15066,7 @@ if (process.env.NODE_ENV !== "production") {
         if (instance.propTypes) {
           error(
             "propTypes was defined as an instance property on %s. Use a static " +
-            "property to define propTypes instead.",
+              "property to define propTypes instead.",
             name
           );
         }
@@ -15074,7 +15074,7 @@ if (process.env.NODE_ENV !== "production") {
         if (instance.contextType) {
           error(
             "contextType was defined as an instance property on %s. Use a static " +
-            "property to define contextType instead.",
+              "property to define contextType instead.",
             name
           );
         }
@@ -15083,7 +15083,7 @@ if (process.env.NODE_ENV !== "production") {
           if (instance.contextTypes) {
             error(
               "contextTypes was defined as an instance property on %s. Use a static " +
-              "property to define contextTypes instead.",
+                "property to define contextTypes instead.",
               name
             );
           }
@@ -15097,7 +15097,7 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "%s declares both contextTypes and contextType static properties. " +
-              "The legacy contextTypes property will be ignored.",
+                "The legacy contextTypes property will be ignored.",
               name
             );
           }
@@ -15106,9 +15106,9 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof instance.componentShouldUpdate === "function") {
           error(
             "%s has a method called " +
-            "componentShouldUpdate(). Did you mean shouldComponentUpdate()? " +
-            "The name is phrased as a question because the function is " +
-            "expected to return a value.",
+              "componentShouldUpdate(). Did you mean shouldComponentUpdate()? " +
+              "The name is phrased as a question because the function is " +
+              "expected to return a value.",
             name
           );
         }
@@ -15120,8 +15120,8 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "%s has a method called shouldComponentUpdate(). " +
-            "shouldComponentUpdate should not be used when extending React.PureComponent. " +
-            "Please extend React.Component if shouldComponentUpdate is used.",
+              "shouldComponentUpdate should not be used when extending React.PureComponent. " +
+              "Please extend React.Component if shouldComponentUpdate is used.",
             getComponentName(ctor) || "A pure component"
           );
         }
@@ -15129,8 +15129,8 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof instance.componentDidUnmount === "function") {
           error(
             "%s has a method called " +
-            "componentDidUnmount(). But there is no such lifecycle method. " +
-            "Did you mean componentWillUnmount()?",
+              "componentDidUnmount(). But there is no such lifecycle method. " +
+              "Did you mean componentWillUnmount()?",
             name
           );
         }
@@ -15138,10 +15138,10 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof instance.componentDidReceiveProps === "function") {
           error(
             "%s has a method called " +
-            "componentDidReceiveProps(). But there is no such lifecycle method. " +
-            "If you meant to update the state in response to changing props, " +
-            "use componentWillReceiveProps(). If you meant to fetch data or " +
-            "run side-effects or mutations after React has updated the UI, use componentDidUpdate().",
+              "componentDidReceiveProps(). But there is no such lifecycle method. " +
+              "If you meant to update the state in response to changing props, " +
+              "use componentWillReceiveProps(). If you meant to fetch data or " +
+              "run side-effects or mutations after React has updated the UI, use componentDidUpdate().",
             name
           );
         }
@@ -15149,7 +15149,7 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof instance.componentWillRecieveProps === "function") {
           error(
             "%s has a method called " +
-            "componentWillRecieveProps(). Did you mean componentWillReceiveProps()?",
+              "componentWillRecieveProps(). Did you mean componentWillReceiveProps()?",
             name
           );
         }
@@ -15157,7 +15157,7 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof instance.UNSAFE_componentWillRecieveProps === "function") {
           error(
             "%s has a method called " +
-            "UNSAFE_componentWillRecieveProps(). Did you mean UNSAFE_componentWillReceiveProps()?",
+              "UNSAFE_componentWillRecieveProps(). Did you mean UNSAFE_componentWillReceiveProps()?",
             name
           );
         }
@@ -15167,7 +15167,7 @@ if (process.env.NODE_ENV !== "production") {
         if (instance.props !== undefined && hasMutatedProps) {
           error(
             "%s(...): When calling super() in `%s`, make sure to pass " +
-            "up the same props that your component's constructor was passed.",
+              "up the same props that your component's constructor was passed.",
             name,
             name
           );
@@ -15176,7 +15176,7 @@ if (process.env.NODE_ENV !== "production") {
         if (instance.defaultProps) {
           error(
             "Setting defaultProps as an instance property on %s is not supported and will be ignored." +
-            " Instead, define defaultProps as a static property on %s.",
+              " Instead, define defaultProps as a static property on %s.",
             name,
             name
           );
@@ -15191,7 +15191,7 @@ if (process.env.NODE_ENV !== "production") {
 
           error(
             "%s: getSnapshotBeforeUpdate() should be used with componentDidUpdate(). " +
-            "This component defines getSnapshotBeforeUpdate() only.",
+              "This component defines getSnapshotBeforeUpdate() only.",
             getComponentName(ctor)
           );
         }
@@ -15199,7 +15199,7 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof instance.getDerivedStateFromProps === "function") {
           error(
             "%s: getDerivedStateFromProps() is defined as an instance method " +
-            "and will be ignored. Instead, declare it as a static method.",
+              "and will be ignored. Instead, declare it as a static method.",
             name
           );
         }
@@ -15207,7 +15207,7 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof instance.getDerivedStateFromError === "function") {
           error(
             "%s: getDerivedStateFromError() is defined as an instance method " +
-            "and will be ignored. Instead, declare it as a static method.",
+              "and will be ignored. Instead, declare it as a static method.",
             name
           );
         }
@@ -15215,7 +15215,7 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof ctor.getSnapshotBeforeUpdate === "function") {
           error(
             "%s: getSnapshotBeforeUpdate() is defined as a static method " +
-            "and will be ignored. Instead, declare it as an instance method.",
+              "and will be ignored. Instead, declare it as an instance method.",
             name
           );
         }
@@ -15232,7 +15232,7 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "%s.getChildContext(): childContextTypes must be defined in order to " +
-            "use getChildContext().",
+              "use getChildContext().",
             name
           );
         }
@@ -15292,7 +15292,7 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "%s defines an invalid contextType. " +
-              "contextType should point to the Context object returned by React.createContext().%s",
+                "contextType should point to the Context object returned by React.createContext().%s",
               getComponentName(ctor) || "Component",
               addendum
             );
@@ -15343,9 +15343,9 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "`%s` uses `getDerivedStateFromProps` but its initial state is " +
-              "%s. This is not recommended. Instead, define the initial state by " +
-              "assigning an object to `this.state` in the constructor of `%s`. " +
-              "This ensures that `getDerivedStateFromProps` arguments have a consistent shape.",
+                "%s. This is not recommended. Instead, define the initial state by " +
+                "assigning an object to `this.state` in the constructor of `%s`. " +
+                "This ensures that `getDerivedStateFromProps` arguments have a consistent shape.",
               componentName,
               instance.state === null ? "null" : "undefined",
               componentName
@@ -15375,7 +15375,7 @@ if (process.env.NODE_ENV !== "production") {
           if (
             typeof instance.componentWillReceiveProps === "function" &&
             instance.componentWillReceiveProps.__suppressDeprecationWarning !==
-            true
+              true
           ) {
             foundWillReceivePropsName = "componentWillReceiveProps";
           } else if (
@@ -15414,9 +15414,9 @@ if (process.env.NODE_ENV !== "production") {
 
               error(
                 "Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n" +
-                "%s uses %s but also contains the following legacy lifecycles:%s%s%s\n\n" +
-                "The above lifecycles should be removed. Learn more about this warning here:\n" +
-                "https://reactjs.org/link/unsafe-component-lifecycles",
+                  "%s uses %s but also contains the following legacy lifecycles:%s%s%s\n\n" +
+                  "The above lifecycles should be removed. Learn more about this warning here:\n" +
+                  "https://reactjs.org/link/unsafe-component-lifecycles",
                 _componentName,
                 newApiName,
                 foundWillMountName !== null ? "\n  " + foundWillMountName : "",
@@ -15453,8 +15453,8 @@ if (process.env.NODE_ENV !== "production") {
         {
           error(
             "%s.componentWillMount(): Assigning directly to this.state is " +
-            "deprecated (except inside a component's " +
-            "constructor). Use setState instead.",
+              "deprecated (except inside a component's " +
+              "constructor). Use setState instead.",
             getComponentName(workInProgress.type) || "Component"
           );
         }
@@ -15493,8 +15493,8 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "%s.componentWillReceiveProps(): Assigning directly to " +
-              "this.state is deprecated (except inside a component's " +
-              "constructor). Use setState instead.",
+                "this.state is deprecated (except inside a component's " +
+                "constructor). Use setState instead.",
               componentName
             );
           }
@@ -15536,8 +15536,8 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "%s: It is not recommended to assign props directly to state " +
-              "because updates to props won't be reflected in state. " +
-              "In most cases, it is better to use props directly.",
+                "because updates to props won't be reflected in state. " +
+                "In most cases, it is better to use props directly.",
               componentName
             );
           }
@@ -15906,7 +15906,7 @@ if (process.env.NODE_ENV !== "production") {
     var ownerHasKeyUseWarning;
     var ownerHasFunctionTypeWarning;
 
-    var warnForMissingKey = function(child, returnFiber) { };
+    var warnForMissingKey = function (child, returnFiber) {};
 
     {
       didWarnAboutMaps = false;
@@ -15921,7 +15921,7 @@ if (process.env.NODE_ENV !== "production") {
       ownerHasKeyUseWarning = {};
       ownerHasFunctionTypeWarning = {};
 
-      warnForMissingKey = function(child, returnFiber) {
+      warnForMissingKey = function (child, returnFiber) {
         if (child === null || typeof child !== "object") {
           return;
         }
@@ -15949,8 +15949,8 @@ if (process.env.NODE_ENV !== "production") {
 
         error(
           "Each child in a list should have a unique " +
-          '"key" prop. See https://reactjs.org/link/warning-keys for ' +
-          "more information."
+            '"key" prop. See https://reactjs.org/link/warning-keys for ' +
+            "more information."
         );
       };
     }
@@ -15985,10 +15985,10 @@ if (process.env.NODE_ENV !== "production") {
               {
                 error(
                   'A string ref, "%s", has been found within a strict mode tree. ' +
-                  "String refs are a source of potential bugs and should be avoided. " +
-                  "We recommend using useRef() or createRef() instead. " +
-                  "Learn more about using refs safely here: " +
-                  "https://reactjs.org/link/strict-mode-string-ref",
+                    "String refs are a source of potential bugs and should be avoided. " +
+                    "We recommend using useRef() or createRef() instead. " +
+                    "Learn more about using refs safely here: " +
+                    "https://reactjs.org/link/strict-mode-string-ref",
                   mixedRef
                 );
               }
@@ -16020,8 +16020,8 @@ if (process.env.NODE_ENV !== "production") {
             {
               throw Error(
                 "Missing owner for string ref " +
-                mixedRef +
-                ". This error is likely caused by a bug in React. Please file an issue."
+                  mixedRef +
+                  ". This error is likely caused by a bug in React. Please file an issue."
               );
             }
           }
@@ -16037,7 +16037,7 @@ if (process.env.NODE_ENV !== "production") {
             return current.ref;
           }
 
-          var ref = function(value) {
+          var ref = function (value) {
             var refs = inst.refs;
 
             if (refs === emptyRefsObject) {
@@ -16067,8 +16067,8 @@ if (process.env.NODE_ENV !== "production") {
             {
               throw Error(
                 "Element ref was specified as a string (" +
-                mixedRef +
-                ") but no owner was set. This could happen for one of the following reasons:\n1. You may be adding a ref to a function component\n2. You may be adding a ref to a component that was not created inside a component's render method\n3. You have multiple copies of React loaded\nSee https://reactjs.org/link/refs-must-have-owner for more information."
+                  mixedRef +
+                  ") but no owner was set. This could happen for one of the following reasons:\n1. You may be adding a ref to a function component\n2. You may be adding a ref to a component that was not created inside a component's render method\n3. You have multiple copies of React loaded\nSee https://reactjs.org/link/refs-must-have-owner for more information."
               );
             }
           }
@@ -16084,12 +16084,12 @@ if (process.env.NODE_ENV !== "production") {
           {
             throw Error(
               "Objects are not valid as a React child (found: " +
-              (Object.prototype.toString.call(newChild) === "[object Object]"
-                ? "object with keys {" +
-                Object.keys(newChild).join(", ") +
-                "}"
-                : newChild) +
-              "). If you meant to render a collection of children, use an array instead."
+                (Object.prototype.toString.call(newChild) === "[object Object]"
+                  ? "object with keys {" +
+                    Object.keys(newChild).join(", ") +
+                    "}"
+                  : newChild) +
+                "). If you meant to render a collection of children, use an array instead."
             );
           }
         }
@@ -16108,8 +16108,8 @@ if (process.env.NODE_ENV !== "production") {
 
         error(
           "Functions are not valid as a React child. This may happen if " +
-          "you return a Component instead of <Component /> from render. " +
-          "Or maybe you meant to call this function rather than return it."
+            "you return a Component instead of <Component /> from render. " +
+            "Or maybe you meant to call this function rather than return it."
         );
       }
     } // We avoid inlining this to avoid potential deopts from using try/catch.
@@ -16541,10 +16541,10 @@ if (process.env.NODE_ENV !== "production") {
 
               error(
                 "Encountered two children with the same key, `%s`. " +
-                "Keys should be unique so that components maintain their identity " +
-                "across updates. Non-unique keys may cause children to be " +
-                "duplicated and/or omitted — the behavior is unsupported and " +
-                "could change in a future version.",
+                  "Keys should be unique so that components maintain their identity " +
+                  "across updates. Non-unique keys may cause children to be " +
+                  "duplicated and/or omitted — the behavior is unsupported and " +
+                  "could change in a future version.",
                 key
               );
 
@@ -16719,7 +16719,7 @@ if (process.env.NODE_ENV !== "production") {
         if (shouldTrackSideEffects) {
           // Any existing children that weren't consumed above were deleted. We need
           // to add them to the deletion list.
-          existingChildren.forEach(function(child) {
+          existingChildren.forEach(function (child) {
             return deleteChild(returnFiber, child);
           });
         }
@@ -16755,10 +16755,10 @@ if (process.env.NODE_ENV !== "production") {
             if (!didWarnAboutGenerators) {
               error(
                 "Using Generators as children is unsupported and will likely yield " +
-                "unexpected results because enumerating a generator mutates it. " +
-                "You may convert it to an array with `Array.from()` or the " +
-                "`[...spread]` operator before rendering. Keep in mind " +
-                "you might need to polyfill these features for older browsers."
+                  "unexpected results because enumerating a generator mutates it. " +
+                  "You may convert it to an array with `Array.from()` or the " +
+                  "`[...spread]` operator before rendering. Keep in mind " +
+                  "you might need to polyfill these features for older browsers."
               );
             }
 
@@ -16769,7 +16769,7 @@ if (process.env.NODE_ENV !== "production") {
             if (!didWarnAboutMaps) {
               error(
                 "Using Maps as children is not supported. " +
-                "Use an array of keyed ReactElements instead."
+                  "Use an array of keyed ReactElements instead."
               );
             }
 
@@ -16928,7 +16928,7 @@ if (process.env.NODE_ENV !== "production") {
         if (shouldTrackSideEffects) {
           // Any existing children that weren't consumed above were deleted. We need
           // to add them to the deletion list.
-          existingChildren.forEach(function(child) {
+          existingChildren.forEach(function (child) {
             return deleteChild(returnFiber, child);
           });
         }
@@ -17206,7 +17206,7 @@ if (process.env.NODE_ENV !== "production") {
                 {
                   throw Error(
                     (getComponentName(returnFiber.type) || "Component") +
-                    "(...): Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return null."
+                      "(...): Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return null."
                   );
                 }
               }
@@ -17879,7 +17879,7 @@ if (process.env.NODE_ENV !== "production") {
           ) {
             error(
               "Detected multiple renderers concurrently rendering the " +
-              "same mutable source. This is currently unsupported."
+                "same mutable source. This is currently unsupported."
             );
           }
         }
@@ -17963,7 +17963,7 @@ if (process.env.NODE_ENV !== "production") {
           // It's unlikely their type would change as usually you define them inline.
           error(
             "%s received a final argument that is not an array (instead, received `%s`). When " +
-            "specified, the final argument must be an array.",
+              "specified, the final argument must be an array.",
             currentHookNameInDev,
             typeof deps
           );
@@ -17999,12 +17999,12 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "React has detected a change in the order of Hooks called by %s. " +
-              "This will lead to bugs and errors if not fixed. " +
-              "For more information, read the Rules of Hooks: https://reactjs.org/link/rules-of-hooks\n\n" +
-              "   Previous render            Next render\n" +
-              "   ------------------------------------------------------\n" +
-              "%s" +
-              "   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+                "This will lead to bugs and errors if not fixed. " +
+                "For more information, read the Rules of Hooks: https://reactjs.org/link/rules-of-hooks\n\n" +
+                "   Previous render            Next render\n" +
+                "   ------------------------------------------------------\n" +
+                "%s" +
+                "   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
               componentName,
               table
             );
@@ -18035,8 +18035,8 @@ if (process.env.NODE_ENV !== "production") {
         {
           error(
             "%s received a final argument during this render, but not during " +
-            "the previous render. Even though the final argument is optional, " +
-            "its type cannot change between renders.",
+              "the previous render. Even though the final argument is optional, " +
+              "its type cannot change between renders.",
             currentHookNameInDev
           );
         }
@@ -18050,9 +18050,9 @@ if (process.env.NODE_ENV !== "production") {
         if (nextDeps.length !== prevDeps.length) {
           error(
             "The final argument passed to %s changed size between renders. The " +
-            "order and size of this array must remain constant.\n\n" +
-            "Previous: %s\n" +
-            "Incoming: %s",
+              "order and size of this array must remain constant.\n\n" +
+              "Previous: %s\n" +
+              "Incoming: %s",
             currentHookNameInDev,
             "[" + prevDeps.join(", ") + "]",
             "[" + nextDeps.join(", ") + "]"
@@ -18396,7 +18396,7 @@ if (process.env.NODE_ENV !== "production") {
             // the future if we implement resuming, or some form of that.
             error(
               "Internal error: Expected work-in-progress queue to be a clone. " +
-              "This is a bug in React."
+                "This is a bug in React."
             );
           }
         }
@@ -18600,7 +18600,7 @@ if (process.env.NODE_ENV !== "production") {
           if (typeof snapshot === "function") {
             error(
               "Mutable source should not return a function as the snapshot value. " +
-              "Functions may close over mutable values and cause tearing."
+                "Functions may close over mutable values and cause tearing."
             );
           }
         }
@@ -18643,9 +18643,9 @@ if (process.env.NODE_ENV !== "production") {
       var version = getVersion(source._source);
       var dispatcher = ReactCurrentDispatcher$1.current; // eslint-disable-next-line prefer-const
 
-      var _dispatcher$useState = dispatcher.useState(function() {
-        return readFromUnsubcribedMutableSource(root, source, getSnapshot);
-      }),
+      var _dispatcher$useState = dispatcher.useState(function () {
+          return readFromUnsubcribedMutableSource(root, source, getSnapshot);
+        }),
         currentSnapshot = _dispatcher$useState[0],
         setSnapshot = _dispatcher$useState[1];
 
@@ -18666,7 +18666,7 @@ if (process.env.NODE_ENV !== "production") {
       }; // Sync the values needed by our subscription handler after each commit.
 
       dispatcher.useEffect(
-        function() {
+        function () {
           refs.getSnapshot = getSnapshot; // Normally the dispatch function for a state hook never changes,
           // but this hook recreates the queue in certain cases  to avoid updates from stale sources.
           // handleChange() below needs to reference the dispatch function without re-subscribing,
@@ -18683,7 +18683,7 @@ if (process.env.NODE_ENV !== "production") {
               if (typeof maybeNewSnapshot === "function") {
                 error(
                   "Mutable source should not return a function as the snapshot value. " +
-                  "Functions may close over mutable values and cause tearing."
+                    "Functions may close over mutable values and cause tearing."
                 );
               }
             }
@@ -18703,8 +18703,8 @@ if (process.env.NODE_ENV !== "production") {
       ); // If we got a new source or subscribe function, re-subscribe in a passive effect.
 
       dispatcher.useEffect(
-        function() {
-          var handleChange = function() {
+        function () {
+          var handleChange = function () {
             var latestGetSnapshot = refs.getSnapshot;
             var latestSetSnapshot = refs.setSnapshot;
 
@@ -18718,7 +18718,7 @@ if (process.env.NODE_ENV !== "production") {
               // e.g. it might try to read from a part of the store that no longer exists.
               // In this case we should still schedule an update with React.
               // Worst case the selector will throw again and then an error boundary will handle it.
-              latestSetSnapshot(function() {
+              latestSetSnapshot(function () {
                 throw error;
               });
             }
@@ -18954,7 +18954,7 @@ if (process.env.NODE_ENV !== "production") {
         var _inst = create();
 
         refCallback(_inst);
-        return function() {
+        return function () {
           refCallback(null);
         };
       } else if (ref !== null && ref !== undefined) {
@@ -18964,7 +18964,7 @@ if (process.env.NODE_ENV !== "production") {
           if (!refObject.hasOwnProperty("current")) {
             error(
               "Expected useImperativeHandle() first argument to either be a " +
-              "ref callback or React.createRef() object. Instead received: %s.",
+                "ref callback or React.createRef() object. Instead received: %s.",
               "an object with keys {" + Object.keys(refObject).join(", ") + "}"
             );
           }
@@ -18973,7 +18973,7 @@ if (process.env.NODE_ENV !== "production") {
         var _inst2 = create();
 
         refObject.current = _inst2;
-        return function() {
+        return function () {
           refObject.current = null;
         };
       }
@@ -18984,7 +18984,7 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof create !== "function") {
           error(
             "Expected useImperativeHandle() second argument to be a function " +
-            "that creates a handle. Instead received: %s.",
+              "that creates a handle. Instead received: %s.",
             create !== null ? typeof create : "null"
           );
         }
@@ -19005,7 +19005,7 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof create !== "function") {
           error(
             "Expected useImperativeHandle() second argument to be a function " +
-            "that creates a handle. Instead received: %s.",
+              "that creates a handle. Instead received: %s.",
             create !== null ? typeof create : "null"
           );
         }
@@ -19090,7 +19090,7 @@ if (process.env.NODE_ENV !== "production") {
         setValue = _mountState[1];
 
       mountEffect(
-        function() {
+        function () {
           var prevTransition = ReactCurrentBatchConfig$1.transition;
           ReactCurrentBatchConfig$1.transition = 1;
 
@@ -19111,7 +19111,7 @@ if (process.env.NODE_ENV !== "production") {
         setValue = _updateState[1];
 
       updateEffect(
-        function() {
+        function () {
           var prevTransition = ReactCurrentBatchConfig$1.transition;
           ReactCurrentBatchConfig$1.transition = 1;
 
@@ -19132,7 +19132,7 @@ if (process.env.NODE_ENV !== "production") {
         setValue = _rerenderState[1];
 
       updateEffect(
-        function() {
+        function () {
           var prevTransition = ReactCurrentBatchConfig$1.transition;
           ReactCurrentBatchConfig$1.transition = 1;
 
@@ -19155,13 +19155,13 @@ if (process.env.NODE_ENV !== "production") {
           priorityLevel < UserBlockingPriority$2
             ? UserBlockingPriority$2
             : priorityLevel,
-          function() {
+          function () {
             setPending(true);
           }
         );
         runWithPriority$1(
           priorityLevel > NormalPriority$1 ? NormalPriority$1 : priorityLevel,
-          function() {
+          function () {
             var prevTransition = ReactCurrentBatchConfig$1.transition;
             ReactCurrentBatchConfig$1.transition = 1;
 
@@ -19220,8 +19220,8 @@ if (process.env.NODE_ENV !== "production") {
         if (getIsRendering() && !didWarnAboutUseOpaqueIdentifier[name]) {
           error(
             "The object passed back from useOpaqueIdentifier is meant to be " +
-            "passed through to attributes only. Do not read the " +
-            "value directly."
+              "passed through to attributes only. Do not read the " +
+              "value directly."
           );
 
           didWarnAboutUseOpaqueIdentifier[name] = true;
@@ -19239,7 +19239,7 @@ if (process.env.NODE_ENV !== "production") {
         var didUpgrade = false;
         var fiber = currentlyRenderingFiber$1;
 
-        var readValue = function() {
+        var readValue = function () {
           if (!didUpgrade) {
             // Only upgrade once. This works even inside the render phase because
             // the update is added to a shared queue, which outlasts the
@@ -19270,7 +19270,7 @@ if (process.env.NODE_ENV !== "production") {
           currentlyRenderingFiber$1.flags |= Update | Passive;
           pushEffect(
             HasEffect | Passive$1,
-            function() {
+            function () {
               setId(makeId());
             },
             undefined,
@@ -19297,13 +19297,18 @@ if (process.env.NODE_ENV !== "production") {
       return id;
     }
 
+    // WANPAN
+    /*
+     *  setState useState
+     * fiber 当前出发更新的 fiber节点
+     */
     function dispatchAction(fiber, queue, action) {
       {
         if (typeof arguments[3] === "function") {
           error(
             "State updates from the useState() and useReducer() Hooks don't support the " +
-            "second callback argument. To execute a side effect after " +
-            "rendering, declare it in the component body with useEffect()."
+              "second callback argument. To execute a side effect after " +
+              "rendering, declare it in the component body with useEffect()."
           );
         }
       }
@@ -19425,58 +19430,58 @@ if (process.env.NODE_ENV !== "production") {
     var InvalidNestedHooksDispatcherOnRerenderInDEV = null;
 
     {
-      var warnInvalidContextAccess = function() {
+      var warnInvalidContextAccess = function () {
         error(
           "Context can only be read while React is rendering. " +
-          "In classes, you can read it in the render method or getDerivedStateFromProps. " +
-          "In function components, you can read it directly in the function body, but not " +
-          "inside Hooks like useReducer() or useMemo()."
+            "In classes, you can read it in the render method or getDerivedStateFromProps. " +
+            "In function components, you can read it directly in the function body, but not " +
+            "inside Hooks like useReducer() or useMemo()."
         );
       };
 
-      var warnInvalidHookAccess = function() {
+      var warnInvalidHookAccess = function () {
         error(
           "Do not call Hooks inside useEffect(...), useMemo(...), or other built-in Hooks. " +
-          "You can only call Hooks at the top level of your React function. " +
-          "For more information, see " +
-          "https://reactjs.org/link/rules-of-hooks"
+            "You can only call Hooks at the top level of your React function. " +
+            "For more information, see " +
+            "https://reactjs.org/link/rules-of-hooks"
         );
       };
 
       HooksDispatcherOnMountInDEV = {
-        readContext: function(context, observedBits) {
+        readContext: function (context, observedBits) {
           return readContext(context, observedBits);
         },
-        useCallback: function(callback, deps) {
+        useCallback: function (callback, deps) {
           currentHookNameInDev = "useCallback";
           mountHookTypesDev();
           checkDepsAreArrayDev(deps);
           return mountCallback(callback, deps);
         },
-        useContext: function(context, observedBits) {
+        useContext: function (context, observedBits) {
           currentHookNameInDev = "useContext";
           mountHookTypesDev();
           return readContext(context, observedBits);
         },
-        useEffect: function(create, deps) {
+        useEffect: function (create, deps) {
           currentHookNameInDev = "useEffect";
           mountHookTypesDev();
           checkDepsAreArrayDev(deps);
           return mountEffect(create, deps);
         },
-        useImperativeHandle: function(ref, create, deps) {
+        useImperativeHandle: function (ref, create, deps) {
           currentHookNameInDev = "useImperativeHandle";
           mountHookTypesDev();
           checkDepsAreArrayDev(deps);
           return mountImperativeHandle(ref, create, deps);
         },
-        useLayoutEffect: function(create, deps) {
+        useLayoutEffect: function (create, deps) {
           currentHookNameInDev = "useLayoutEffect";
           mountHookTypesDev();
           checkDepsAreArrayDev(deps);
           return mountLayoutEffect(create, deps);
         },
-        useMemo: function(create, deps) {
+        useMemo: function (create, deps) {
           currentHookNameInDev = "useMemo";
           mountHookTypesDev();
           checkDepsAreArrayDev(deps);
@@ -19490,7 +19495,7 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useReducer: function(reducer, initialArg, init) {
+        useReducer: function (reducer, initialArg, init) {
           currentHookNameInDev = "useReducer";
           mountHookTypesDev();
           var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -19503,12 +19508,12 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useRef: function(initialValue) {
+        useRef: function (initialValue) {
           currentHookNameInDev = "useRef";
           mountHookTypesDev();
           return mountRef(initialValue);
         },
-        useState: function(initialState) {
+        useState: function (initialState) {
           currentHookNameInDev = "useState";
           mountHookTypesDev();
           var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -19521,27 +19526,27 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useDebugValue: function(value, formatterFn) {
+        useDebugValue: function (value, formatterFn) {
           currentHookNameInDev = "useDebugValue";
           mountHookTypesDev();
           return mountDebugValue();
         },
-        useDeferredValue: function(value) {
+        useDeferredValue: function (value) {
           currentHookNameInDev = "useDeferredValue";
           mountHookTypesDev();
           return mountDeferredValue(value);
         },
-        useTransition: function() {
+        useTransition: function () {
           currentHookNameInDev = "useTransition";
           mountHookTypesDev();
           return mountTransition();
         },
-        useMutableSource: function(source, getSnapshot, subscribe) {
+        useMutableSource: function (source, getSnapshot, subscribe) {
           currentHookNameInDev = "useMutableSource";
           mountHookTypesDev();
           return mountMutableSource(source, getSnapshot, subscribe);
         },
-        useOpaqueIdentifier: function() {
+        useOpaqueIdentifier: function () {
           currentHookNameInDev = "useOpaqueIdentifier";
           mountHookTypesDev();
           return mountOpaqueIdentifier();
@@ -19549,35 +19554,35 @@ if (process.env.NODE_ENV !== "production") {
         unstable_isNewReconciler: enableNewReconciler,
       };
       HooksDispatcherOnMountWithHookTypesInDEV = {
-        readContext: function(context, observedBits) {
+        readContext: function (context, observedBits) {
           return readContext(context, observedBits);
         },
-        useCallback: function(callback, deps) {
+        useCallback: function (callback, deps) {
           currentHookNameInDev = "useCallback";
           updateHookTypesDev();
           return mountCallback(callback, deps);
         },
-        useContext: function(context, observedBits) {
+        useContext: function (context, observedBits) {
           currentHookNameInDev = "useContext";
           updateHookTypesDev();
           return readContext(context, observedBits);
         },
-        useEffect: function(create, deps) {
+        useEffect: function (create, deps) {
           currentHookNameInDev = "useEffect";
           updateHookTypesDev();
           return mountEffect(create, deps);
         },
-        useImperativeHandle: function(ref, create, deps) {
+        useImperativeHandle: function (ref, create, deps) {
           currentHookNameInDev = "useImperativeHandle";
           updateHookTypesDev();
           return mountImperativeHandle(ref, create, deps);
         },
-        useLayoutEffect: function(create, deps) {
+        useLayoutEffect: function (create, deps) {
           currentHookNameInDev = "useLayoutEffect";
           updateHookTypesDev();
           return mountLayoutEffect(create, deps);
         },
-        useMemo: function(create, deps) {
+        useMemo: function (create, deps) {
           currentHookNameInDev = "useMemo";
           updateHookTypesDev();
           var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -19590,7 +19595,7 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useReducer: function(reducer, initialArg, init) {
+        useReducer: function (reducer, initialArg, init) {
           currentHookNameInDev = "useReducer";
           updateHookTypesDev();
           var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -19603,12 +19608,12 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useRef: function(initialValue) {
+        useRef: function (initialValue) {
           currentHookNameInDev = "useRef";
           updateHookTypesDev();
           return mountRef(initialValue);
         },
-        useState: function(initialState) {
+        useState: function (initialState) {
           currentHookNameInDev = "useState";
           updateHookTypesDev();
           var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -19621,27 +19626,27 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useDebugValue: function(value, formatterFn) {
+        useDebugValue: function (value, formatterFn) {
           currentHookNameInDev = "useDebugValue";
           updateHookTypesDev();
           return mountDebugValue();
         },
-        useDeferredValue: function(value) {
+        useDeferredValue: function (value) {
           currentHookNameInDev = "useDeferredValue";
           updateHookTypesDev();
           return mountDeferredValue(value);
         },
-        useTransition: function() {
+        useTransition: function () {
           currentHookNameInDev = "useTransition";
           updateHookTypesDev();
           return mountTransition();
         },
-        useMutableSource: function(source, getSnapshot, subscribe) {
+        useMutableSource: function (source, getSnapshot, subscribe) {
           currentHookNameInDev = "useMutableSource";
           updateHookTypesDev();
           return mountMutableSource(source, getSnapshot, subscribe);
         },
-        useOpaqueIdentifier: function() {
+        useOpaqueIdentifier: function () {
           currentHookNameInDev = "useOpaqueIdentifier";
           updateHookTypesDev();
           return mountOpaqueIdentifier();
@@ -19649,35 +19654,35 @@ if (process.env.NODE_ENV !== "production") {
         unstable_isNewReconciler: enableNewReconciler,
       };
       HooksDispatcherOnUpdateInDEV = {
-        readContext: function(context, observedBits) {
+        readContext: function (context, observedBits) {
           return readContext(context, observedBits);
         },
-        useCallback: function(callback, deps) {
+        useCallback: function (callback, deps) {
           currentHookNameInDev = "useCallback";
           updateHookTypesDev();
           return updateCallback(callback, deps);
         },
-        useContext: function(context, observedBits) {
+        useContext: function (context, observedBits) {
           currentHookNameInDev = "useContext";
           updateHookTypesDev();
           return readContext(context, observedBits);
         },
-        useEffect: function(create, deps) {
+        useEffect: function (create, deps) {
           currentHookNameInDev = "useEffect";
           updateHookTypesDev();
           return updateEffect(create, deps);
         },
-        useImperativeHandle: function(ref, create, deps) {
+        useImperativeHandle: function (ref, create, deps) {
           currentHookNameInDev = "useImperativeHandle";
           updateHookTypesDev();
           return updateImperativeHandle(ref, create, deps);
         },
-        useLayoutEffect: function(create, deps) {
+        useLayoutEffect: function (create, deps) {
           currentHookNameInDev = "useLayoutEffect";
           updateHookTypesDev();
           return updateLayoutEffect(create, deps);
         },
-        useMemo: function(create, deps) {
+        useMemo: function (create, deps) {
           currentHookNameInDev = "useMemo";
           updateHookTypesDev();
           var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -19690,7 +19695,7 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useReducer: function(reducer, initialArg, init) {
+        useReducer: function (reducer, initialArg, init) {
           currentHookNameInDev = "useReducer";
           updateHookTypesDev();
           var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -19703,12 +19708,12 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useRef: function(initialValue) {
+        useRef: function (initialValue) {
           currentHookNameInDev = "useRef";
           updateHookTypesDev();
           return updateRef();
         },
-        useState: function(initialState) {
+        useState: function (initialState) {
           currentHookNameInDev = "useState";
           updateHookTypesDev();
           var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -19721,27 +19726,27 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useDebugValue: function(value, formatterFn) {
+        useDebugValue: function (value, formatterFn) {
           currentHookNameInDev = "useDebugValue";
           updateHookTypesDev();
           return updateDebugValue();
         },
-        useDeferredValue: function(value) {
+        useDeferredValue: function (value) {
           currentHookNameInDev = "useDeferredValue";
           updateHookTypesDev();
           return updateDeferredValue(value);
         },
-        useTransition: function() {
+        useTransition: function () {
           currentHookNameInDev = "useTransition";
           updateHookTypesDev();
           return updateTransition();
         },
-        useMutableSource: function(source, getSnapshot, subscribe) {
+        useMutableSource: function (source, getSnapshot, subscribe) {
           currentHookNameInDev = "useMutableSource";
           updateHookTypesDev();
           return updateMutableSource(source, getSnapshot, subscribe);
         },
-        useOpaqueIdentifier: function() {
+        useOpaqueIdentifier: function () {
           currentHookNameInDev = "useOpaqueIdentifier";
           updateHookTypesDev();
           return updateOpaqueIdentifier();
@@ -19749,35 +19754,35 @@ if (process.env.NODE_ENV !== "production") {
         unstable_isNewReconciler: enableNewReconciler,
       };
       HooksDispatcherOnRerenderInDEV = {
-        readContext: function(context, observedBits) {
+        readContext: function (context, observedBits) {
           return readContext(context, observedBits);
         },
-        useCallback: function(callback, deps) {
+        useCallback: function (callback, deps) {
           currentHookNameInDev = "useCallback";
           updateHookTypesDev();
           return updateCallback(callback, deps);
         },
-        useContext: function(context, observedBits) {
+        useContext: function (context, observedBits) {
           currentHookNameInDev = "useContext";
           updateHookTypesDev();
           return readContext(context, observedBits);
         },
-        useEffect: function(create, deps) {
+        useEffect: function (create, deps) {
           currentHookNameInDev = "useEffect";
           updateHookTypesDev();
           return updateEffect(create, deps);
         },
-        useImperativeHandle: function(ref, create, deps) {
+        useImperativeHandle: function (ref, create, deps) {
           currentHookNameInDev = "useImperativeHandle";
           updateHookTypesDev();
           return updateImperativeHandle(ref, create, deps);
         },
-        useLayoutEffect: function(create, deps) {
+        useLayoutEffect: function (create, deps) {
           currentHookNameInDev = "useLayoutEffect";
           updateHookTypesDev();
           return updateLayoutEffect(create, deps);
         },
-        useMemo: function(create, deps) {
+        useMemo: function (create, deps) {
           currentHookNameInDev = "useMemo";
           updateHookTypesDev();
           var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -19790,7 +19795,7 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useReducer: function(reducer, initialArg, init) {
+        useReducer: function (reducer, initialArg, init) {
           currentHookNameInDev = "useReducer";
           updateHookTypesDev();
           var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -19803,12 +19808,12 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useRef: function(initialValue) {
+        useRef: function (initialValue) {
           currentHookNameInDev = "useRef";
           updateHookTypesDev();
           return updateRef();
         },
-        useState: function(initialState) {
+        useState: function (initialState) {
           currentHookNameInDev = "useState";
           updateHookTypesDev();
           var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -19821,27 +19826,27 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useDebugValue: function(value, formatterFn) {
+        useDebugValue: function (value, formatterFn) {
           currentHookNameInDev = "useDebugValue";
           updateHookTypesDev();
           return updateDebugValue();
         },
-        useDeferredValue: function(value) {
+        useDeferredValue: function (value) {
           currentHookNameInDev = "useDeferredValue";
           updateHookTypesDev();
           return rerenderDeferredValue(value);
         },
-        useTransition: function() {
+        useTransition: function () {
           currentHookNameInDev = "useTransition";
           updateHookTypesDev();
           return rerenderTransition();
         },
-        useMutableSource: function(source, getSnapshot, subscribe) {
+        useMutableSource: function (source, getSnapshot, subscribe) {
           currentHookNameInDev = "useMutableSource";
           updateHookTypesDev();
           return updateMutableSource(source, getSnapshot, subscribe);
         },
-        useOpaqueIdentifier: function() {
+        useOpaqueIdentifier: function () {
           currentHookNameInDev = "useOpaqueIdentifier";
           updateHookTypesDev();
           return rerenderOpaqueIdentifier();
@@ -19849,41 +19854,41 @@ if (process.env.NODE_ENV !== "production") {
         unstable_isNewReconciler: enableNewReconciler,
       };
       InvalidNestedHooksDispatcherOnMountInDEV = {
-        readContext: function(context, observedBits) {
+        readContext: function (context, observedBits) {
           warnInvalidContextAccess();
           return readContext(context, observedBits);
         },
-        useCallback: function(callback, deps) {
+        useCallback: function (callback, deps) {
           currentHookNameInDev = "useCallback";
           warnInvalidHookAccess();
           mountHookTypesDev();
           return mountCallback(callback, deps);
         },
-        useContext: function(context, observedBits) {
+        useContext: function (context, observedBits) {
           currentHookNameInDev = "useContext";
           warnInvalidHookAccess();
           mountHookTypesDev();
           return readContext(context, observedBits);
         },
-        useEffect: function(create, deps) {
+        useEffect: function (create, deps) {
           currentHookNameInDev = "useEffect";
           warnInvalidHookAccess();
           mountHookTypesDev();
           return mountEffect(create, deps);
         },
-        useImperativeHandle: function(ref, create, deps) {
+        useImperativeHandle: function (ref, create, deps) {
           currentHookNameInDev = "useImperativeHandle";
           warnInvalidHookAccess();
           mountHookTypesDev();
           return mountImperativeHandle(ref, create, deps);
         },
-        useLayoutEffect: function(create, deps) {
+        useLayoutEffect: function (create, deps) {
           currentHookNameInDev = "useLayoutEffect";
           warnInvalidHookAccess();
           mountHookTypesDev();
           return mountLayoutEffect(create, deps);
         },
-        useMemo: function(create, deps) {
+        useMemo: function (create, deps) {
           currentHookNameInDev = "useMemo";
           warnInvalidHookAccess();
           mountHookTypesDev();
@@ -19897,7 +19902,7 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useReducer: function(reducer, initialArg, init) {
+        useReducer: function (reducer, initialArg, init) {
           currentHookNameInDev = "useReducer";
           warnInvalidHookAccess();
           mountHookTypesDev();
@@ -19911,13 +19916,13 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useRef: function(initialValue) {
+        useRef: function (initialValue) {
           currentHookNameInDev = "useRef";
           warnInvalidHookAccess();
           mountHookTypesDev();
           return mountRef(initialValue);
         },
-        useState: function(initialState) {
+        useState: function (initialState) {
           currentHookNameInDev = "useState";
           warnInvalidHookAccess();
           mountHookTypesDev();
@@ -19931,31 +19936,31 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useDebugValue: function(value, formatterFn) {
+        useDebugValue: function (value, formatterFn) {
           currentHookNameInDev = "useDebugValue";
           warnInvalidHookAccess();
           mountHookTypesDev();
           return mountDebugValue();
         },
-        useDeferredValue: function(value) {
+        useDeferredValue: function (value) {
           currentHookNameInDev = "useDeferredValue";
           warnInvalidHookAccess();
           mountHookTypesDev();
           return mountDeferredValue(value);
         },
-        useTransition: function() {
+        useTransition: function () {
           currentHookNameInDev = "useTransition";
           warnInvalidHookAccess();
           mountHookTypesDev();
           return mountTransition();
         },
-        useMutableSource: function(source, getSnapshot, subscribe) {
+        useMutableSource: function (source, getSnapshot, subscribe) {
           currentHookNameInDev = "useMutableSource";
           warnInvalidHookAccess();
           mountHookTypesDev();
           return mountMutableSource(source, getSnapshot, subscribe);
         },
-        useOpaqueIdentifier: function() {
+        useOpaqueIdentifier: function () {
           currentHookNameInDev = "useOpaqueIdentifier";
           warnInvalidHookAccess();
           mountHookTypesDev();
@@ -19964,41 +19969,41 @@ if (process.env.NODE_ENV !== "production") {
         unstable_isNewReconciler: enableNewReconciler,
       };
       InvalidNestedHooksDispatcherOnUpdateInDEV = {
-        readContext: function(context, observedBits) {
+        readContext: function (context, observedBits) {
           warnInvalidContextAccess();
           return readContext(context, observedBits);
         },
-        useCallback: function(callback, deps) {
+        useCallback: function (callback, deps) {
           currentHookNameInDev = "useCallback";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateCallback(callback, deps);
         },
-        useContext: function(context, observedBits) {
+        useContext: function (context, observedBits) {
           currentHookNameInDev = "useContext";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return readContext(context, observedBits);
         },
-        useEffect: function(create, deps) {
+        useEffect: function (create, deps) {
           currentHookNameInDev = "useEffect";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateEffect(create, deps);
         },
-        useImperativeHandle: function(ref, create, deps) {
+        useImperativeHandle: function (ref, create, deps) {
           currentHookNameInDev = "useImperativeHandle";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateImperativeHandle(ref, create, deps);
         },
-        useLayoutEffect: function(create, deps) {
+        useLayoutEffect: function (create, deps) {
           currentHookNameInDev = "useLayoutEffect";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateLayoutEffect(create, deps);
         },
-        useMemo: function(create, deps) {
+        useMemo: function (create, deps) {
           currentHookNameInDev = "useMemo";
           warnInvalidHookAccess();
           updateHookTypesDev();
@@ -20012,7 +20017,7 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useReducer: function(reducer, initialArg, init) {
+        useReducer: function (reducer, initialArg, init) {
           currentHookNameInDev = "useReducer";
           warnInvalidHookAccess();
           updateHookTypesDev();
@@ -20026,13 +20031,13 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useRef: function(initialValue) {
+        useRef: function (initialValue) {
           currentHookNameInDev = "useRef";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateRef();
         },
-        useState: function(initialState) {
+        useState: function (initialState) {
           currentHookNameInDev = "useState";
           warnInvalidHookAccess();
           updateHookTypesDev();
@@ -20046,31 +20051,31 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useDebugValue: function(value, formatterFn) {
+        useDebugValue: function (value, formatterFn) {
           currentHookNameInDev = "useDebugValue";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateDebugValue();
         },
-        useDeferredValue: function(value) {
+        useDeferredValue: function (value) {
           currentHookNameInDev = "useDeferredValue";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateDeferredValue(value);
         },
-        useTransition: function() {
+        useTransition: function () {
           currentHookNameInDev = "useTransition";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateTransition();
         },
-        useMutableSource: function(source, getSnapshot, subscribe) {
+        useMutableSource: function (source, getSnapshot, subscribe) {
           currentHookNameInDev = "useMutableSource";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateMutableSource(source, getSnapshot, subscribe);
         },
-        useOpaqueIdentifier: function() {
+        useOpaqueIdentifier: function () {
           currentHookNameInDev = "useOpaqueIdentifier";
           warnInvalidHookAccess();
           updateHookTypesDev();
@@ -20079,41 +20084,41 @@ if (process.env.NODE_ENV !== "production") {
         unstable_isNewReconciler: enableNewReconciler,
       };
       InvalidNestedHooksDispatcherOnRerenderInDEV = {
-        readContext: function(context, observedBits) {
+        readContext: function (context, observedBits) {
           warnInvalidContextAccess();
           return readContext(context, observedBits);
         },
-        useCallback: function(callback, deps) {
+        useCallback: function (callback, deps) {
           currentHookNameInDev = "useCallback";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateCallback(callback, deps);
         },
-        useContext: function(context, observedBits) {
+        useContext: function (context, observedBits) {
           currentHookNameInDev = "useContext";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return readContext(context, observedBits);
         },
-        useEffect: function(create, deps) {
+        useEffect: function (create, deps) {
           currentHookNameInDev = "useEffect";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateEffect(create, deps);
         },
-        useImperativeHandle: function(ref, create, deps) {
+        useImperativeHandle: function (ref, create, deps) {
           currentHookNameInDev = "useImperativeHandle";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateImperativeHandle(ref, create, deps);
         },
-        useLayoutEffect: function(create, deps) {
+        useLayoutEffect: function (create, deps) {
           currentHookNameInDev = "useLayoutEffect";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateLayoutEffect(create, deps);
         },
-        useMemo: function(create, deps) {
+        useMemo: function (create, deps) {
           currentHookNameInDev = "useMemo";
           warnInvalidHookAccess();
           updateHookTypesDev();
@@ -20127,7 +20132,7 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useReducer: function(reducer, initialArg, init) {
+        useReducer: function (reducer, initialArg, init) {
           currentHookNameInDev = "useReducer";
           warnInvalidHookAccess();
           updateHookTypesDev();
@@ -20141,13 +20146,13 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useRef: function(initialValue) {
+        useRef: function (initialValue) {
           currentHookNameInDev = "useRef";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateRef();
         },
-        useState: function(initialState) {
+        useState: function (initialState) {
           currentHookNameInDev = "useState";
           warnInvalidHookAccess();
           updateHookTypesDev();
@@ -20161,31 +20166,31 @@ if (process.env.NODE_ENV !== "production") {
             ReactCurrentDispatcher$1.current = prevDispatcher;
           }
         },
-        useDebugValue: function(value, formatterFn) {
+        useDebugValue: function (value, formatterFn) {
           currentHookNameInDev = "useDebugValue";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateDebugValue();
         },
-        useDeferredValue: function(value) {
+        useDeferredValue: function (value) {
           currentHookNameInDev = "useDeferredValue";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return rerenderDeferredValue(value);
         },
-        useTransition: function() {
+        useTransition: function () {
           currentHookNameInDev = "useTransition";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return rerenderTransition();
         },
-        useMutableSource: function(source, getSnapshot, subscribe) {
+        useMutableSource: function (source, getSnapshot, subscribe) {
           currentHookNameInDev = "useMutableSource";
           warnInvalidHookAccess();
           updateHookTypesDev();
           return updateMutableSource(source, getSnapshot, subscribe);
         },
-        useOpaqueIdentifier: function() {
+        useOpaqueIdentifier: function () {
           currentHookNameInDev = "useOpaqueIdentifier";
           warnInvalidHookAccess();
           updateHookTypesDev();
@@ -20909,7 +20914,7 @@ if (process.env.NODE_ENV !== "production") {
           if (!didWarnAboutReassigningProps) {
             error(
               "It looks like %s is reassigning its own `this.props` while rendering. " +
-              "This is not supported and can lead to confusing bugs.",
+                "This is not supported and can lead to confusing bugs.",
               getComponentName(workInProgress.type) || "a component"
             );
           }
@@ -21277,9 +21282,9 @@ if (process.env.NODE_ENV !== "production") {
         {
           throw Error(
             "Element type is invalid. Received a promise that resolves to: " +
-            Component +
-            ". Lazy element type must resolve to a class or function." +
-            hint
+              Component +
+              ". Lazy element type must resolve to a class or function." +
+              hint
           );
         }
       }
@@ -21372,7 +21377,7 @@ if (process.env.NODE_ENV !== "production") {
           if (!didWarnAboutBadClass[componentName]) {
             error(
               "The <%s /> component appears to have a render method, but doesn't extend React.Component. " +
-              "This is likely to cause errors. Change %s to extend React.Component instead.",
+                "This is likely to cause errors. Change %s to extend React.Component instead.",
               componentName,
               componentName
             );
@@ -21417,10 +21422,10 @@ if (process.env.NODE_ENV !== "production") {
           if (!didWarnAboutModulePatternComponent[_componentName]) {
             error(
               "The <%s /> component appears to be a function component that returns a class instance. " +
-              "Change %s to a class that extends React.Component instead. " +
-              "If you can't use a class try assigning the prototype on the function as a workaround. " +
-              "`%s.prototype = React.Component.prototype`. Don't use an arrow function since it " +
-              "cannot be called with `new` by React.",
+                "Change %s to a class that extends React.Component instead. " +
+                "If you can't use a class try assigning the prototype on the function as a workaround. " +
+                "`%s.prototype = React.Component.prototype`. Don't use an arrow function since it " +
+                "cannot be called with `new` by React.",
               _componentName,
               _componentName,
               _componentName
@@ -21445,10 +21450,10 @@ if (process.env.NODE_ENV !== "production") {
           if (!didWarnAboutModulePatternComponent[_componentName2]) {
             error(
               "The <%s /> component appears to be a function component that returns a class instance. " +
-              "Change %s to a class that extends React.Component instead. " +
-              "If you can't use a class try assigning the prototype on the function as a workaround. " +
-              "`%s.prototype = React.Component.prototype`. Don't use an arrow function since it " +
-              "cannot be called with `new` by React.",
+                "Change %s to a class that extends React.Component instead. " +
+                "If you can't use a class try assigning the prototype on the function as a workaround. " +
+                "`%s.prototype = React.Component.prototype`. Don't use an arrow function since it " +
+                "cannot be called with `new` by React.",
               _componentName2,
               _componentName2,
               _componentName2
@@ -21564,8 +21569,8 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "Function components cannot be given refs. " +
-              "Attempts to access this ref will fail. " +
-              "Did you mean to use React.forwardRef()?%s",
+                "Attempts to access this ref will fail. " +
+                "Did you mean to use React.forwardRef()?%s",
               info
             );
           }
@@ -21839,9 +21844,9 @@ if (process.env.NODE_ENV !== "production") {
               _prevOffscreenState === null
                 ? mountSuspenseOffscreenState(renderLanes)
                 : updateSuspenseOffscreenState(
-                  _prevOffscreenState,
-                  renderLanes
-                );
+                    _prevOffscreenState,
+                    renderLanes
+                  );
             _primaryChildFragment5.childLanes = getRemainingWorkInPrimaryTree(
               current,
               renderLanes
@@ -22188,7 +22193,7 @@ if (process.env.NODE_ENV !== "production") {
               case "backwards": {
                 error(
                   '"%s" is not a valid value for revealOrder on <SuspenseList />. ' +
-                  'Use lowercase "%s" instead.',
+                    'Use lowercase "%s" instead.',
                   revealOrder,
                   revealOrder.toLowerCase()
                 );
@@ -22200,7 +22205,7 @@ if (process.env.NODE_ENV !== "production") {
               case "backward": {
                 error(
                   '"%s" is not a valid value for revealOrder on <SuspenseList />. ' +
-                  'React uses the -s suffix in the spelling. Use "%ss" instead.',
+                    'React uses the -s suffix in the spelling. Use "%ss" instead.',
                   revealOrder,
                   revealOrder.toLowerCase()
                 );
@@ -22211,7 +22216,7 @@ if (process.env.NODE_ENV !== "production") {
               default:
                 error(
                   '"%s" is not a supported revealOrder on <SuspenseList />. ' +
-                  'Did you mean "together", "forwards" or "backwards"?',
+                    'Did you mean "together", "forwards" or "backwards"?',
                   revealOrder
                 );
 
@@ -22220,7 +22225,7 @@ if (process.env.NODE_ENV !== "production") {
           } else {
             error(
               "%s is not a supported value for revealOrder on <SuspenseList />. " +
-              'Did you mean "together", "forwards" or "backwards"?',
+                'Did you mean "together", "forwards" or "backwards"?',
               revealOrder
             );
           }
@@ -22236,7 +22241,7 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               '"%s" is not a supported value for tail on <SuspenseList />. ' +
-              'Did you mean "collapsed" or "hidden"?',
+                'Did you mean "collapsed" or "hidden"?',
               tailMode
             );
           } else if (
@@ -22247,8 +22252,8 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               '<SuspenseList tail="%s" /> is only valid if revealOrder is ' +
-              '"forwards" or "backwards". ' +
-              'Did you mean to specify revealOrder="forwards"?',
+                '"forwards" or "backwards". ' +
+                'Did you mean to specify revealOrder="forwards"?',
               tailMode
             );
           }
@@ -22267,10 +22272,10 @@ if (process.env.NODE_ENV !== "production") {
 
           error(
             "A nested %s was passed to row #%s in <SuspenseList />. Wrap it in " +
-            "an additional SuspenseList to configure its revealOrder: " +
-            "<SuspenseList revealOrder=...> ... " +
-            "<SuspenseList revealOrder=...>{%s}</SuspenseList> ... " +
-            "</SuspenseList>",
+              "an additional SuspenseList to configure its revealOrder: " +
+              "<SuspenseList revealOrder=...> ... " +
+              "<SuspenseList revealOrder=...>{%s}</SuspenseList> ... " +
+              "</SuspenseList>",
             type,
             index,
             type
@@ -22318,8 +22323,8 @@ if (process.env.NODE_ENV !== "production") {
             } else {
               error(
                 'A single row was passed to a <SuspenseList revealOrder="%s" />. ' +
-                "This is not useful since it needs multiple rows. " +
-                "Did you mean to pass multiple children or an array?",
+                  "This is not useful since it needs multiple rows. " +
+                  "Did you mean to pass multiple children or an array?",
                 revealOrder
               );
             }
@@ -22610,7 +22615,7 @@ if (process.env.NODE_ENV !== "production") {
 
               error(
                 "Rendering <Context> directly is not supported and will be removed in " +
-                "a future major release. Did you mean to render <Context.Consumer> instead?"
+                  "a future major release. Did you mean to render <Context.Consumer> instead?"
               );
             }
           }
@@ -22626,9 +22631,9 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof render !== "function") {
           error(
             "A context consumer was rendered with multiple children, or a child " +
-            "that isn't a function. A context consumer expects a single child " +
-            "that is a function. If you did pass a function, make sure there " +
-            "is no trailing or leading whitespace around it."
+              "that isn't a function. A context consumer expects a single child " +
+              "that is a function. If you did pass a function, make sure there " +
+              "is no trailing or leading whitespace around it."
           );
         }
       }
@@ -22737,7 +22742,6 @@ if (process.env.NODE_ENV !== "production") {
         return newWorkInProgress;
       }
     }
-
 
     // WANPAN beginWork
     function beginWork(current, workInProgress, renderLanes) {
@@ -23184,8 +23188,8 @@ if (process.env.NODE_ENV !== "production") {
         {
           throw Error(
             "Unknown unit of work tag (" +
-            workInProgress.tag +
-            "). This error is likely caused by a bug in React. Please file an issue."
+              workInProgress.tag +
+              "). This error is likely caused by a bug in React. Please file an issue."
           );
         }
       }
@@ -23208,7 +23212,7 @@ if (process.env.NODE_ENV !== "production") {
 
     {
       // Mutation mode
-      appendAllChildren = function(
+      appendAllChildren = function (
         parent,
         workInProgress,
         needsVisibilityToggle,
@@ -23245,11 +23249,11 @@ if (process.env.NODE_ENV !== "production") {
         }
       };
 
-      updateHostContainer = function(workInProgress) {
+      updateHostContainer = function (workInProgress) {
         // Noop
       };
 
-      updateHostComponent$1 = function(
+      updateHostComponent$1 = function (
         current,
         workInProgress,
         type,
@@ -23291,7 +23295,7 @@ if (process.env.NODE_ENV !== "production") {
         }
       };
 
-      updateHostText$1 = function(current, workInProgress, oldText, newText) {
+      updateHostText$1 = function (current, workInProgress, oldText, newText) {
         // If the text differs, mark it as an update. All the work in done in commitWork.
         if (oldText !== newText) {
           markUpdate(workInProgress);
@@ -23605,7 +23609,7 @@ if (process.env.NODE_ENV !== "production") {
               var hasInvisibleChildContext =
                 current === null &&
                 workInProgress.memoizedProps.unstable_avoidThisFallback !==
-                true;
+                  true;
 
               if (
                 hasInvisibleChildContext ||
@@ -23817,7 +23821,7 @@ if (process.env.NODE_ENV !== "production") {
                 // time we have to render. So rendering one more row would likely
                 // exceed it.
                 now() * 2 - renderState.renderingStartTime >
-                getRenderTargetTime() &&
+                  getRenderTargetTime() &&
                 renderLanes !== OffscreenLane
               ) {
                 // We have now passed our CPU deadline and we'll just give up further
@@ -23932,8 +23936,8 @@ if (process.env.NODE_ENV !== "production") {
         {
           throw Error(
             "Unknown unit of work tag (" +
-            workInProgress.tag +
-            "). This error is likely caused by a bug in React. Please file an issue."
+              workInProgress.tag +
+              "). This error is likely caused by a bug in React. Please file an issue."
           );
         }
       }
@@ -24131,8 +24135,8 @@ if (process.env.NODE_ENV !== "production") {
           var componentName = source ? getComponentName(source.type) : null;
           var componentNameMessage = componentName
             ? "The above error occurred in the <" +
-            componentName +
-            "> component:"
+              componentName +
+              "> component:"
             : "The above error occurred in one of your React components:";
           var errorBoundaryMessage;
           var errorBoundaryName = getComponentName(boundary.type);
@@ -24171,7 +24175,7 @@ if (process.env.NODE_ENV !== "production") {
         // If console.error is overridden, or logCapturedError() shows a dialog that throws,
         // we want to report this error outside of the normal stack as a last resort.
         // https://github.com/facebook/react/issues/13188
-        setTimeout(function() {
+        setTimeout(function () {
           throw e;
         });
       }
@@ -24190,7 +24194,7 @@ if (process.env.NODE_ENV !== "production") {
       };
       var error = errorInfo.value;
 
-      update.callback = function() {
+      update.callback = function () {
         onUncaughtError(error);
         logCapturedError(fiber, errorInfo);
       };
@@ -24206,7 +24210,7 @@ if (process.env.NODE_ENV !== "production") {
       if (typeof getDerivedStateFromError === "function") {
         var error$1 = errorInfo.value;
 
-        update.payload = function() {
+        update.payload = function () {
           logCapturedError(fiber, errorInfo);
           return getDerivedStateFromError(error$1);
         };
@@ -24245,7 +24249,7 @@ if (process.env.NODE_ENV !== "production") {
               if (!includesSomeLane(fiber.lanes, SyncLane)) {
                 error(
                   "%s: Error boundaries should implement getDerivedStateFromError(). " +
-                  "In that method, return a state update to display an error message or fallback UI.",
+                    "In that method, return a state update to display an error message or fallback UI.",
                   getComponentName(fiber.type) || "Unknown"
                 );
               }
@@ -24253,7 +24257,7 @@ if (process.env.NODE_ENV !== "production") {
           }
         };
       } else {
-        update.callback = function() {
+        update.callback = function () {
           markFailedErrorBoundaryForHotReloading(fiber);
         };
       }
@@ -24440,10 +24444,10 @@ if (process.env.NODE_ENV !== "production") {
 
         value = new Error(
           (getComponentName(sourceFiber.type) || "A React component") +
-          " suspended while rendering, but no fallback UI was specified.\n" +
-          "\n" +
-          "Add a <Suspense fallback=...> component higher in the tree to " +
-          "provide a loading indicator or placeholder to display."
+            " suspended while rendering, but no fallback UI was specified.\n" +
+            "\n" +
+            "Add a <Suspense fallback=...> component higher in the tree to " +
+            "provide a loading indicator or placeholder to display."
         );
       } // We didn't find a boundary that could handle this type of exception. Start
       // over and traverse parent path again, this time treating the exception
@@ -24515,7 +24519,7 @@ if (process.env.NODE_ENV !== "production") {
 
     var PossiblyWeakSet = typeof WeakSet === "function" ? WeakSet : Set;
 
-    var callComponentWillUnmountWithTimer = function(current, instance) {
+    var callComponentWillUnmountWithTimer = function (current, instance) {
       instance.props = current.memoizedProps;
       instance.state = current.memoizedState;
 
@@ -24597,10 +24601,10 @@ if (process.env.NODE_ENV !== "production") {
                   if (instance.props !== finishedWork.memoizedProps) {
                     error(
                       "Expected %s props to match memoized props before " +
-                      "getSnapshotBeforeUpdate. " +
-                      "This might either be because of a bug in React, or because " +
-                      "a component reassigns its own `this.props`. " +
-                      "Please file an issue.",
+                        "getSnapshotBeforeUpdate. " +
+                        "This might either be because of a bug in React, or because " +
+                        "a component reassigns its own `this.props`. " +
+                        "Please file an issue.",
                       getComponentName(finishedWork.type) || "instance"
                     );
                   }
@@ -24608,10 +24612,10 @@ if (process.env.NODE_ENV !== "production") {
                   if (instance.state !== finishedWork.memoizedState) {
                     error(
                       "Expected %s state to match memoized state before " +
-                      "getSnapshotBeforeUpdate. " +
-                      "This might either be because of a bug in React, or because " +
-                      "a component reassigns its own `this.state`. " +
-                      "Please file an issue.",
+                        "getSnapshotBeforeUpdate. " +
+                        "This might either be because of a bug in React, or because " +
+                        "a component reassigns its own `this.state`. " +
+                        "Please file an issue.",
                       getComponentName(finishedWork.type) || "instance"
                     );
                   }
@@ -24636,7 +24640,7 @@ if (process.env.NODE_ENV !== "production") {
 
                   error(
                     "%s.getSnapshotBeforeUpdate(): A snapshot value (or null) " +
-                    "must be returned. You have returned undefined.",
+                      "must be returned. You have returned undefined.",
                     getComponentName(finishedWork.type)
                   );
                 }
@@ -24745,7 +24749,7 @@ if (process.env.NODE_ENV !== "production") {
 
                 error(
                   "An effect function must not return anything besides a function, " +
-                  "which is used for clean-up.%s",
+                    "which is used for clean-up.%s",
                   addendum
                 );
               }
@@ -24822,10 +24826,10 @@ if (process.env.NODE_ENV !== "production") {
                   if (instance.props !== finishedWork.memoizedProps) {
                     error(
                       "Expected %s props to match memoized props before " +
-                      "componentDidMount. " +
-                      "This might either be because of a bug in React, or because " +
-                      "a component reassigns its own `this.props`. " +
-                      "Please file an issue.",
+                        "componentDidMount. " +
+                        "This might either be because of a bug in React, or because " +
+                        "a component reassigns its own `this.props`. " +
+                        "Please file an issue.",
                       getComponentName(finishedWork.type) || "instance"
                     );
                   }
@@ -24833,10 +24837,10 @@ if (process.env.NODE_ENV !== "production") {
                   if (instance.state !== finishedWork.memoizedState) {
                     error(
                       "Expected %s state to match memoized state before " +
-                      "componentDidMount. " +
-                      "This might either be because of a bug in React, or because " +
-                      "a component reassigns its own `this.state`. " +
-                      "Please file an issue.",
+                        "componentDidMount. " +
+                        "This might either be because of a bug in React, or because " +
+                        "a component reassigns its own `this.state`. " +
+                        "Please file an issue.",
                       getComponentName(finishedWork.type) || "instance"
                     );
                   }
@@ -24851,9 +24855,9 @@ if (process.env.NODE_ENV !== "production") {
                 finishedWork.elementType === finishedWork.type
                   ? current.memoizedProps
                   : resolveDefaultProps(
-                    finishedWork.type,
-                    current.memoizedProps
-                  );
+                      finishedWork.type,
+                      current.memoizedProps
+                    );
               var prevState = current.memoizedState; // We could update instance props and state here,
               // but instead we rely on them being set during last render.
               // TODO: revisit this when we implement resuming.
@@ -24866,10 +24870,10 @@ if (process.env.NODE_ENV !== "production") {
                   if (instance.props !== finishedWork.memoizedProps) {
                     error(
                       "Expected %s props to match memoized props before " +
-                      "componentDidUpdate. " +
-                      "This might either be because of a bug in React, or because " +
-                      "a component reassigns its own `this.props`. " +
-                      "Please file an issue.",
+                        "componentDidUpdate. " +
+                        "This might either be because of a bug in React, or because " +
+                        "a component reassigns its own `this.props`. " +
+                        "Please file an issue.",
                       getComponentName(finishedWork.type) || "instance"
                     );
                   }
@@ -24877,10 +24881,10 @@ if (process.env.NODE_ENV !== "production") {
                   if (instance.state !== finishedWork.memoizedState) {
                     error(
                       "Expected %s state to match memoized state before " +
-                      "componentDidUpdate. " +
-                      "This might either be because of a bug in React, or because " +
-                      "a component reassigns its own `this.state`. " +
-                      "Please file an issue.",
+                        "componentDidUpdate. " +
+                        "This might either be because of a bug in React, or because " +
+                        "a component reassigns its own `this.state`. " +
+                        "Please file an issue.",
                       getComponentName(finishedWork.type) || "instance"
                     );
                   }
@@ -24909,10 +24913,10 @@ if (process.env.NODE_ENV !== "production") {
                 if (instance.props !== finishedWork.memoizedProps) {
                   error(
                     "Expected %s props to match memoized props before " +
-                    "processing the update queue. " +
-                    "This might either be because of a bug in React, or because " +
-                    "a component reassigns its own `this.props`. " +
-                    "Please file an issue.",
+                      "processing the update queue. " +
+                      "This might either be because of a bug in React, or because " +
+                      "a component reassigns its own `this.props`. " +
+                      "Please file an issue.",
                     getComponentName(finishedWork.type) || "instance"
                   );
                 }
@@ -24920,10 +24924,10 @@ if (process.env.NODE_ENV !== "production") {
                 if (instance.state !== finishedWork.memoizedState) {
                   error(
                     "Expected %s state to match memoized state before " +
-                    "processing the update queue. " +
-                    "This might either be because of a bug in React, or because " +
-                    "a component reassigns its own `this.state`. " +
-                    "Please file an issue.",
+                      "processing the update queue. " +
+                      "This might either be because of a bug in React, or because " +
+                      "a component reassigns its own `this.state`. " +
+                      "Please file an issue.",
                     getComponentName(finishedWork.type) || "instance"
                   );
                 }
@@ -25114,7 +25118,7 @@ if (process.env.NODE_ENV !== "production") {
             if (!ref.hasOwnProperty("current")) {
               error(
                 "Unexpected ref object provided for %s. " +
-                "Use either a ref-setter function or React.createRef().",
+                  "Use either a ref-setter function or React.createRef().",
                 getComponentName(finishedWork.type)
               );
             }
@@ -25774,7 +25778,7 @@ if (process.env.NODE_ENV !== "production") {
           retryCache = finishedWork.stateNode = new PossiblyWeakSet();
         }
 
-        wakeables.forEach(function(wakeable) {
+        wakeables.forEach(function (wakeable) {
           // Memoize using the boundary fiber to prevent redundant listeners.
           var retry = resolveRetryWakeable.bind(null, finishedWork, wakeable);
 
@@ -25828,7 +25832,7 @@ if (process.env.NODE_ENV !== "production") {
     var commitHooks = [];
     function onCommitRoot$1() {
       {
-        commitHooks.forEach(function(commitHook) {
+        commitHooks.forEach(function (commitHook) {
           return commitHook();
         });
       }
@@ -26106,16 +26110,13 @@ if (process.env.NODE_ENV !== "production") {
 
       var priorityLevel = getCurrentPriorityLevel();
 
-
-
       if (lane === SyncLane) {
         if (
           // Check if we're inside unbatchedUpdates
           (executionContext & LegacyUnbatchedContext) !== NoContext && // Check if we're not already rendering
           (executionContext & (RenderContext | CommitContext)) === NoContext
         ) {
-
-          console.log('scheduleUpdateOnFiber 初次加载');
+          console.log("scheduleUpdateOnFiber 初次加载");
 
           // Register pending interactions on the root to avoid losing traced interaction data.
           schedulePendingInteractions(root, lane); // This is a legacy edge case. The initial mount of a ReactDOM.render-ed
@@ -26125,8 +26126,7 @@ if (process.env.NODE_ENV !== "production") {
           //WANPAN setState() 3  初次加载 同步更新任务
           performSyncWorkOnRoot(root);
         } else {
-
-          console.log('scheduleUpdateOnFiber 2');
+          console.log("scheduleUpdateOnFiber 2");
 
           //WANPAN setState() 3 异步 注册调度更新任务
           ensureRootIsScheduled(root, eventTime);
@@ -26134,7 +26134,7 @@ if (process.env.NODE_ENV !== "production") {
           schedulePendingInteractions(root, lane);
 
           if (executionContext === NoContext) {
-            console.log('scheduleUpdateOnFiber 3');
+            console.log("scheduleUpdateOnFiber 3");
             // Flush the synchronous work now, unless we're already working or inside
             // a batch. This is intentionally inside scheduleUpdateOnFiber instead of
             // scheduleCallbackForFiber to preserve the ability to schedule a callback
@@ -26154,8 +26154,7 @@ if (process.env.NODE_ENV !== "production") {
           (priorityLevel === UserBlockingPriority$2 ||
             priorityLevel === ImmediatePriority$1)
         ) {
-
-          console.log('scheduleUpdateOnFiber 4');
+          console.log("scheduleUpdateOnFiber 4");
 
           // This is the result of a discrete event. Track the lowest priority
           // discrete update per root so we can flush them early, if needed.
@@ -26639,7 +26638,7 @@ if (process.env.NODE_ENV !== "production") {
           if ((executionContext & RenderContext) !== NoContext) {
             error(
               "unstable_flushDiscreteUpdates: Cannot flush updates when React is " +
-              "already rendering."
+                "already rendering."
             );
           }
         } // We're already rendering, so we can't synchronously flush pending work.
@@ -26661,7 +26660,7 @@ if (process.env.NODE_ENV !== "production") {
         // immediately flush them.
         var roots = rootsWithPendingDiscreteUpdates;
         rootsWithPendingDiscreteUpdates = null;
-        roots.forEach(function(root) {
+        roots.forEach(function (root) {
           markDiscreteUpdatesExpired(root);
           ensureRootIsScheduled(root, now());
         });
@@ -26753,8 +26752,8 @@ if (process.env.NODE_ENV !== "production") {
         {
           error(
             "flushSync was called from inside a lifecycle method. React cannot " +
-            "flush when React is already rendering. Consider moving this call to " +
-            "a scheduler task or micro task."
+              "flush when React is already rendering. Consider moving this call to " +
+              "a scheduler task or micro task."
           );
         }
 
@@ -26819,7 +26818,7 @@ if (process.env.NODE_ENV !== "production") {
       workInProgressRootRenderLanes =
         subtreeRenderLanes =
         workInProgressRootIncludedLanes =
-        lanes;
+          lanes;
       workInProgressRootExitStatus = RootIncomplete;
       workInProgressRootFatalError = null;
       workInProgressRootSkippedLanes = NoLanes;
@@ -27694,7 +27693,7 @@ if (process.env.NODE_ENV !== "production") {
           // the earliest opportunity.
           if (!rootDoesHavePassiveEffects) {
             rootDoesHavePassiveEffects = true;
-            scheduleCallback(NormalPriority$1, function() {
+            scheduleCallback(NormalPriority$1, function () {
               flushPassiveEffects();
               return null;
             });
@@ -27823,7 +27822,7 @@ if (process.env.NODE_ENV !== "production") {
 
       if (!rootDoesHavePassiveEffects) {
         rootDoesHavePassiveEffects = true;
-        scheduleCallback(NormalPriority$1, function() {
+        scheduleCallback(NormalPriority$1, function () {
           flushPassiveEffects();
           return null;
         });
@@ -27843,7 +27842,7 @@ if (process.env.NODE_ENV !== "production") {
 
       if (!rootDoesHavePassiveEffects) {
         rootDoesHavePassiveEffects = true;
-        scheduleCallback(NormalPriority$1, function() {
+        scheduleCallback(NormalPriority$1, function () {
           flushPassiveEffects();
           return null;
         });
@@ -28190,16 +28189,16 @@ if (process.env.NODE_ENV !== "production") {
       return timeElapsed < 120
         ? 120
         : timeElapsed < 480
-          ? 480
-          : timeElapsed < 1080
-            ? 1080
-            : timeElapsed < 1920
-              ? 1920
-              : timeElapsed < 3000
-                ? 3000
-                : timeElapsed < 4320
-                  ? 4320
-                  : ceil(timeElapsed / 1960) * 1960;
+        ? 480
+        : timeElapsed < 1080
+        ? 1080
+        : timeElapsed < 1920
+        ? 1920
+        : timeElapsed < 3000
+        ? 3000
+        : timeElapsed < 4320
+        ? 4320
+        : ceil(timeElapsed / 1960) * 1960;
     }
 
     function checkForNestedUpdates() {
@@ -28222,9 +28221,9 @@ if (process.env.NODE_ENV !== "production") {
 
           error(
             "Maximum update depth exceeded. This can happen when a component " +
-            "calls setState inside useEffect, but useEffect either doesn't " +
-            "have a dependency array, or one of the dependencies changes on " +
-            "every render."
+              "calls setState inside useEffect, but useEffect either doesn't " +
+              "have a dependency array, or one of the dependencies changes on " +
+              "every render."
           );
         }
       }
@@ -28291,9 +28290,9 @@ if (process.env.NODE_ENV !== "production") {
 
           error(
             "Can't perform a React state update on a component that hasn't mounted yet. " +
-            "This indicates that you have a side-effect in your render function that " +
-            "asynchronously later calls tries to update the component. Move this work to " +
-            "useEffect instead."
+              "This indicates that you have a side-effect in your render function that " +
+              "asynchronously later calls tries to update the component. Move this work to " +
+              "useEffect instead."
           );
         } finally {
           if (previousFiber) {
@@ -28351,8 +28350,8 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "Can't perform a React state update on an unmounted component. This " +
-              "is a no-op, but it indicates a memory leak in your application. To " +
-              "fix, cancel all subscriptions and asynchronous tasks in %s.",
+                "is a no-op, but it indicates a memory leak in your application. To " +
+                "fix, cancel all subscriptions and asynchronous tasks in %s.",
               tag === ClassComponent
                 ? "the componentWillUnmount method"
                 : "a useEffect cleanup function"
@@ -28373,7 +28372,7 @@ if (process.env.NODE_ENV !== "production") {
     {
       var dummyFiber = null;
 
-      beginWork$1 = function(current, unitOfWork, lanes) {
+      beginWork$1 = function (current, unitOfWork, lanes) {
         // If a component throws an error, we replay it again in a synchronously
         // dispatched event, so that the debugger will treat it as an uncaught
         // error See ReactErrorUtils for more information.
@@ -28466,8 +28465,8 @@ if (process.env.NODE_ENV !== "production") {
 
                 error(
                   "Cannot update a component (`%s`) while rendering a " +
-                  "different component (`%s`). To locate the bad setState() call inside `%s`, " +
-                  "follow the stack trace as described in https://reactjs.org/link/setstate-in-render",
+                    "different component (`%s`). To locate the bad setState() call inside `%s`, " +
+                    "follow the stack trace as described in https://reactjs.org/link/setstate-in-render",
                   setStateComponentName,
                   renderingComponentName,
                   renderingComponentName
@@ -28481,8 +28480,8 @@ if (process.env.NODE_ENV !== "production") {
               if (!didWarnAboutUpdateInRender) {
                 error(
                   "Cannot update during an existing state transition (such as " +
-                  "within `render`). Render methods should be a pure " +
-                  "function of props and state."
+                    "within `render`). Render methods should be a pure " +
+                    "function of props and state."
                 );
 
                 didWarnAboutUpdateInRender = true;
@@ -28511,18 +28510,18 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "It looks like you're using the wrong act() around your test interactions.\n" +
-              "Be sure to use the matching version of act() corresponding to your renderer:\n\n" +
-              "// for react-dom:\n" + // Break up imports to avoid accidentally parsing them as dependencies.
-              "import {act} fr" +
-              "om 'react-dom/test-utils';\n" +
-              "// ...\n" +
-              "act(() => ...);\n\n" +
-              "// for react-test-renderer:\n" + // Break up imports to avoid accidentally parsing them as dependencies.
-              "import TestRenderer fr" +
-              "om react-test-renderer';\n" +
-              "const {act} = TestRenderer;\n" +
-              "// ...\n" +
-              "act(() => ...);"
+                "Be sure to use the matching version of act() corresponding to your renderer:\n\n" +
+                "// for react-dom:\n" + // Break up imports to avoid accidentally parsing them as dependencies.
+                "import {act} fr" +
+                "om 'react-dom/test-utils';\n" +
+                "// ...\n" +
+                "act(() => ...);\n\n" +
+                "// for react-test-renderer:\n" + // Break up imports to avoid accidentally parsing them as dependencies.
+                "import TestRenderer fr" +
+                "om react-test-renderer';\n" +
+                "const {act} = TestRenderer;\n" +
+                "// ...\n" +
+                "act(() => ...);"
             );
           } finally {
             if (previousFiber) {
@@ -28543,15 +28542,15 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "An update to %s ran an effect, but was not wrapped in act(...).\n\n" +
-            "When testing, code that causes React state updates should be " +
-            "wrapped into act(...):\n\n" +
-            "act(() => {\n" +
-            "  /* fire events that update state */\n" +
-            "});\n" +
-            "/* assert on the output */\n\n" +
-            "This ensures that you're testing the behavior the user would see " +
-            "in the browser." +
-            " Learn more at https://reactjs.org/link/wrap-tests-with-act",
+              "When testing, code that causes React state updates should be " +
+              "wrapped into act(...):\n\n" +
+              "act(() => {\n" +
+              "  /* fire events that update state */\n" +
+              "});\n" +
+              "/* assert on the output */\n\n" +
+              "This ensures that you're testing the behavior the user would see " +
+              "in the browser." +
+              " Learn more at https://reactjs.org/link/wrap-tests-with-act",
             getComponentName(fiber.type)
           );
         }
@@ -28572,15 +28571,15 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               "An update to %s inside a test was not wrapped in act(...).\n\n" +
-              "When testing, code that causes React state updates should be " +
-              "wrapped into act(...):\n\n" +
-              "act(() => {\n" +
-              "  /* fire events that update state */\n" +
-              "});\n" +
-              "/* assert on the output */\n\n" +
-              "This ensures that you're testing the behavior the user would see " +
-              "in the browser." +
-              " Learn more at https://reactjs.org/link/wrap-tests-with-act",
+                "When testing, code that causes React state updates should be " +
+                "wrapped into act(...):\n\n" +
+                "act(() => {\n" +
+                "  /* fire events that update state */\n" +
+                "});\n" +
+                "/* assert on the output */\n\n" +
+                "This ensures that you're testing the behavior the user would see " +
+                "in the browser." +
+                " Learn more at https://reactjs.org/link/wrap-tests-with-act",
               getComponentName(fiber.type)
             );
           } finally {
@@ -28613,11 +28612,11 @@ if (process.env.NODE_ENV !== "production") {
 
             error(
               'In Concurrent or Sync modes, the "scheduler" module needs to be mocked ' +
-              "to guarantee consistent behaviour across tests and browsers. " +
-              "For example, with jest: \n" + // Break up requires to avoid accidentally parsing them as dependencies.
-              "jest.mock('scheduler', () => require" +
-              "('scheduler/unstable_mock'));\n\n" +
-              "For more info, visit https://reactjs.org/link/mock-scheduler"
+                "to guarantee consistent behaviour across tests and browsers. " +
+                "For example, with jest: \n" + // Break up requires to avoid accidentally parsing them as dependencies.
+                "jest.mock('scheduler', () => require" +
+                "('scheduler/unstable_mock'));\n\n" +
+                "For more info, visit https://reactjs.org/link/mock-scheduler"
             );
           }
         }
@@ -28646,7 +28645,7 @@ if (process.env.NODE_ENV !== "production") {
         var pendingInteractions = pendingInteractionMap.get(lane);
 
         if (pendingInteractions != null) {
-          interactions.forEach(function(interaction) {
+          interactions.forEach(function (interaction) {
             if (!pendingInteractions.has(interaction)) {
               // Update the pending async work count for previously unscheduled interaction.
               interaction.__count++;
@@ -28657,7 +28656,7 @@ if (process.env.NODE_ENV !== "production") {
         } else {
           pendingInteractionMap.set(lane, new Set(interactions)); // Update the pending async work count for the current interactions.
 
-          interactions.forEach(function(interaction) {
+          interactions.forEach(function (interaction) {
             interaction.__count++;
           });
         }
@@ -28680,12 +28679,12 @@ if (process.env.NODE_ENV !== "production") {
       // work triggered during the render phase will be associated with it.
 
       var interactions = new Set();
-      root.pendingInteractionMap.forEach(function(
+      root.pendingInteractionMap.forEach(function (
         scheduledInteractions,
         scheduledLane
       ) {
         if (includesSomeLane(lanes, scheduledLane)) {
-          scheduledInteractions.forEach(function(interaction) {
+          scheduledInteractions.forEach(function (interaction) {
             return interactions.add(interaction);
           });
         }
@@ -28707,7 +28706,7 @@ if (process.env.NODE_ENV !== "production") {
             subscriber.onWorkStarted(interactions, threadID);
           } catch (error) {
             // If the subscriber throws, rethrow it in a separate task
-            scheduleCallback(ImmediatePriority$1, function() {
+            scheduleCallback(ImmediatePriority$1, function () {
               throw error;
             });
           }
@@ -28729,7 +28728,7 @@ if (process.env.NODE_ENV !== "production") {
         }
       } catch (error) {
         // If the subscriber throws, rethrow it in a separate task
-        scheduleCallback(ImmediatePriority$1, function() {
+        scheduleCallback(ImmediatePriority$1, function () {
           throw error;
         });
       } finally {
@@ -28737,13 +28736,13 @@ if (process.env.NODE_ENV !== "production") {
         // Unless the render was suspended or cascading work was scheduled,
         // In which case– leave pending interactions until the subsequent render.
         var pendingInteractionMap = root.pendingInteractionMap;
-        pendingInteractionMap.forEach(function(scheduledInteractions, lane) {
+        pendingInteractionMap.forEach(function (scheduledInteractions, lane) {
           // Only decrement the pending interaction count if we're done.
           // If there's still work at the current priority,
           // That indicates that we are waiting for suspense data.
           if (!includesSomeLane(remainingLanesAfterCommit, lane)) {
             pendingInteractionMap.delete(lane);
-            scheduledInteractions.forEach(function(interaction) {
+            scheduledInteractions.forEach(function (interaction) {
               interaction.__count--;
 
               if (subscriber !== null && interaction.__count === 0) {
@@ -28751,7 +28750,7 @@ if (process.env.NODE_ENV !== "production") {
                   subscriber.onInteractionScheduledWorkCompleted(interaction);
                 } catch (error) {
                   // If the subscriber throws, rethrow it in a separate task
-                  scheduleCallback(ImmediatePriority$1, function() {
+                  scheduleCallback(ImmediatePriority$1, function () {
                     throw error;
                   });
                 }
@@ -28778,7 +28777,7 @@ if (process.env.NODE_ENV !== "production") {
     var resolveFamily = null; // $FlowFixMe Flow gets confused by a WeakSet feature check below.
 
     var failedBoundaries = null;
-    var setRefreshHandler = function(handler) {
+    var setRefreshHandler = function (handler) {
       {
         resolveFamily = handler;
       }
@@ -28947,7 +28946,7 @@ if (process.env.NODE_ENV !== "production") {
         failedBoundaries.add(fiber);
       }
     }
-    var scheduleRefresh = function(root, update) {
+    var scheduleRefresh = function (root, update) {
       {
         if (resolveFamily === null) {
           // Hot reloading is disabled.
@@ -28957,7 +28956,7 @@ if (process.env.NODE_ENV !== "production") {
         var staleFamilies = update.staleFamilies,
           updatedFamilies = update.updatedFamilies;
         flushPassiveEffects();
-        flushSync(function() {
+        flushSync(function () {
           scheduleFibersWithFamiliesRecursively(
             root.current,
             updatedFamilies,
@@ -28966,7 +28965,7 @@ if (process.env.NODE_ENV !== "production") {
         });
       }
     };
-    var scheduleRoot = function(root, element) {
+    var scheduleRoot = function (root, element) {
       {
         if (root.context !== emptyContextObject) {
           // Super edge case: root has a legacy _renderSubtree context
@@ -28976,7 +28975,7 @@ if (process.env.NODE_ENV !== "production") {
         }
 
         flushPassiveEffects();
-        flushSync(function() {
+        flushSync(function () {
           updateContainer(element, root, null, null);
         });
       }
@@ -29067,11 +29066,11 @@ if (process.env.NODE_ENV !== "production") {
       }
     }
 
-    var findHostInstancesForRefresh = function(root, families) {
+    var findHostInstancesForRefresh = function (root, families) {
       {
         var hostInstances = new Set();
         var types = new Set(
-          families.map(function(family) {
+          families.map(function (family) {
             return family.current;
           })
         );
@@ -29318,7 +29317,7 @@ if (process.env.NODE_ENV !== "production") {
     // 5) It should be easy to port this to a C struct and keep a C implementation
     //    compatible.
 
-    var createFiber = function(tag, pendingProps, key, mode) {
+    var createFiber = function (tag, pendingProps, key, mode) {
       // $FlowFixMe: the shapes are exact here but Flow doesn't like constructors
       return new FiberNode(tag, pendingProps, key, mode);
     };
@@ -29419,9 +29418,9 @@ if (process.env.NODE_ENV !== "production") {
         currentDependencies === null
           ? null
           : {
-            lanes: currentDependencies.lanes,
-            firstContext: currentDependencies.firstContext,
-          }; // These will be overridden during the parent's reconciliation
+              lanes: currentDependencies.lanes,
+              firstContext: currentDependencies.firstContext,
+            }; // These will be overridden during the parent's reconciliation
 
       workInProgress.sibling = current.sibling;
       workInProgress.index = current.index;
@@ -29507,9 +29506,9 @@ if (process.env.NODE_ENV !== "production") {
           currentDependencies === null
             ? null
             : {
-              lanes: currentDependencies.lanes,
-              firstContext: currentDependencies.firstContext,
-            };
+                lanes: currentDependencies.lanes,
+                firstContext: currentDependencies.firstContext,
+              };
 
         {
           // Note: We don't reset the actualTime counts. It's useful to accumulate
@@ -29671,9 +29670,9 @@ if (process.env.NODE_ENV !== "production") {
               {
                 throw Error(
                   "Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: " +
-                  (type == null ? type : typeof type) +
-                  "." +
-                  info
+                    (type == null ? type : typeof type) +
+                    "." +
+                    info
                 );
               }
             }
@@ -30013,7 +30012,7 @@ if (process.env.NODE_ENV !== "production") {
               {
                 throw Error(
                   "Argument appears to not be a ReactComponent. Keys: " +
-                  Object.keys(component)
+                    Object.keys(component)
                 );
               }
             }
@@ -30039,10 +30038,10 @@ if (process.env.NODE_ENV !== "production") {
               if (fiber.mode & StrictMode) {
                 error(
                   "%s is deprecated in StrictMode. " +
-                  "%s was passed an instance of %s which is inside StrictMode. " +
-                  "Instead, add a ref directly to the element you want to reference. " +
-                  "Learn more about using refs safely here: " +
-                  "https://reactjs.org/link/strict-mode-find-node",
+                    "%s was passed an instance of %s which is inside StrictMode. " +
+                    "Instead, add a ref directly to the element you want to reference. " +
+                    "Learn more about using refs safely here: " +
+                    "https://reactjs.org/link/strict-mode-find-node",
                   methodName,
                   methodName,
                   componentName
@@ -30050,10 +30049,10 @@ if (process.env.NODE_ENV !== "production") {
               } else {
                 error(
                   "%s is deprecated in StrictMode. " +
-                  "%s was passed an instance of %s which renders StrictMode children. " +
-                  "Instead, add a ref directly to the element you want to reference. " +
-                  "Learn more about using refs safely here: " +
-                  "https://reactjs.org/link/strict-mode-find-node",
+                    "%s was passed an instance of %s which renders StrictMode children. " +
+                    "Instead, add a ref directly to the element you want to reference. " +
+                    "Learn more about using refs safely here: " +
+                    "https://reactjs.org/link/strict-mode-find-node",
                   methodName,
                   methodName,
                   componentName
@@ -30113,9 +30112,9 @@ if (process.env.NODE_ENV !== "production") {
 
           error(
             "Render methods should be a pure function of props and state; " +
-            "triggering nested component updates from render is not allowed. " +
-            "If necessary, trigger nested updates in componentDidUpdate.\n\n" +
-            "Check the render method of %s.",
+              "triggering nested component updates from render is not allowed. " +
+              "If necessary, trigger nested updates in componentDidUpdate.\n\n" +
+              "Check the render method of %s.",
             getComponentName(current.type) || "Unknown"
           );
         }
@@ -30134,7 +30133,7 @@ if (process.env.NODE_ENV !== "production") {
           if (typeof callback !== "function") {
             error(
               "render(...): Expected the last optional `callback` argument to be a " +
-              "function. Instead received: %s.",
+                "function. Instead received: %s.",
               callback
             );
           }
@@ -30245,7 +30244,7 @@ if (process.env.NODE_ENV !== "production") {
       return hostFiber.stateNode;
     }
 
-    var shouldSuspendImpl = function(fiber) {
+    var shouldSuspendImpl = function (fiber) {
       return false;
     };
 
@@ -30262,7 +30261,7 @@ if (process.env.NODE_ENV !== "production") {
     var setSuspenseHandler = null;
 
     {
-      var copyWithDeleteImpl = function(obj, path, index) {
+      var copyWithDeleteImpl = function (obj, path, index) {
         var key = path[index];
         var updated = Array.isArray(obj) ? obj.slice() : _assign({}, obj);
 
@@ -30280,11 +30279,11 @@ if (process.env.NODE_ENV !== "production") {
         return updated;
       };
 
-      var copyWithDelete = function(obj, path) {
+      var copyWithDelete = function (obj, path) {
         return copyWithDeleteImpl(obj, path, 0);
       };
 
-      var copyWithRenameImpl = function(obj, oldPath, newPath, index) {
+      var copyWithRenameImpl = function (obj, oldPath, newPath, index) {
         var oldKey = oldPath[index];
         var updated = Array.isArray(obj) ? obj.slice() : _assign({}, obj);
 
@@ -30312,7 +30311,7 @@ if (process.env.NODE_ENV !== "production") {
         return updated;
       };
 
-      var copyWithRename = function(obj, oldPath, newPath) {
+      var copyWithRename = function (obj, oldPath, newPath) {
         if (oldPath.length !== newPath.length) {
           warn("copyWithRename() expects paths of the same length");
 
@@ -30332,7 +30331,7 @@ if (process.env.NODE_ENV !== "production") {
         return copyWithRenameImpl(obj, oldPath, newPath, 0);
       };
 
-      var copyWithSetImpl = function(obj, path, index, value) {
+      var copyWithSetImpl = function (obj, path, index, value) {
         if (index >= path.length) {
           return value;
         }
@@ -30344,11 +30343,11 @@ if (process.env.NODE_ENV !== "production") {
         return updated;
       };
 
-      var copyWithSet = function(obj, path, value) {
+      var copyWithSet = function (obj, path, value) {
         return copyWithSetImpl(obj, path, 0, value);
       };
 
-      var findHook = function(fiber, id) {
+      var findHook = function (fiber, id) {
         // For now, the "id" of stateful hooks is just the stateful hook index.
         // This may change in the future with e.g. nested hooks.
         var currentHook = fiber.memoizedState;
@@ -30361,7 +30360,7 @@ if (process.env.NODE_ENV !== "production") {
         return currentHook;
       }; // Support DevTools editable values for useState and useReducer.
 
-      overrideHookState = function(fiber, id, path, value) {
+      overrideHookState = function (fiber, id, path, value) {
         var hook = findHook(fiber, id);
 
         if (hook !== null) {
@@ -30378,7 +30377,7 @@ if (process.env.NODE_ENV !== "production") {
         }
       };
 
-      overrideHookStateDeletePath = function(fiber, id, path) {
+      overrideHookStateDeletePath = function (fiber, id, path) {
         var hook = findHook(fiber, id);
 
         if (hook !== null) {
@@ -30395,7 +30394,7 @@ if (process.env.NODE_ENV !== "production") {
         }
       };
 
-      overrideHookStateRenamePath = function(fiber, id, oldPath, newPath) {
+      overrideHookStateRenamePath = function (fiber, id, oldPath, newPath) {
         var hook = findHook(fiber, id);
 
         if (hook !== null) {
@@ -30412,7 +30411,7 @@ if (process.env.NODE_ENV !== "production") {
         }
       }; // Support DevTools props for function components, forwardRef, memo, host components, etc.
 
-      overrideProps = function(fiber, path, value) {
+      overrideProps = function (fiber, path, value) {
         fiber.pendingProps = copyWithSet(fiber.memoizedProps, path, value);
 
         if (fiber.alternate) {
@@ -30422,7 +30421,7 @@ if (process.env.NODE_ENV !== "production") {
         scheduleUpdateOnFiber(fiber, SyncLane, NoTimestamp);
       };
 
-      overridePropsDeletePath = function(fiber, path) {
+      overridePropsDeletePath = function (fiber, path) {
         fiber.pendingProps = copyWithDelete(fiber.memoizedProps, path);
 
         if (fiber.alternate) {
@@ -30432,7 +30431,7 @@ if (process.env.NODE_ENV !== "production") {
         scheduleUpdateOnFiber(fiber, SyncLane, NoTimestamp);
       };
 
-      overridePropsRenamePath = function(fiber, oldPath, newPath) {
+      overridePropsRenamePath = function (fiber, oldPath, newPath) {
         fiber.pendingProps = copyWithRename(
           fiber.memoizedProps,
           oldPath,
@@ -30446,11 +30445,11 @@ if (process.env.NODE_ENV !== "production") {
         scheduleUpdateOnFiber(fiber, SyncLane, NoTimestamp);
       };
 
-      scheduleUpdate = function(fiber) {
+      scheduleUpdate = function (fiber) {
         scheduleUpdateOnFiber(fiber, SyncLane, NoTimestamp);
       };
 
-      setSuspenseHandler = function(newShouldSuspendImpl) {
+      setSuspenseHandler = function (newShouldSuspendImpl) {
         shouldSuspendImpl = newShouldSuspendImpl;
       };
     }
@@ -30512,14 +30511,14 @@ if (process.env.NODE_ENV !== "production") {
     }
 
     ReactDOMRoot.prototype.render = ReactDOMBlockingRoot.prototype.render =
-      function(children) {
+      function (children) {
         var root = this._internalRoot;
 
         {
           if (typeof arguments[1] === "function") {
             error(
               "render(...): does not support the second callback argument. " +
-              "To execute a side effect after rendering, declare it in a component body with useEffect()."
+                "To execute a side effect after rendering, declare it in a component body with useEffect()."
             );
           }
 
@@ -30532,9 +30531,9 @@ if (process.env.NODE_ENV !== "production") {
               if (hostInstance.parentNode !== container) {
                 error(
                   "render(...): It looks like the React-rendered content of the " +
-                  "root container was removed without using React. This is not " +
-                  "supported and will cause errors. Instead, call " +
-                  "root.unmount() to empty a root's container."
+                    "root container was removed without using React. This is not " +
+                    "supported and will cause errors. Instead, call " +
+                    "root.unmount() to empty a root's container."
                 );
               }
             }
@@ -30545,19 +30544,19 @@ if (process.env.NODE_ENV !== "production") {
       };
 
     ReactDOMRoot.prototype.unmount = ReactDOMBlockingRoot.prototype.unmount =
-      function() {
+      function () {
         {
           if (typeof arguments[0] === "function") {
             error(
               "unmount(...): does not support a callback argument. " +
-              "To execute a side effect after rendering, declare it in a component body with useEffect()."
+                "To execute a side effect after rendering, declare it in a component body with useEffect()."
             );
           }
         }
 
         var root = this._internalRoot;
         var container = root.containerInfo;
-        updateContainer(null, root, null, function() {
+        updateContainer(null, root, null, function () {
           unmarkContainerAsRoot(container);
         });
       };
@@ -30616,7 +30615,7 @@ if (process.env.NODE_ENV !== "production") {
     var warnedAboutHydrateAPI = false;
 
     {
-      topLevelUpdateWarnings = function(container) {
+      topLevelUpdateWarnings = function (container) {
         if (
           container._reactRootContainer &&
           container.nodeType !== COMMENT_NODE
@@ -30629,9 +30628,9 @@ if (process.env.NODE_ENV !== "production") {
             if (hostInstance.parentNode !== container) {
               error(
                 "render(...): It looks like the React-rendered content of this " +
-                "container was removed without using React. This is not " +
-                "supported and will cause errors. Instead, call " +
-                "ReactDOM.unmountComponentAtNode to empty a container."
+                  "container was removed without using React. This is not " +
+                  "supported and will cause errors. Instead, call " +
+                  "ReactDOM.unmountComponentAtNode to empty a container."
               );
             }
           }
@@ -30644,9 +30643,9 @@ if (process.env.NODE_ENV !== "production") {
         if (hasNonRootReactChild && !isRootRenderedBySomeReact) {
           error(
             "render(...): Replacing React-rendered children with a new root " +
-            "component. If you intended to update the children of this node, " +
-            "you should instead have the existing children update their state " +
-            "and render the new components instead of calling ReactDOM.render."
+              "component. If you intended to update the children of this node, " +
+              "you should instead have the existing children update their state " +
+              "and render the new components instead of calling ReactDOM.render."
           );
         }
 
@@ -30657,10 +30656,10 @@ if (process.env.NODE_ENV !== "production") {
         ) {
           error(
             "render(): Rendering components directly into document.body is " +
-            "discouraged, since its children are often manipulated by third-party " +
-            "scripts and browser extensions. This may lead to subtle " +
-            "reconciliation issues. Try rendering into a container element created " +
-            "for your app."
+              "discouraged, since its children are often manipulated by third-party " +
+              "scripts and browser extensions. This may lead to subtle " +
+              "reconciliation issues. Try rendering into a container element created " +
+              "for your app."
           );
         }
       };
@@ -30707,8 +30706,8 @@ if (process.env.NODE_ENV !== "production") {
 
               error(
                 "render(): Target node has markup rendered by React, but there " +
-                "are unrelated nodes as well. This is most commonly caused by " +
-                "white-space inserted around server-rendered markup."
+                  "are unrelated nodes as well. This is most commonly caused by " +
+                  "white-space inserted around server-rendered markup."
               );
             }
           }
@@ -30723,8 +30722,8 @@ if (process.env.NODE_ENV !== "production") {
 
           warn(
             "render(): Calling ReactDOM.render() to hydrate server-rendered markup " +
-            "will stop working in React v18. Replace the ReactDOM.render() call " +
-            "with ReactDOM.hydrate() if you want React to attach to the server HTML."
+              "will stop working in React v18. Replace the ReactDOM.render() call " +
+              "with ReactDOM.hydrate() if you want React to attach to the server HTML."
           );
         }
       }
@@ -30733,8 +30732,8 @@ if (process.env.NODE_ENV !== "production") {
         container,
         shouldHydrate
           ? {
-            hydrate: true,
-          }
+              hydrate: true,
+            }
           : undefined
       );
     }
@@ -30744,7 +30743,7 @@ if (process.env.NODE_ENV !== "production") {
         if (callback !== null && typeof callback !== "function") {
           error(
             "%s(...): Expected the last optional `callback` argument to be a " +
-            "function. Instead received: %s.",
+              "function. Instead received: %s.",
             callerName,
             callback
           );
@@ -30784,14 +30783,14 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof callback === "function") {
           var originalCallback = callback;
 
-          callback = function() {
+          callback = function () {
             var instance = getPublicRootInstance(fiberRoot);
             originalCallback.call(instance);
           };
         } // Initial mount should not be batched.
 
         // 2. 更新容器
-        unbatchedUpdates(function() {
+        unbatchedUpdates(function () {
           updateContainer(children, fiberRoot, parentComponent, callback);
         });
       } else {
@@ -30800,7 +30799,7 @@ if (process.env.NODE_ENV !== "production") {
         if (typeof callback === "function") {
           var _originalCallback = callback;
 
-          callback = function() {
+          callback = function () {
             var instance = getPublicRootInstance(fiberRoot);
 
             _originalCallback.call(instance);
@@ -30824,10 +30823,10 @@ if (process.env.NODE_ENV !== "production") {
           if (!warnedAboutRefsInRender) {
             error(
               "%s is accessing findDOMNode inside its render(). " +
-              "render() should be a pure function of props and state. It should " +
-              "never access something that requires stale data from the previous " +
-              "render, such as refs. Move this logic to componentDidMount and " +
-              "componentDidUpdate instead.",
+                "render() should be a pure function of props and state. It should " +
+                "never access something that requires stale data from the previous " +
+                "render, such as refs. Move this logic to componentDidMount and " +
+                "componentDidUpdate instead.",
               getComponentName(owner.type) || "A component"
             );
           }
@@ -30863,8 +30862,8 @@ if (process.env.NODE_ENV !== "production") {
         if (isModernRoot) {
           error(
             "You are calling ReactDOM.hydrate() on a container that was previously " +
-            "passed to ReactDOM.createRoot(). This is not supported. " +
-            "Did you mean to call createRoot(container, {hydrate: true}).render(element)?"
+              "passed to ReactDOM.createRoot(). This is not supported. " +
+              "Did you mean to call createRoot(container, {hydrate: true}).render(element)?"
           );
         }
       } // TODO: throw or warn if we couldn't hydrate?
@@ -30894,8 +30893,8 @@ if (process.env.NODE_ENV !== "production") {
         if (isModernRoot) {
           error(
             "You are calling ReactDOM.render() on a container that was previously " +
-            "passed to ReactDOM.createRoot(). This is not supported. " +
-            "Did you mean to call root.render(element)?"
+              "passed to ReactDOM.createRoot(). This is not supported. " +
+              "Did you mean to call root.render(element)?"
           );
         }
       }
@@ -30952,7 +30951,7 @@ if (process.env.NODE_ENV !== "production") {
         if (isModernRoot) {
           error(
             "You are calling ReactDOM.unmountComponentAtNode() on a container that was previously " +
-            "passed to ReactDOM.createRoot(). This is not supported. Did you mean to call root.unmount()?"
+              "passed to ReactDOM.createRoot(). This is not supported. Did you mean to call root.unmount()?"
           );
         }
       }
@@ -30965,18 +30964,18 @@ if (process.env.NODE_ENV !== "production") {
           if (renderedByDifferentReact) {
             error(
               "unmountComponentAtNode(): The node you're attempting to unmount " +
-              "was rendered by another copy of React."
+                "was rendered by another copy of React."
             );
           }
         } // Unmount should not be batched.
 
-        unbatchedUpdates(function() {
+        unbatchedUpdates(function () {
           legacyRenderSubtreeIntoContainer(
             null,
             null,
             container,
             false,
-            function() {
+            function () {
               // $FlowFixMe This should probably use `delete container._reactRootContainer`
               container._reactRootContainer = null;
               unmarkContainerAsRoot(container);
@@ -31002,12 +31001,12 @@ if (process.env.NODE_ENV !== "production") {
           if (hasNonRootReactChild) {
             error(
               "unmountComponentAtNode(): The node you're attempting to unmount " +
-              "was rendered by React and is not a top-level container. %s",
+                "was rendered by React and is not a top-level container. %s",
               isContainerReactRoot
                 ? "You may have accidentally passed in a React root node instead " +
-                "of its container."
+                    "of its container."
                 : "Instead, have the parent component update its state and " +
-                "rerender in order to remove this component."
+                    "rerender in order to remove this component."
             );
           }
         }
@@ -31034,7 +31033,7 @@ if (process.env.NODE_ENV !== "production") {
       ) {
         error(
           "React depends on Map and Set built-in types. Make sure that you load a " +
-          "polyfill in older browsers. https://reactjs.org/link/react-polyfills"
+            "polyfill in older browsers. https://reactjs.org/link/react-polyfills"
         );
       }
     }
@@ -31089,9 +31088,9 @@ if (process.env.NODE_ENV !== "production") {
 
           warn(
             "The ReactDOM.unstable_createPortal() alias has been deprecated, " +
-            "and will be removed in React 18+. Update your code to use " +
-            "ReactDOM.createPortal() instead. It has the exact same API, " +
-            'but without the "unstable_" prefix.'
+              "and will be removed in React 18+. Update your code to use " +
+              "ReactDOM.createPortal() instead. It has the exact same API, " +
+              'but without the "unstable_" prefix.'
           );
         }
       }
@@ -31133,12 +31132,12 @@ if (process.env.NODE_ENV !== "production") {
             // eslint-disable-next-line react-internal/no-production-logging
             console.info(
               "%cDownload the React DevTools " +
-              "for a better development experience: " +
-              "https://reactjs.org/link/react-devtools" +
-              (protocol === "file:"
-                ? "\nYou might need to use a local HTTP server (instead of file://): " +
-                "https://reactjs.org/link/react-devtools-faq"
-                : ""),
+                "for a better development experience: " +
+                "https://reactjs.org/link/react-devtools" +
+                (protocol === "file:"
+                  ? "\nYou might need to use a local HTTP server (instead of file://): " +
+                    "https://reactjs.org/link/react-devtools-faq"
+                  : ""),
               "font-weight:bold"
             );
           }

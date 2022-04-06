@@ -13,7 +13,7 @@ if (process.env.NODE_ENV !== "production") {
   (function () {
     "use strict";
 
-    console.log("wanpan react debug 17.0.2 2022年03月28日21:10:50");
+    console.log("react 17.0.2 new Date >>>", new Date());
 
     var _assign = require("object-assign");
 
