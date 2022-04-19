@@ -376,7 +376,7 @@ if (process.env.NODE_ENV !== "production") {
       }
     }
 
-    // WANPAN scheduleCallback 2 开启任务
+    // V17 scheduleCallback 2 开启任务
     function flushWork(hasTimeRemaining, initialTime) {
       isHostCallbackScheduled = false;
 
@@ -413,7 +413,7 @@ if (process.env.NODE_ENV !== "production") {
       }
     }
 
-    // WANPAN scheduleCallback 3 开始消费任务队列
+    // V17 scheduleCallback 3 开始消费任务队列
     function workLoop(hasTimeRemaining, initialTime) {
       var currentTime = initialTime;
       advanceTimers(currentTime);
@@ -533,7 +533,7 @@ if (process.env.NODE_ENV !== "production") {
       };
     }
 
-    // WANPAN scheduleCallback 1 将任务载入任务队列
+    // V17 scheduleCallback 1 将任务载入任务队列
     function unstable_scheduleCallback(priorityLevel, callback, options) {
       var currentTime = exports.unstable_now();
       var startTime;

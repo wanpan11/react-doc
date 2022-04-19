@@ -387,7 +387,7 @@ if (process.env.NODE_ENV !== "production") {
      * @protected
      */
 
-    // WANPAN setState() 1
+    // V17 setState() 1
     Component.prototype.setState = function (partialState, callback) {
       if (
         !(

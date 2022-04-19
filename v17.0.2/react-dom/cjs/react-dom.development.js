@@ -14354,7 +14354,7 @@ if (process.env.NODE_ENV !== "production") {
       return update;
     }
 
-    // WANPAN setState() 2-1  更新任务队列
+    // V17 setState() 2-1  更新任务队列
     function enqueueUpdate(fiber, update) {
       var updateQueue = fiber.updateQueue;
 
@@ -14901,7 +14901,7 @@ if (process.env.NODE_ENV !== "production") {
 
     var classComponentUpdater = {
       isMounted: isMounted,
-      // WANPAN setState() 2-0  更新任务队列 准备调度任务
+      // V17 setState() 2-0  更新任务队列 准备调度任务
       enqueueSetState: function (inst, payload, callback) {
         var fiber = get(inst);
         var eventTime = requestEventTime();
@@ -19297,7 +19297,7 @@ if (process.env.NODE_ENV !== "production") {
       return id;
     }
 
-    // WANPAN
+    // V17
     /*
      *  setState useState
      * fiber 当前出发更新的 fiber节点
@@ -22743,7 +22743,7 @@ if (process.env.NODE_ENV !== "production") {
       }
     }
 
-    // WANPAN beginWork
+    // V17 beginWork
     function beginWork(current, workInProgress, renderLanes) {
       var updateLanes = workInProgress.lanes;
 
@@ -26070,7 +26070,7 @@ if (process.env.NODE_ENV !== "production") {
       return findRetryLane(currentEventWipLanes);
     }
 
-    // WANPAN setState() 2-2 调度任务 reconciler 入口阶段
+    // V17 setState() 2-2 调度任务 reconciler 入口阶段
     function scheduleUpdateOnFiber(fiber, lane, eventTime) {
       checkForNestedUpdates();
       warnAboutRenderPhaseUpdatesInDEV(fiber);
@@ -26123,12 +26123,12 @@ if (process.env.NODE_ENV !== "production") {
           // root inside of batchedUpdates should be synchronous, but layout updates
           // should be deferred until the end of the batch.
 
-          //WANPAN setState() 3  初次加载 同步更新任务
+          //V17 setState() 3  初次加载 同步更新任务
           performSyncWorkOnRoot(root);
         } else {
           console.log("scheduleUpdateOnFiber 2");
 
-          //WANPAN setState() 3 异步 注册调度更新任务
+          //V17 setState() 3 异步 注册调度更新任务
           ensureRootIsScheduled(root, eventTime);
 
           schedulePendingInteractions(root, lane);
@@ -26142,7 +26142,7 @@ if (process.env.NODE_ENV !== "production") {
             // updates, to preserve historical behavior of legacy mode.
             resetRenderTimer();
 
-            //WANPAN setState() 3 没有执行上下文时 同步更新任务
+            //V17 setState() 3 没有执行上下文时 同步更新任务
             flushSyncCallbackQueue();
           }
         }
@@ -26165,7 +26165,7 @@ if (process.env.NODE_ENV !== "production") {
           }
         } // Schedule other updates after in case the callback is sync.
 
-        //WANPAN setState() 3 异步 注册调度更新任务
+        //V17 setState() 3 异步 注册调度更新任务
         ensureRootIsScheduled(root, eventTime);
 
         schedulePendingInteractions(root, lane);
@@ -26295,7 +26295,7 @@ if (process.env.NODE_ENV !== "production") {
     } // This is the entry point for every concurrent task, i.e. anything that
     // goes through Scheduler.
 
-    //WANPAN setState() 4 时间切片 更新任务
+    //V17 setState() 4 时间切片 更新任务
     function performConcurrentWorkOnRoot(root) {
       // Since we know we're in a React event, we can clear the current
       // event time. The next update will compute a new event time.
@@ -26537,7 +26537,7 @@ if (process.env.NODE_ENV !== "production") {
     } // This is the entry point for synchronous tasks that don't go
     // through Scheduler
 
-    //WANPAN setState() 4  同步更新任务
+    //V17 setState() 4  同步更新任务
     function performSyncWorkOnRoot(root) {
       if (
         !((executionContext & (RenderContext | CommitContext)) === NoContext)
@@ -26580,7 +26580,7 @@ if (process.env.NODE_ENV !== "production") {
       } else {
         lanes = getNextLanes(root, NoLanes);
 
-        // WANPAN setState() 5 构建fiber树
+        // V17 setState() 5 构建fiber树
         exitStatus = renderRootSync(root, lanes);
       }
 
@@ -26723,7 +26723,7 @@ if (process.env.NODE_ENV !== "production") {
       }
     }
 
-    // WANPAN update() 1 切换环境调用更新
+    // V17 update() 1 切换环境调用更新
     function unbatchedUpdates(fn, a) {
       var prevExecutionContext = executionContext;
       executionContext &= ~BatchedContext;
@@ -26982,7 +26982,7 @@ if (process.env.NODE_ENV !== "production") {
       return workInProgressRootExitStatus === RootIncomplete;
     }
 
-    // WANPAN setState() 6 准备开始 同步 循环构建fiber 树
+    // V17 setState() 6 准备开始 同步 循环构建fiber 树
     function renderRootSync(root, lanes) {
       var prevExecutionContext = executionContext;
       executionContext |= RenderContext;
@@ -27035,7 +27035,7 @@ if (process.env.NODE_ENV !== "production") {
 
     /** @noinline */
 
-    // WANPAN setState() 6 开始 同步 循环构建fiber 树
+    // V17 setState() 6 开始 同步 循环构建fiber 树
     function workLoopSync() {
       // Already timed out, so perform work without checking if we need to yield.
       while (workInProgress !== null) {
@@ -27043,7 +27043,7 @@ if (process.env.NODE_ENV !== "production") {
       }
     }
 
-    // WANPAN setState() 6 准备开始 异步 循环构建fiber 树
+    // V17 setState() 6 准备开始 异步 循环构建fiber 树
     function renderRootConcurrent(root, lanes) {
       var prevExecutionContext = executionContext;
       executionContext |= RenderContext;
@@ -27090,7 +27090,7 @@ if (process.env.NODE_ENV !== "production") {
     }
     /** @noinline */
 
-    // WANPAN setState() 6 开始 异步 循环构建fiber 树
+    // V17 setState() 6 开始 异步 循环构建fiber 树
     function workLoopConcurrent() {
       // Perform work until Scheduler asks us to yield
       while (workInProgress !== null && !shouldYield()) {
@@ -27343,7 +27343,7 @@ if (process.env.NODE_ENV !== "production") {
       return null;
     }
 
-    // WANPAN setState() 7 根据虚拟DOM渲染真是DOM
+    // V17 setState() 7 根据虚拟DOM渲染真是DOM
     function commitRootImpl(root, renderPriorityLevel) {
       do {
         // `flushPassiveEffects` will call `flushSyncUpdateQueue` at the end, which
@@ -27445,7 +27445,7 @@ if (process.env.NODE_ENV !== "production") {
         shouldFireAfterActiveInstanceBlur = false;
         nextEffect = firstEffect;
 
-        // WANPAN 生命周期 副作用 1
+        // V17 生命周期 副作用 1
         do {
           {
             invokeGuardedCallback(null, commitBeforeMutationEffects, null);
@@ -27474,7 +27474,7 @@ if (process.env.NODE_ENV !== "production") {
 
         nextEffect = firstEffect;
 
-        // WANPAN 生命周期 副作用 2
+        // V17 生命周期 副作用 2
         do {
           {
             invokeGuardedCallback(
@@ -27511,7 +27511,7 @@ if (process.env.NODE_ENV !== "production") {
 
         nextEffect = firstEffect;
 
-        // WANPAN 生命周期 副作用 3
+        // V17 生命周期 副作用 3
         do {
           {
             invokeGuardedCallback(null, commitLayoutEffects, null, root, lanes);
@@ -29521,7 +29521,7 @@ if (process.env.NODE_ENV !== "production") {
       return workInProgress;
     }
 
-    // WANPAN 程序启动 render() 8 createHostRootFiber
+    // V17 程序启动 render() 8 createHostRootFiber
     function createHostRootFiber(tag) {
       var mode;
 
@@ -29922,7 +29922,7 @@ if (process.env.NODE_ENV !== "production") {
       }
     }
 
-    // WANPAN 程序启动 render() 7 createFiberRoot
+    // V17 程序启动 render() 7 createFiberRoot
     function createFiberRoot(containerInfo, tag, hydrate, hydrationCallbacks) {
       var root = new FiberRootNode(containerInfo, tag, hydrate);
       // stateNode is any.
@@ -30074,12 +30074,12 @@ if (process.env.NODE_ENV !== "production") {
       }
     }
 
-    // WANPAN 程序启动 render() 6 createContainer
+    // V17 程序启动 render() 6 createContainer
     function createContainer(containerInfo, tag, hydrate, hydrationCallbacks) {
       return createFiberRoot(containerInfo, tag, hydrate);
     }
 
-    // WANPAN update() 2 调用更新
+    // V17 update() 2 调用更新
     function updateContainer(element, container, parentComponent, callback) {
       {
         onScheduleRoot(container, element);
@@ -30561,7 +30561,7 @@ if (process.env.NODE_ENV !== "production") {
         });
       };
 
-    // WANPAN 程序启动 render() 5 ReactDOMB 原型方法
+    // V17 程序启动 render() 5 ReactDOMB 原型方法
     function createRootImpl(container, tag, options) {
       // Tag is either LegacyRoot or Concurrent Root
       var hydrate = options != null && options.hydrate === true;
@@ -30594,7 +30594,7 @@ if (process.env.NODE_ENV !== "production") {
       return root;
     }
 
-    // WANPAN 程序启动 render() 4 创建 ReactDOMB 实例
+    // V17 程序启动 render() 4 创建 ReactDOMB 实例
     function createLegacyRoot(container, options) {
       return new ReactDOMBlockingRoot(container, LegacyRoot, options);
     }
@@ -30686,7 +30686,7 @@ if (process.env.NODE_ENV !== "production") {
       );
     }
 
-    // WANPAN 程序启动 render() 3 准备创建 fiberRoot
+    // V17 程序启动 render() 3 准备创建 fiberRoot
     function legacyCreateRootFromDOMContainer(container, forceHydrate) {
       var shouldHydrate =
         forceHydrate || shouldHydrateDueToLegacyHeuristic(container); // First clear any existing content.
@@ -30751,7 +30751,7 @@ if (process.env.NODE_ENV !== "production") {
       }
     }
 
-    // WANPAN 程序启动 render() 2
+    // V17 程序启动 render() 2
     function legacyRenderSubtreeIntoContainer(
       parentComponent,
       children,
@@ -30877,7 +30877,7 @@ if (process.env.NODE_ENV !== "production") {
       );
     }
 
-    // WANPAN 程序启动 render() 1
+    // V17 程序启动 render() 1
     function render(element, container, callback) {
       if (!isValidContainer(container)) {
         {

@@ -6478,6 +6478,7 @@ function dispatchContinuousEvent(domEventName, eventSystemFlags, container, nati
   }
 }
 
+    // V18 事件响应 dispatchEvent 
 function dispatchEvent(domEventName, eventSystemFlags, targetContainer, nativeEvent) {
   var blockedOn = findInstanceBlockingEvent(domEventName, eventSystemFlags, targetContainer, nativeEvent);
 
@@ -16941,6 +16942,7 @@ function forceStoreRerender(fiber) {
   scheduleUpdateOnFiber(fiber, SyncLane, NoTimestamp);
 }
 
+    // V18 mountState
 function mountState(initialState) {
   var hook = mountWorkInProgressHook();
 
@@ -17465,6 +17467,7 @@ function dispatchReducerAction(fiber, queue, action) {
   markUpdateInDevTools(fiber, lane);
 }
 
+// V18 状态更新 dispatchSetState 
 function dispatchSetState(fiber, queue, action) {
   {
     if (typeof arguments[3] === 'function') {
@@ -17672,6 +17675,8 @@ var InvalidNestedHooksDispatcherOnMountInDEV = null;
 var InvalidNestedHooksDispatcherOnUpdateInDEV = null;
 var InvalidNestedHooksDispatcherOnRerenderInDEV = null;
 
+
+// V18 钩子函数 HOOKS 
 {
   var warnInvalidContextAccess = function () {
     error('Context can only be read while React is rendering. ' + 'In classes, you can read it in the render method or getDerivedStateFromProps. ' + 'In function components, you can read it directly in the function body, but not ' + 'inside Hooks like useReducer() or useMemo().');
@@ -17756,6 +17761,7 @@ var InvalidNestedHooksDispatcherOnRerenderInDEV = null;
       var prevDispatcher = ReactCurrentDispatcher$1.current;
       ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
 
+      // V18 初始化数据 useState
       try {
         return mountState(initialState);
       } finally {
