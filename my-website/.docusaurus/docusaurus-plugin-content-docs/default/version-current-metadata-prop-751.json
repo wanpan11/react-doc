@@ -1,0 +1,48 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "tutorialSidebar": [
+      {
+        "type": "link",
+        "label": "简介",
+        "href": "/docs/intro",
+        "docId": "intro"
+      },
+      {
+        "type": "category",
+        "label": "起步",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "从头开始",
+            "href": "/docs/start/congratulations",
+            "docId": "start/congratulations"
+          }
+        ],
+        "href": "/docs/category/起步"
+      }
+    ]
+  },
+  "docs": {
+    "intro": {
+      "id": "intro",
+      "title": "简介",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "start/congratulations": {
+      "id": "start/congratulations",
+      "title": "从头开始",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    }
+  }
+}

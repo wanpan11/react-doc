@@ -1,0 +1,16 @@
+{
+  "title": "起步",
+  "description": "开始 react 源码分析之旅！",
+  "slug": "/category/起步",
+  "permalink": "/docs/category/起步",
+  "navigation": {
+    "previous": {
+      "title": "简介",
+      "permalink": "/docs/intro"
+    },
+    "next": {
+      "title": "从头开始",
+      "permalink": "/docs/start/congratulations"
+    }
+  }
+}
