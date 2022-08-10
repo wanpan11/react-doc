@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/wanpan11/react_source_debug.git"
   },
+  "scripts": {
+    "start:doc": "cd ./website && npm run start",
+    "start:demo": "cd ./demo && npm run start"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
