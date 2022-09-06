@@ -18,18 +18,25 @@ sidebar_position: 1
 
 #### 关联关系
 
-- ReactDOMRoot.\_internalRoot = FiberRootNode
-- FiberRootNode.containerInfo = container
-- FiberRootNode.current = FiberNode
-- container.\_\_reactContainer$\* = FiberNode
+- 1.FiberRootNode.containerInfo = container
+- 2.FiberRootNode.current = FiberNode
+- 3.FiberNode.stateNode = FiberRootNode
+- 4.container.\_\_reactContainer$\* = FiberNode
+- 5.ReactDOMRoot.\_internalRoot = FiberRootNode
 
 #### Fiber 类型
 
-- tag = ConcurrentRoot = 1 并发模式 FiberRoot
-- tag = HostRoot = 3 主持人 FiberNode
+- tag = ConcurrentRoot = 1 并发模式 FiberRootNode
+- tag = HostRoot = 3 主 fiber FiberNode
 
 #### render 方法
 
 - 首次渲染会去查找是否有已经存在的 fiberTree
 - 不存在 则为初始挂载流程 完整的构建一次 fiberTree
 - 存在 则为更新流程
+
+---
+
+### 运行流程
+
+![示例横幅](../../static/img/assets/creatReact.png)
