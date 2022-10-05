@@ -100,6 +100,7 @@ module.exports = (env, argv) => {
       open: true,
       port: 2001,
     };
+    baseConfig.stats = "errors-only";
     baseConfig.devServer = devServer;
   }
 
