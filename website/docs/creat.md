@@ -13,7 +13,10 @@ sidebar_class_name: green
 
 ### 运行流程
 
-![执行流程](../static/img/assets/creatReact.png)
+<!-- ![执行流程](../static/img/assets/creatReact.png) -->
+<a href='https://docs.qq.com/flowchart/DTFVpaVBqT1dLc1da'>查看流程图</a>
+
+### 节点截图
 ![节点截图](../static/img/assets/node_reactDomRoot_shot.png)
 
 ### 生成节点

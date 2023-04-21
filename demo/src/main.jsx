@@ -6,11 +6,15 @@ const root = createRoot(document.getElementById("root_1"));
 root.render(
   <div>
     <Wanpan />
+    <CaoYeMeng />
   </div>
 );
 
 function Wanpan() {
   const [data, setData] = useState(0);
+
+  debugger;
+  console.log("root Wanpan ===> ", root);
 
   return (
     <div>
@@ -26,4 +30,8 @@ function Wanpan() {
       </button>
     </div>
   );
+}
+
+function CaoYeMeng() {
+  return <div>CaoYeMeng</div>;
 }
