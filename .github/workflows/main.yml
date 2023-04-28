@@ -26,8 +26,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16"
-      - run: npm install
-      - run: npm build
+      - run: npm run install
+      - run: npm run build
 
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.1
