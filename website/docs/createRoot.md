@@ -4,10 +4,7 @@ sidebar_label: createRoot
 sidebar_class_name: green
 ---
 
-# 实例化应用
-
 初次渲染实例化应用时会创建许多虚拟节点，用于记录状态从而渲染页面。
-下面描述下各个节点之间的关联关系。
 
 ---
 
