@@ -24,5 +24,5 @@ jobs:
           username: ${{ vars.FTP_USERNAME }}
           server: ${{ vars.FTP_SERVER }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: "/website/build/*"
+          local_path: "./website/build/*"
           remote_path: ${{ vars.UPLOAD_PATH }}
