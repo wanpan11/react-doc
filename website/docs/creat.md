@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-sidebar_label: 创建应用
+sidebar_label: createRoot
 sidebar_class_name: green
 ---
 
@@ -11,36 +11,20 @@ sidebar_class_name: green
 
 ---
 
+### 大致流程
+
+1. 创建 <code>ReactDOMRoot</code> 时会检查当前 <code>Dom</code> 上是否已经存在 <code>ReactDOMRoot</code> 存在则抛出错误
+2. 执行 <code>createContainer</code> 创建 <code>FiberRoot</code> <code>HostRootFiber</code>
+3. 将 <code>FiberRoot</code> <code>HostRootFiber</code> 进行关联
+4. 初始化 <code>HostRootFiber.memoizedState</code> <code>HostRootFiber.updateQueue</code>
+5. <code>markContainerAsRoot</code> 关联 <code>Dom</code> <code>HostRootFiber</code>
+6. <code>listenToAllSupportedEvents</code> 时间相关
+7. 返回 <code>ReactDOMRoot</code>
+
 ### 运行流程
 
-<!-- ![执行流程](../static/img/assets/creatReact.png) -->
-<a href='https://docs.qq.com/flowchart/DTFVpaVBqT1dLc1da'>查看流程图</a>
+<iframe src='https://docs.qq.com/flowchart/DTFVpaVBqT1dLc1da' width='900' height='600' ></iframe>
 
 ### 节点截图
+
 ![节点截图](../static/img/assets/node_reactDomRoot_shot.png)
-
-### 生成节点
-
-- container 应用实例挂载的 Dom 节点
-- createRoot() 返回 ReactDOMRoot 应用实例
-- createContainer() 返回 FiberRootNode 根节点
-- createHostRootFiber() 返回 FiberNode 组件节点
-
-### 关联关系
-
-- 1.FiberRootNode.containerInfo = container
-- 2.FiberRootNode.current = FiberNode
-- 3.FiberNode.stateNode = FiberRootNode
-- 4.container.\_\_reactContainer$\* = FiberNode
-- 5.ReactDOMRoot.\_internalRoot = FiberRootNode
-
-### Fiber 类型
-
-- tag = ConcurrentRoot = 1 并发模式 FiberRootNode
-- tag = HostRoot = 3 主 fiber FiberNode
-
-### render 方法
-
-- 首次渲染会去查找是否有已经存在的 fiberTree
-- 不存在 则为初始挂载流程 完整的构建一次 fiberTree
-- 存在 则为更新流程

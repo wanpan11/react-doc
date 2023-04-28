@@ -46,12 +46,6 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "start",
-            position: "left",
-            label: "开始",
-          },
-          {
             href: "https://github.com/facebook/docusaurus",
             label: "GitHub",
             position: "right",

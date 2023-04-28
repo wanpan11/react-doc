@@ -8,8 +8,9 @@
     "url": "git+https://github.com/wanpan11/react_source_debug.git"
   },
   "scripts": {
-    "start:doc": "cd ./website && npm run start",
-    "start:demo": "cd ./demo && npm run start"
+    "start": "cd ./website && npm run start",
+    "build": "cd ./website && npm run build",
+    "install": "cd ./website && npm i"
   },
   "keywords": [],
   "author": "",
